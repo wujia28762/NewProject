@@ -1,0 +1,5 @@
+compilerId/<project>=org.eclipse.edt.ide.compiler.edtCompiler
+eclipse.preferences.version=1
+generatorIds//EGLSource/client/client=org.eclipse.edt.ide.gen.JavaScriptGenProvider,org.eclipse.edt.ide.gen.JavaScriptDevGenProvider
+generatorIds//EGLSource/client/server=org.eclipse.edt.ide.gen.JavaGenProvider
+generatorIds/<project>=org.eclipse.edt.ide.gen.JavaGenProvider,org.eclipse.edt.ide.gen.JavaScriptGenProvider,org.eclipse.edt.ide.gen.JavaScriptDevGenProvider

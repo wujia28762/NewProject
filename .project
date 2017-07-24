@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>NewProject</name>
+	<comment></comment>
+	<projects>
+		<project>org.eclipse.edt.rui.dojo_0.8.2</project>
+		<project>org.eclipse.edt.rui.widgets_0.8.2</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.edt.ide.core.EDTBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.edt.ide.core.EDTGenBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.edt.debug.core.smapBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.eclipse.edt.ide.core.eglnature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.apache.derby.ui.derbyEngine</nature>
+	</natures>
+</projectDescription>

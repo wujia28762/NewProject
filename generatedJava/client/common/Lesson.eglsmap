@@ -1,0 +1,14 @@
+SMAP
+lessonRec.java
+egl
+*S egl
+*F
++ 1 lessonRec.egl
+client/common/lessonRec.egl
+*L
+*E
+9#1;lesson_id;lesson_id;eglx.lang.EInt
+10#1;lessonname;lessonname;eglx.lang.EString(100)
+11#1;coursecom;coursecom;eglx.lang.EString(255)
+12#1;_url;_url;eglx.lang.EString(255)
+*X

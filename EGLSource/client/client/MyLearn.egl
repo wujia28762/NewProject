@@ -1,0 +1,79 @@
+package client.client;
+
+import eglx.ui.rui.RUIHandler;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import org.eclipse.edt.rui.widgets.Image;
+import org.eclipse.edt.rui.widgets.HyperLink;
+import org.eclipse.edt.rui.widgets.HTML;
+
+handler MyLearn type RUIhandler{initialUI =[ui], onConstructionFunction = start, cssFile = "css/e-Learning.css", title = "myLearning"}
+
+    ui GridLayout{columns = 1, rows = 1, cellPadding = 4, children = [ myLearningBox ]};
+    myLearningBox Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	columns = 1,
+    	children = [ Lesson1Box, Lesson2Box, Lesson3Box ] };
+    	
+    Lesson1Box Box{ padding=8,
+    	children = [ Lesson1Image, Lesson1Intro, Lesson1Link ],
+    	columns = 3 };
+    Lesson1Image Image{
+    	src = "E:\\workspace\\pictures\\01_副本.png"
+    };
+    Lesson1Intro Box{padding=8, columns=1, children=[Lesson1, Lesson1IntroText]};
+    Lesson1 TextLabel{ text = "可爱的校园",
+    	font = "微软雅黑",
+    	fontSize = "16",
+    	marginLeft = 5 };
+    Lesson1IntroText HTML{ text="本课程使学生初步体会到数具有表示物体个数的含义和作用",
+    	width = "240",
+    	marginTop = 5 };
+    Lesson1Link HyperLink{ text="进入课程",
+    	marginTop = 53,
+    	marginLeft = 20,
+    	href = "http://192.168.1.119:5590/NewProject/client/client/Lesson1.html",
+    	font = "微软雅黑",
+    	fontSize = "14" };
+    	
+   Lesson2Box Box{padding=8, columns=3,
+                  children = [ Lesson2Image, Lesson2Intro, Lesson2Link ],
+                  height = "90"};
+   Lesson2Image Image{src = "E:\\workspace\\pictures\\02_副本.png"};
+   Lesson2Intro Box{ padding=8, columns=1, children=[Lesson2, Lesson2IntroText] };
+   Lesson2 TextLabel{ text = "快乐的家园",
+    	font = "微软雅黑",
+    	fontSize = "16",
+    	marginLeft = 5 };
+   Lesson2IntroText HTML{ text="本课程帮助学生建立数与实物的对应关系的基础上，使学生理解数的意义。",
+    	width = "240",
+    	marginTop = 5 };
+   Lesson2Link HyperLink{ text="进入课程",
+    	marginTop = 53,
+    	marginLeft = 20,
+    	href = "http://192.168.1.119:5590/NewProject/client/client/Lesson2.html",
+    	font = "微软雅黑",
+    	fontSize = "14" };
+    	
+   Lesson3Box Box{padding=8, columns=3,
+                  children = [ Lesson3Image, Lesson3Intro, Lesson3Link ]}; 	
+   Lesson3Image Image{src = "E:\\workspace\\pictures\\03_副本.png"};   
+   Lesson3Intro Box{ padding=8, columns=1, children=[Lesson3, Lesson3IntroText] };   
+   Lesson3 TextLabel{ text = "小猫钓鱼",
+    	font = "微软雅黑",
+    	fontSize = "16",
+    	marginLeft = 5 };   
+   Lesson3IntroText HTML{ text="本课程使学生知道0的含义，0在数中的顺序，会读写0；指导学生规范书写，养成良好的书写习惯；理解0的三个含义。",
+    	width = "240",
+    	marginTop = 5 };  
+   Lesson3Link HyperLink{ text="进入课程",
+    	marginTop = 53,
+    	marginLeft = 20,
+    	href = "http://192.168.1.119:5590/NewProject/client/client/Lesson3.html",
+    	font = "微软雅黑",
+    	fontSize = "14" }; 		     
+
+    function start()
+    end
+end

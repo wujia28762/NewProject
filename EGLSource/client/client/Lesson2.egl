@@ -1,0 +1,88 @@
+package client.client;
+
+import eglx.ui.rui.RUIHandler;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import dojo.widgets.DojoButton;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import org.eclipse.edt.rui.widgets.Button;
+import org.eclipse.edt.rui.widgets.Image;
+import org.eclipse.edt.rui.widgets.BoxLib;
+import org.eclipse.edt.rui.widgets.HyperLink;
+import org.eclipse.edt.rui.widgets.HTML;
+
+handler Lesson2 type RUIhandler{initialUI =[ui], onConstructionFunction = start, cssFile = "css/e-Learning.css", title = ""}
+
+    ui GridLayout{columns = 1, rows = 1, cellPadding = 4, children = [ Lesson1Box ]};
+    Lesson1Box Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ TitleBox, contentBox ],
+    	width = "900",
+    	columns = 1 };
+    	
+    TitleBox Box{ padding=8,
+    	children = [ LessonTitle, ButtonsBox ], 
+    	backgroundColor = "LightSkyBlue",
+    	width = "900",
+    	height = "50",
+    	columns = 2 };
+    LessonTitle TextLabel{ text="快乐的家园", 
+    	font = "华文新魏",
+    	fontSize = "30" };
+    ButtonsBox Box{ padding=8,
+    	marginTop = 20,
+    	marginLeft = 10,
+    	columns = 8,
+    	children = [ Button1, Button2, Button3, Button4, Button5, Button6, Button7, Button8 ] };
+    Button1 Button{ text = "课程简介",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button2 Button{ text = "教师简介",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button3 Button{ text = "指定教材",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button4 Button{ text = "学习方法",
+    	fontSize = "14",
+    	font = "微软雅黑" }; 
+    Button5 Button{ text = "教学目标",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button6 Button{ text = "教学重点",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button7 Button{ text = "作业习题",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button8 Button{ text = "授课时长",
+    	fontSize = "14",
+    	font = "微软雅黑" }; 
+    	
+    contentBox Box{padding=8,columns=1, children=[topBox, bodyBox]};	
+    topBox Box{padding=8, columns=2, children=[leftBox],
+    	width = "840"};    
+    		
+    leftBox Box{padding=8, columns=2,
+    	children = [ leftImage, leftText ]};
+    leftImage Image{
+    	src = "E:\\workspace\\pictures\\图标.jpg"
+    };
+    leftText TextLabel{ text = "课 程 简 介",
+    	fontSize = "16" };
+    	
+    
+  
+   bodyBox Box{padding=8, columns=1,
+   	children = [ HTML1 ]};
+   HTML1 HTML{ text= "<li><b>活动（一）</b></li><p>1．你们知道古代人是怎么数数的吗？（演示课件：结绳计数） </p>"+
+                     "<p> 2．你们有什么好办法帮助他吗？   （点评：以结绳计数的故事引入，调动学生学习的兴趣，使学生初步感知学习数学的重要性．）</p>"+
+                    "<li><b>活动（二）</b></li><p> 1．今天老师带大家到一座美丽的小山村去旅游（板书“1”），你们想去吗？乡村的早晨非常美，让我们一起去看一看．   （点评：设置情境，让学生在活动中体会数“1”的概念． ）</p>"+
+                    "<p>2．（演示课件：美丽的山村）请你们仔细观察，1可以表示什么？（小组讨论）</p>"+
+                    "<P>3．集体交流：学生可能说：一条狗、一棵树、一艘船、一间房、一个小孩、一座山、一个太阳、一户人家、一棵草、一个萝卜、一筐萝卜、一条小路、一条河、一群鸟……</p>",
+   	width = "800",
+   	fontSize = "14" }; 	
+
+    function start()
+    end
+end

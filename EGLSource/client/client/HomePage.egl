@@ -1,0 +1,99 @@
+package client.client;
+
+// RUI Handler
+
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.Div;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.GridLayoutLib;
+import org.eclipse.edt.rui.widgets.HyperLink;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import dojo.widgets.DojoTitlePane;
+import eglx.ui.rui.RUIHandler;
+
+//
+//
+
+handler HomePage type RUIhandler{initialUI =[ui
+            ], onConstructionFunction = start, cssFile = "css/NewProject.css", title = ""}
+
+    ui GridLayout{columns = 1, rows = 2, cellPadding = 4, children = [ GridLayout, Box ]};
+    Box Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ TextLabel ] };
+    TextLabel TextLabel{ text = "扫除学习盲点，提高学习成绩",
+    	color = "YellowGreen",
+    	font = "华文行楷",
+    	fontSize = "25",
+    	paddingLeft = 300 };
+    GridLayout GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1 }, cellPadding = 4, rows = 1, columns = 3,
+     children = [ Box1, BoxNewProduct, Boxbody ] };
+      Boxbody Box{ layoutData = new GridLayoutData{ row = 1, column = 1,
+        verticalAlignment = GridLayoutLib.VALIGN_TOP,
+    	horizontalAlignment = GridLayoutLib.ALIGN_RIGHT }, padding=8,
+    	children = [ Product ],
+    	width = "280"  };
+    BoxNewProduct Box{ layoutData = new GridLayoutData{ row = 1, column = 2,
+        verticalAlignment = GridLayoutLib.VALIGN_TOP,
+    	horizontalAlignment = GridLayoutLib.ALIGN_RIGHT }, padding=8,
+    	children = [ NewProduct ],
+    	width = "280" };
+    NewProduct DojoTitlePane{ title = "教学天地", isOpen=true, duration=1000, width="280", children = [ new Div {
+        children = [ NewProduct1,NewProduct2,NewProduct3,NewProduct4,NewProduct5,NewProductMore ]
+        } ],
+        font = "微软雅黑",
+    	fontSize = "14" };
+    NewProduct1 HyperLink{ text = "小学一年级学生学习指导",
+    	href = "http://www.dingboshi.com/education/detail413.htm" };
+    NewProduct2 HyperLink{ text = "小学数学复习方法指导",
+    	href = "http://www.dingboshi.com/education/detail423.htm" };
+    NewProduct3 HyperLink{ text = "小学数学高效复习技巧：做好哪些辅导",
+    	href = "http://www.dingboshi.com/education/detail412.htm" };
+    NewProduct4 HyperLink{ text = "小学数学学习方法有哪些",
+    	href = "http://www.dingboshi.com/education/detail350.htm" };
+    NewProduct5 HyperLink{ text = "小学数学高效复习的五把利剑",
+    	href = "http://www.dingboshi.com/education/detail194.htm" };
+    NewProductMore HyperLink{ text = "了解更多",
+    	href = "了解更多",
+    	marginTop = 10  };
+    Product DojoTitlePane{ title = "热门课程", isOpen=true, duration=1000, width="280", children = [ new Div {
+        children = [ Product1,Product2,Product3,Product4,ProductMore ]
+        } ],
+        font = "微软雅黑",
+    	fontSize = "14" };
+    Product1 HyperLink{ text = "1、2、3的认识",
+    	href = "http://www.shuxueweb.com/Article/Class8/Class17/200308/127.html" };
+    Product2 HyperLink{ text = "认识钟",
+    	href = "http://www.shuxueweb.com/Article/Class8/Class17/200311/925.html" };
+    Product3 HyperLink{ text = "两位数加两位数（竖式）",
+    	href = "http://www.shuxueweb.com/Article/Class8/Class17/Class51/200309/465.html" };
+    Product4 HyperLink{ text = "图画应用题",
+    	href = "http://www.shuxueweb.com/Article/Class8/Class17/Class51/200401/1293.html" };
+    ProductMore HyperLink{ text = "了解更多",
+    	href = "了解更多",
+    	marginTop = 10 };
+    Box1 Box{ layoutData = new GridLayoutData{ row = 1, column = 3 ,
+        verticalAlignment = GridLayoutLib.VALIGN_TOP,
+    	horizontalAlignment = GridLayoutLib.ALIGN_RIGHT}, padding=8,
+    	children = [ ProductOne ] ,
+    	width = "280" };
+    ProductOne DojoTitlePane{ title = "教学论坛", isOpen=true, duration=1000, width="280", children = [ new Div {
+         children = [ ProductOne1,ProductOne2,ProductOne3,ProductOne4,ProductOneMore ]
+       } ] ,
+        font = "微软雅黑",
+    	fontSize = "14" };
+    ProductOne1 HyperLink{ text = " 家长如何辅导孩子写作业",
+    	href = "http://www.dingboshi.com/forum/detail1_5_249.htm" };
+    ProductOne2 HyperLink{ text = "如何帮孩子提高数学成绩",
+    	href = "http://www.dingboshi.com/forum/detail1_5_242.htm" };
+    ProductOne3 HyperLink{ text = " 孩子成绩不理想该怎么办",
+    	href = "http://www.dingboshi.com/forum/detail1_5_228.htm" };
+    ProductOne4 HyperLink{ text = "家长教育孩子的原则有哪些",
+    	href = "http://www.dingboshi.com/forum/detail1_4_111.htm" };
+    ProductOneMore HyperLink{ text = "了解更多",
+    	href = "了解更多",
+    	marginTop = 10 };
+
+    function start()
+    end
+end

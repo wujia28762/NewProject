@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<Record ID="1" eClass="org.eclipse.edt.mof.egl.Record" name="Cases" fileName="client/common/casesRec.egl" hasCompileErrors="false" packageName="client.common" isAbstract="false" >
+	<annotations ID="2" eClass="egl:eglx.persistence.entity" />
+	<annotations ID="3" eClass="egl:eglx.persistence.sql.table" name="USER_CASES" />
+	<annotations ID="4" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:171" off="i:117" line="i:8" />
+	<superTypes href="egl:eglx.lang.anyrecord"/>
+	<fields ID="5" eClass="org.eclipse.edt.mof.egl.Field" name="case_id" type="egl:eglx.lang.eint" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="6" eClass="egl:eglx.persistence.id" />
+		<annotations ID="7" eClass="egl:eglx.persistence.sql.generatedvalue" />
+		<annotations ID="8" eClass="egl:eglx.persistence.sql.column" name="case_id" insertable="true" updateable="true" />
+		<annotations ID="9" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:57" off="i:175" line="i:9" />
+		<container IDREF="1"/>
+	</fields>
+	<fields ID="10" eClass="org.eclipse.edt.mof.egl.Field" name="casename" type="egl:eglx.lang.estring(100)" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="11" eClass="egl:eglx.persistence.sql.column" name="casename" insertable="true" updateable="true" />
+		<annotations ID="12" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:47" off="i:237" line="i:10" />
+		<container IDREF="1"/>
+	</fields>
+</Record>

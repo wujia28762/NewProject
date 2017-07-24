@@ -1,0 +1,29 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<Record ID="1" eClass="org.eclipse.edt.mof.egl.Record" name="Lesson" fileName="client/common/lessonRec.egl" hasCompileErrors="false" packageName="client.common" isAbstract="false" >
+	<annotations ID="2" eClass="egl:eglx.persistence.entity" />
+	<annotations ID="3" eClass="egl:eglx.persistence.sql.table" name="USER_LESSON" />
+	<annotations ID="4" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:281" off="i:117" line="i:8" />
+	<superTypes href="egl:eglx.lang.anyrecord"/>
+	<fields ID="5" eClass="org.eclipse.edt.mof.egl.Field" name="lesson_id" type="egl:eglx.lang.eint" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="6" eClass="egl:eglx.persistence.id" />
+		<annotations ID="7" eClass="egl:eglx.persistence.sql.generatedvalue" />
+		<annotations ID="8" eClass="egl:eglx.persistence.sql.column" name="lesson_id" insertable="true" updateable="true" />
+		<annotations ID="9" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:61" off="i:177" line="i:9" />
+		<container IDREF="1"/>
+	</fields>
+	<fields ID="10" eClass="org.eclipse.edt.mof.egl.Field" name="lessonname" type="egl:eglx.lang.estring(100)" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="11" eClass="egl:eglx.persistence.sql.column" name="lessonname" insertable="true" updateable="true" />
+		<annotations ID="12" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:51" off="i:243" line="i:10" />
+		<container IDREF="1"/>
+	</fields>
+	<fields ID="13" eClass="org.eclipse.edt.mof.egl.Field" name="coursecom" type="egl:eglx.lang.estring(255)" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="14" eClass="egl:eglx.persistence.sql.column" name="coursecom" insertable="true" updateable="true" />
+		<annotations ID="15" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:49" off="i:299" line="i:11" />
+		<container IDREF="1"/>
+	</fields>
+	<fields ID="16" eClass="org.eclipse.edt.mof.egl.Field" name="_url" type="egl:eglx.lang.estring(255)" isNullable="true" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="17" eClass="egl:eglx.persistence.sql.column" name="URL" insertable="true" updateable="true" />
+		<annotations ID="18" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:353" line="i:12" />
+		<container IDREF="1"/>
+	</fields>
+</Record>

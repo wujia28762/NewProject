@@ -1,0 +1,91 @@
+package client.client;
+
+import eglx.ui.rui.RUIHandler;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import dojo.widgets.DojoButton;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import org.eclipse.edt.rui.widgets.Button;
+import org.eclipse.edt.rui.widgets.Image;
+import org.eclipse.edt.rui.widgets.BoxLib;
+import org.eclipse.edt.rui.widgets.HyperLink;
+import org.eclipse.edt.rui.widgets.HTML;
+
+handler ReLesson1 type RUIhandler{initialUI =[ui], onConstructionFunction = start, cssFile = "css/e-Learning.css", title = ""}
+
+    ui GridLayout{columns = 1, rows = 1, cellPadding = 4, children = [ Lesson1Box ]};
+    Lesson1Box Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ TitleBox, contentBox ],
+    	width = "900",
+    	columns = 1 };
+    	
+    TitleBox Box{ padding=8,
+    	children = [ LessonTitle, ButtonsBox ], 
+    	backgroundColor = "LightSkyBlue",
+    	width = "900",
+    	height = "50",
+    	columns = 2 };
+    LessonTitle TextLabel{ text="玩具", 
+    	font = "华文新魏",
+    	fontSize = "30" };
+    ButtonsBox Box{ padding=8,
+    	marginTop = 20,
+    	marginLeft = 10,
+    	columns = 8,
+    	children = [ Button1, Button2, Button3, Button4, Button5, Button6, Button7, Button8 ] };
+    Button1 Button{ text = "课程简介",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button2 Button{ text = "教师简介",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button3 Button{ text = "指定教材",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button4 Button{ text = "学习方法",
+    	fontSize = "14",
+    	font = "微软雅黑" }; 
+    Button5 Button{ text = "教学目标",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button6 Button{ text = "教学重点",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button7 Button{ text = "作业习题",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button8 Button{ text = "授课时长",
+    	fontSize = "14",
+    	font = "微软雅黑" }; 
+    	
+    contentBox Box{padding=8,columns=1, children=[topBox, bodyBox]};	
+    topBox Box{padding=8, columns=2, children=[leftBox],
+    	width = "840"};    
+    		
+    leftBox Box{padding=8, columns=2,
+    	children = [ leftImage, leftText ]};
+    leftImage Image{
+    	src = "E:\\workspace\\pictures\\图标.jpg"
+    };
+    leftText TextLabel{ text = "课 程 简 介",
+    	fontSize = "16" };
+    	
+    
+  
+   bodyBox Box{padding=8, columns=1,
+   	children = [ HTML1 ]};
+   HTML1 HTML{ text= "<li><b>一、 课前活动</b></li><p>打开书本，请找一找第4页和第5页。再找一找第6页和第7页。你找到了吗？看谁找得又快又准。  </p>"+
+                     "<p>小朋友，你们喜欢玩具吗？你们都有哪些玩具呢？淘气和笑笑也喜欢玩具，他们正在用手中的玩具布置一个“玩具城”，我们来看一看，数一数，他们都有些什么玩具，每样玩具有几个呢。</p>"+
+                     "<li><b>二、学写1~5各数</b></li><p> 1、观察图画，数一数图画上物品的数量。</p>"+
+                     "<p>2、教师引导学生有顺序的说一说，同桌交流，全班交流。  </p>"+
+                     "<p>3、观察1－5各数，说说它们像什么。</p>"+
+                     "<p>4、学写1－5各数。  （可以用口诀帮助记忆、提高兴趣：  1像小棒斜着放，2像小鸭嘎嘎叫，3像耳朵弯又弯，4像小旗迎风飘，5像钩子多个横。）  </p>"+
+                     "<p>5、在小黑板上教师指导，示范，学生模仿练习。</p>"+
+                     "<p>6、说一说怎样才能写的又快又好。</p>",
+   	width = "800",
+   	fontSize = "14" }; 	
+
+    function start()
+    end
+end

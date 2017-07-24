@@ -1,0 +1,16 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<Service ID="1" eClass="org.eclipse.edt.mof.egl.Service" name="LoginService" fileName="client/server/LoginService.egl" hasCompileErrors="false" packageName="client.server" isAbstract="false" >
+	<annotations ID="2" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:74" off="i:24" line="i:3" />
+	<superTypes href="egl:eglx.lang.anystruct"/>
+	<functions ID="3" eClass="org.eclipse.edt.mof.egl.Function" name="register" isNullable="false" isStatic="false" isAbstract="false" >
+		<annotations ID="4" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:24" off="i:69" line="i:6" />
+		<container IDREF="1"/>
+		<statementBlock ID="5" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<container IDREF="3"/>
+		</statementBlock>
+	</functions>
+	<fields ID="6" eClass="org.eclipse.edt.mof.egl.Field" name="variableName" type="egl:eglx.lang.estring" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="7" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:20" off="i:47" line="i:5" />
+		<container IDREF="1"/>
+	</fields>
+</Service>

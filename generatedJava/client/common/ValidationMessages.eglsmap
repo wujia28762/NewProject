@@ -1,0 +1,16 @@
+SMAP
+ValidationMessages.java
+egl
+*S egl
+*F
++ 1 ValidationMessages.egl
+client/common/ValidationMessages.egl
+*L
+*E
+4#1;usrMinInput;usrMinInput;eglx.lang.EString
+5#1;pwMinInput;pwMinInput;eglx.lang.EString
+6#1;valReq;valReq;eglx.lang.EString
+7#1;validZip;validZip;eglx.lang.EString
+8#1;emailError;emailError;eglx.lang.EString
+9#1;invalidDate;invalidDate;eglx.lang.EString
+*X

@@ -1,0 +1,1270 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<Handler ID="1" eClass="org.eclipse.edt.mof.egl.Handler" name="Test4" fileName="client/client/Test4.egl" hasCompileErrors="false" packageName="client.client" isAbstract="false" >
+	<annotations ID="2" eClass="egl:eglx.ui.rui.ruihandler" cssFile="css/NewProject1.css" >
+		<onConstructionFunction ID="3" eClass="org.eclipse.edt.mof.egl.MemberName" id="start" >
+			<member IDREF="4"/>
+		</onConstructionFunction>
+	</annotations>
+	<annotations ID="5" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1701" off="i:367" line="i:17" />
+	<superTypes href="egl:eglx.ui.rui.view"/>
+	<functions ID="4" eClass="org.eclipse.edt.mof.egl.Function" name="start" isNullable="false" isStatic="false" isAbstract="false" >
+		<annotations ID="6" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:24" off="i:1766" line="i:46" />
+		<container IDREF="1"/>
+		<statementBlock ID="7" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<container IDREF="4"/>
+		</statementBlock>
+	</functions>
+	<functions ID="8" eClass="org.eclipse.edt.mof.egl.Function" name="showcall" isNullable="false" isStatic="false" isAbstract="false" >
+		<annotations ID="9" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:264" off="i:1800" line="i:49" />
+		<container IDREF="1"/>
+		<parameters ID="10" eClass="org.eclipse.edt.mof.egl.FunctionParameter" name="event" type="egl:eglx.ui.rui.event" isNullable="false" isStatic="false" isAbstract="false" accessKind="ACC_PRIVATE" parameterKind="PARM_IN" isDefinedSqlNullable="false" isField="false" isConst="false" >
+			<annotations ID="11" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:14" off="i:1818" line="i:49" />
+			<container IDREF="8"/>
+		</parameters>
+		<statementBlock ID="12" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<container IDREF="8"/>
+			<statements ID="13" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+				<annotations ID="14" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:31" off="i:1839" line="i:50" />
+				<container IDREF="8"/>
+				<expr ID="15" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+					<annotations ID="16" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:31" off="i:1839" line="i:50" />
+					<fields ID="17" eClass="org.eclipse.edt.mof.egl.Field" name="button" type="egl:dojo.widgets.dojobutton" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="true" isImplicit="false" isSystemField="false" >
+						<annotations ID="18" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:1839" line="i:50" />
+						<container IDREF="8"/>
+						<initializerStatements ID="19" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+							<annotations ID="20" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:12" off="i:1857" line="i:50" />
+							<container IDREF="1"/>
+							<statements ID="21" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+								<annotations ID="22" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:12" off="i:1857" line="i:50" />
+								<container IDREF="1"/>
+								<expr ID="23" eClass="org.eclipse.edt.mof.egl.Assignment" >
+									<LHS ID="24" eClass="org.eclipse.edt.mof.egl.MemberName" id="button" >
+										<member IDREF="17"/>
+									</LHS>
+									<RHS ID="25" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="widget" >
+										<annotations ID="26" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:12" off="i:1857" line="i:50" />
+										<qualifier ID="27" eClass="org.eclipse.edt.mof.egl.MemberName" id="event" >
+											<annotations ID="28" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:5" off="i:1857" line="i:50" />
+											<member IDREF="10"/>
+										</qualifier>
+									</RHS>
+								</expr>
+							</statements>
+						</initializerStatements>
+					</fields>
+				</expr>
+			</statements>
+			<statements ID="29" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="30" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:22" off="i:1878" line="i:51" />
+				<container IDREF="8"/>
+				<expr ID="31" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="32" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:21" off="i:1878" line="i:51" />
+					<LHS ID="33" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="children" >
+						<annotations ID="34" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:1878" line="i:51" />
+						<qualifier ID="35" eClass="org.eclipse.edt.mof.egl.MemberName" id="Boxcon" >
+							<annotations ID="36" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:1878" line="i:51" />
+							<member IDREF="37"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="38" eClass="org.eclipse.edt.mof.egl.ArrayLiteral" >
+						<annotations ID="39" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:3" off="i:1896" line="i:51" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="40" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+				<statements ID="41" eClass="org.eclipse.edt.mof.egl.LabelStatement" label="eze_CaseLabel_0" >
+					<annotations ID="42" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:147" off="i:1909" line="i:52" />
+					<container IDREF="8"/>
+				</statements>
+				<statements ID="43" eClass="org.eclipse.edt.mof.egl.IfStatement" >
+					<annotations ID="44" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:49" off="i:1937" line="i:53" />
+					<annotations ID="45" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:147" off="i:1909" line="i:52" />
+					<container IDREF="8"/>
+					<condition ID="46" eClass="org.eclipse.edt.mof.egl.BinaryExpression" operator="==" >
+						<operands ID="47" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="text" >
+							<annotations ID="48" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:1915" line="i:52" />
+							<qualifier ID="49" eClass="org.eclipse.edt.mof.egl.MemberName" id="button" >
+								<annotations ID="50" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:1915" line="i:52" />
+								<member IDREF="17"/>
+							</qualifier>
+						</operands>
+						<operands ID="51" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="整理房间" isHex="false" >
+							<annotations ID="52" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:1942" line="i:53" />
+						</operands>
+					</condition>
+					<trueBranch ID="53" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+						<annotations ID="54" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:49" off="i:1937" line="i:53" />
+						<container IDREF="8"/>
+						<statements ID="55" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+							<annotations ID="56" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:34" off="i:1952" line="i:53" />
+							<container IDREF="8"/>
+							<expr ID="57" eClass="org.eclipse.edt.mof.egl.QualifiedFunctionInvocation" id="appendChild" >
+								<annotations ID="58" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:33" off="i:1952" line="i:53" />
+								<arguments ID="59" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="ui" >
+									<annotations ID="60" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:1971" line="i:53" />
+									<qualifier ID="61" eClass="org.eclipse.edt.mof.egl.NewExpression" id="client.client.room" >
+										<annotations ID="62" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:1971" line="i:53" />
+									</qualifier>
+								</arguments>
+								<qualifier ID="63" eClass="org.eclipse.edt.mof.egl.MemberName" id="Boxcon" >
+									<annotations ID="64" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:1952" line="i:53" />
+									<member IDREF="37"/>
+								</qualifier>
+							</expr>
+						</statements>
+					</trueBranch>
+					<falseBranch ID="65" eClass="org.eclipse.edt.mof.egl.IfStatement" >
+						<annotations ID="66" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:48" off="i:1996" line="i:54" />
+						<container IDREF="8"/>
+						<condition ID="67" eClass="org.eclipse.edt.mof.egl.BinaryExpression" operator="==" >
+							<operands ID="47" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="text" >
+								<annotations ID="48" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:1915" line="i:52" />
+								<qualifier ID="49" eClass="org.eclipse.edt.mof.egl.MemberName" id="button" >
+									<annotations ID="50" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:1915" line="i:52" />
+									<member IDREF="17"/>
+								</qualifier>
+							</operands>
+							<operands ID="68" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="整理书包" isHex="false" >
+								<annotations ID="69" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:2001" line="i:54" />
+							</operands>
+						</condition>
+						<trueBranch ID="70" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+							<annotations ID="71" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:48" off="i:1996" line="i:54" />
+							<container IDREF="8"/>
+							<statements ID="72" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+								<annotations ID="73" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:33" off="i:2011" line="i:54" />
+								<container IDREF="8"/>
+								<expr ID="74" eClass="org.eclipse.edt.mof.egl.QualifiedFunctionInvocation" id="appendChild" >
+									<annotations ID="75" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:32" off="i:2011" line="i:54" />
+									<arguments ID="76" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="ui" >
+										<annotations ID="77" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:12" off="i:2030" line="i:54" />
+										<qualifier ID="78" eClass="org.eclipse.edt.mof.egl.NewExpression" id="client.client.bag" >
+											<annotations ID="79" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:9" off="i:2030" line="i:54" />
+										</qualifier>
+									</arguments>
+									<qualifier ID="80" eClass="org.eclipse.edt.mof.egl.MemberName" id="Boxcon" >
+										<annotations ID="81" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:2011" line="i:54" />
+										<member IDREF="37"/>
+									</qualifier>
+								</expr>
+							</statements>
+						</trueBranch>
+					</falseBranch>
+				</statements>
+			</statements>
+		</statementBlock>
+	</functions>
+	<initializerStatements ID="82" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+		<statements ID="83" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+			<annotations ID="84" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:28" off="i:397" line="i:17" />
+			<container IDREF="1"/>
+			<expr ID="85" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+				<annotations ID="86" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:28" off="i:397" line="i:17" />
+				<LHS ID="87" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="initialUI" >
+					<annotations ID="88" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:9" off="i:397" line="i:17" />
+					<qualifier ID="89" eClass="org.eclipse.edt.mof.egl.ThisExpression" >
+						<thisObject IDREF="1"/>
+					</qualifier>
+				</LHS>
+				<RHS ID="90" eClass="org.eclipse.edt.mof.egl.ArrayLiteral" >
+					<annotations ID="91" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:17" off="i:408" line="i:17" />
+					<entries ID="92" eClass="org.eclipse.edt.mof.egl.MemberName" id="ui" >
+						<annotations ID="93" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:409" line="i:17" />
+						<member IDREF="94"/>
+					</entries>
+				</RHS>
+			</expr>
+		</statements>
+	</initializerStatements>
+	<fields ID="94" eClass="org.eclipse.edt.mof.egl.Field" name="ui" type="egl:org.eclipse.edt.rui.widgets.gridlayout" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="95" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:89" off="i:509" line="i:20" />
+		<container IDREF="1"/>
+		<initializerStatements ID="96" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<statements ID="97" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="98" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:523" line="i:20" />
+				<container IDREF="1"/>
+				<expr ID="99" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="100" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:523" line="i:20" />
+					<LHS ID="101" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="columns" >
+						<qualifier ID="102" eClass="org.eclipse.edt.mof.egl.MemberName" id="ui" >
+							<member IDREF="94"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="103" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+						<annotations ID="104" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:533" line="i:20" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="105" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="106" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:8" off="i:536" line="i:20" />
+				<container IDREF="1"/>
+				<expr ID="107" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="108" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:8" off="i:536" line="i:20" />
+					<LHS ID="109" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="rows" >
+						<qualifier ID="110" eClass="org.eclipse.edt.mof.egl.MemberName" id="ui" >
+							<member IDREF="94"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="111" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="2" isNegated="false" type="egl:eglx.lang.eint" >
+						<annotations ID="112" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:543" line="i:20" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="113" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="114" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:546" line="i:20" />
+				<container IDREF="1"/>
+				<expr ID="115" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="116" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:546" line="i:20" />
+					<LHS ID="117" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="cellPadding" >
+						<qualifier ID="118" eClass="org.eclipse.edt.mof.egl.MemberName" id="ui" >
+							<member IDREF="94"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="119" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+						<annotations ID="120" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:560" line="i:20" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="121" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="122" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:33" off="i:563" line="i:20" />
+				<container IDREF="1"/>
+				<expr ID="123" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="124" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:33" off="i:563" line="i:20" />
+					<LHS ID="125" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="children" >
+						<qualifier ID="126" eClass="org.eclipse.edt.mof.egl.MemberName" id="ui" >
+							<member IDREF="94"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="127" eClass="org.eclipse.edt.mof.egl.ArrayLiteral" >
+						<annotations ID="128" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:22" off="i:574" line="i:20" />
+						<entries ID="129" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout" >
+							<annotations ID="130" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:576" line="i:20" />
+							<member IDREF="131"/>
+						</entries>
+						<entries ID="132" eClass="org.eclipse.edt.mof.egl.MemberName" id="conBox" >
+							<annotations ID="133" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:588" line="i:20" />
+							<member IDREF="134"/>
+						</entries>
+					</RHS>
+				</expr>
+			</statements>
+		</initializerStatements>
+	</fields>
+	<fields ID="134" eClass="org.eclipse.edt.mof.egl.Field" name="conBox" type="egl:org.eclipse.edt.rui.widgets.box" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="135" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:161" off="i:603" line="i:21" />
+		<container IDREF="1"/>
+		<initializerStatements ID="136" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<statements ID="137" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="138" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:54" off="i:615" line="i:21" />
+				<container IDREF="1"/>
+				<expr ID="139" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="140" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:54" off="i:615" line="i:21" />
+					<LHS ID="141" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="layoutData" >
+						<qualifier ID="142" eClass="org.eclipse.edt.mof.egl.MemberName" id="conBox" >
+							<member IDREF="134"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="143" eClass="org.eclipse.edt.mof.egl.SetValuesExpression" >
+						<annotations ID="144" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:628" line="i:21" />
+						<target ID="145" eClass="org.eclipse.edt.mof.egl.NewExpression" id="org.eclipse.edt.rui.widgets.GridLayoutData" >
+							<annotations ID="146" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:628" line="i:21" />
+						</target>
+						<settings ID="147" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+							<annotations ID="148" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:23" off="i:646" line="i:21" />
+							<container IDREF="1"/>
+							<statements ID="149" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+								<annotations ID="150" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:628" line="i:21" />
+								<container IDREF="1"/>
+								<expr ID="151" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+									<fields ID="152" eClass="org.eclipse.edt.mof.egl.Field" name="eze$SettingTarget1" type="egl:org.eclipse.edt.rui.widgets.gridlayoutdata" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+										<annotations ID="153" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:628" line="i:21" />
+										<container IDREF="1"/>
+										<initializerStatements ID="154" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+											<annotations ID="155" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:628" line="i:21" />
+											<container IDREF="1"/>
+											<statements ID="156" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+												<annotations ID="157" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:628" line="i:21" />
+												<container IDREF="1"/>
+												<expr ID="158" eClass="org.eclipse.edt.mof.egl.Assignment" >
+													<LHS ID="159" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+														<member IDREF="152"/>
+													</LHS>
+													<RHS ID="145" eClass="org.eclipse.edt.mof.egl.NewExpression" id="org.eclipse.edt.rui.widgets.GridLayoutData" >
+														<annotations ID="146" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:628" line="i:21" />
+													</RHS>
+												</expr>
+											</statements>
+										</initializerStatements>
+									</fields>
+								</expr>
+							</statements>
+							<statements ID="160" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+								<annotations ID="161" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:7" off="i:648" line="i:21" />
+								<container IDREF="1"/>
+								<expr ID="162" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+									<annotations ID="163" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:7" off="i:648" line="i:21" />
+									<LHS ID="164" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="row" >
+										<qualifier ID="165" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+											<member IDREF="152"/>
+										</qualifier>
+									</LHS>
+									<RHS ID="166" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+										<annotations ID="167" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:654" line="i:21" />
+									</RHS>
+								</expr>
+							</statements>
+							<statements ID="168" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+								<annotations ID="169" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:657" line="i:21" />
+								<container IDREF="1"/>
+								<expr ID="170" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+									<annotations ID="171" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:657" line="i:21" />
+									<LHS ID="172" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="column" >
+										<qualifier ID="173" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+											<member IDREF="152"/>
+										</qualifier>
+									</LHS>
+									<RHS ID="174" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+										<annotations ID="175" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:666" line="i:21" />
+									</RHS>
+								</expr>
+							</statements>
+						</settings>
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="176" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="177" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:9" off="i:671" line="i:21" />
+				<container IDREF="1"/>
+				<expr ID="178" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="179" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:9" off="i:671" line="i:21" />
+					<LHS ID="180" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="padding" >
+						<qualifier ID="181" eClass="org.eclipse.edt.mof.egl.MemberName" id="conBox" >
+							<member IDREF="134"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="182" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="8" isNegated="false" type="egl:eglx.lang.eint" >
+						<annotations ID="183" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:679" line="i:21" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="184" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="185" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:18" off="i:687" line="i:22" />
+				<container IDREF="1"/>
+				<expr ID="186" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="187" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:18" off="i:687" line="i:22" />
+					<LHS ID="188" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="children" >
+						<qualifier ID="189" eClass="org.eclipse.edt.mof.egl.MemberName" id="conBox" >
+							<member IDREF="134"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="190" eClass="org.eclipse.edt.mof.egl.ArrayLiteral" >
+						<annotations ID="191" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:7" off="i:698" line="i:22" />
+						<entries ID="192" eClass="org.eclipse.edt.mof.egl.MemberName" id="con" >
+							<annotations ID="193" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:3" off="i:700" line="i:22" />
+							<member IDREF="194"/>
+						</entries>
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="195" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="196" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:29" off="i:713" line="i:23" />
+				<container IDREF="1"/>
+				<expr ID="197" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="198" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:29" off="i:713" line="i:23" />
+					<LHS ID="199" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="backgroundColor" >
+						<qualifier ID="200" eClass="org.eclipse.edt.mof.egl.MemberName" id="conBox" >
+							<member IDREF="134"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="201" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="Turquoise" isHex="false" >
+						<annotations ID="202" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:731" line="i:23" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="203" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="204" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:749" line="i:24" />
+				<container IDREF="1"/>
+				<expr ID="205" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="206" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:749" line="i:24" />
+					<LHS ID="207" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="width" >
+						<qualifier ID="208" eClass="org.eclipse.edt.mof.egl.MemberName" id="conBox" >
+							<member IDREF="134"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="209" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="790" isHex="false" >
+						<annotations ID="210" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:5" off="i:757" line="i:24" />
+					</RHS>
+				</expr>
+			</statements>
+		</initializerStatements>
+	</fields>
+	<fields ID="194" eClass="org.eclipse.edt.mof.egl.Field" name="con" type="egl:org.eclipse.edt.rui.widgets.textlabel" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="211" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:99" off="i:769" line="i:25" />
+		<container IDREF="1"/>
+		<initializerStatements ID="212" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<statements ID="213" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="214" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:784" line="i:25" />
+				<container IDREF="1"/>
+				<expr ID="215" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="216" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:784" line="i:25" />
+					<LHS ID="217" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="text" >
+						<qualifier ID="218" eClass="org.eclipse.edt.mof.egl.MemberName" id="con" >
+							<member IDREF="194"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="219" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="四、分类" isHex="false" >
+						<annotations ID="220" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:789" line="i:25" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="221" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="222" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:802" line="i:26" />
+				<container IDREF="1"/>
+				<expr ID="223" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="224" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:802" line="i:26" />
+					<LHS ID="225" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="font" >
+						<qualifier ID="226" eClass="org.eclipse.edt.mof.egl.MemberName" id="con" >
+							<member IDREF="194"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="227" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="华文行楷" isHex="false" >
+						<annotations ID="228" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:809" line="i:26" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="229" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="230" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:822" line="i:27" />
+				<container IDREF="1"/>
+				<expr ID="231" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="232" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:822" line="i:27" />
+					<LHS ID="233" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="fontSize" >
+						<qualifier ID="234" eClass="org.eclipse.edt.mof.egl.MemberName" id="con" >
+							<member IDREF="194"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="235" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="20" isHex="false" >
+						<annotations ID="236" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:4" off="i:833" line="i:27" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="237" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="238" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:21" off="i:844" line="i:28" />
+				<container IDREF="1"/>
+				<expr ID="239" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="240" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:21" off="i:844" line="i:28" />
+					<LHS ID="241" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="fontWeight" >
+						<qualifier ID="242" eClass="org.eclipse.edt.mof.egl.MemberName" id="con" >
+							<member IDREF="194"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="243" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="bolder" isHex="false" >
+						<annotations ID="244" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:8" off="i:857" line="i:28" />
+					</RHS>
+				</expr>
+			</statements>
+		</initializerStatements>
+	</fields>
+	<fields ID="131" eClass="org.eclipse.edt.mof.egl.Field" name="GridLayout" type="egl:org.eclipse.edt.rui.widgets.gridlayout" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="245" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:166" off="i:873" line="i:29" />
+		<container IDREF="1"/>
+		<initializerStatements ID="246" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<statements ID="247" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="248" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:54" off="i:896" line="i:29" />
+				<container IDREF="1"/>
+				<expr ID="249" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="250" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:54" off="i:896" line="i:29" />
+					<LHS ID="251" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="layoutData" >
+						<qualifier ID="252" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout" >
+							<member IDREF="131"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="253" eClass="org.eclipse.edt.mof.egl.SetValuesExpression" >
+						<annotations ID="254" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:909" line="i:29" />
+						<target ID="255" eClass="org.eclipse.edt.mof.egl.NewExpression" id="org.eclipse.edt.rui.widgets.GridLayoutData" >
+							<annotations ID="256" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:909" line="i:29" />
+						</target>
+						<settings ID="257" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+							<annotations ID="258" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:23" off="i:927" line="i:29" />
+							<container IDREF="1"/>
+							<statements ID="259" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+								<annotations ID="260" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:909" line="i:29" />
+								<container IDREF="1"/>
+								<expr ID="261" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+									<fields ID="262" eClass="org.eclipse.edt.mof.egl.Field" name="eze$SettingTarget1" type="egl:org.eclipse.edt.rui.widgets.gridlayoutdata" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+										<annotations ID="263" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:909" line="i:29" />
+										<container IDREF="1"/>
+										<initializerStatements ID="264" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+											<annotations ID="265" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:909" line="i:29" />
+											<container IDREF="1"/>
+											<statements ID="266" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+												<annotations ID="267" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:909" line="i:29" />
+												<container IDREF="1"/>
+												<expr ID="268" eClass="org.eclipse.edt.mof.egl.Assignment" >
+													<LHS ID="269" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+														<member IDREF="262"/>
+													</LHS>
+													<RHS ID="255" eClass="org.eclipse.edt.mof.egl.NewExpression" id="org.eclipse.edt.rui.widgets.GridLayoutData" >
+														<annotations ID="256" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:909" line="i:29" />
+													</RHS>
+												</expr>
+											</statements>
+										</initializerStatements>
+									</fields>
+								</expr>
+							</statements>
+							<statements ID="270" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+								<annotations ID="271" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:7" off="i:929" line="i:29" />
+								<container IDREF="1"/>
+								<expr ID="272" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+									<annotations ID="273" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:7" off="i:929" line="i:29" />
+									<LHS ID="274" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="row" >
+										<qualifier ID="275" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+											<member IDREF="262"/>
+										</qualifier>
+									</LHS>
+									<RHS ID="276" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="2" isNegated="false" type="egl:eglx.lang.eint" >
+										<annotations ID="277" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:935" line="i:29" />
+									</RHS>
+								</expr>
+							</statements>
+							<statements ID="278" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+								<annotations ID="279" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:938" line="i:29" />
+								<container IDREF="1"/>
+								<expr ID="280" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+									<annotations ID="281" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:938" line="i:29" />
+									<LHS ID="282" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="column" >
+										<qualifier ID="283" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+											<member IDREF="262"/>
+										</qualifier>
+									</LHS>
+									<RHS ID="284" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+										<annotations ID="285" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:947" line="i:29" />
+									</RHS>
+								</expr>
+							</statements>
+						</settings>
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="286" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="287" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:952" line="i:29" />
+				<container IDREF="1"/>
+				<expr ID="288" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="289" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:952" line="i:29" />
+					<LHS ID="290" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="cellPadding" >
+						<qualifier ID="291" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout" >
+							<member IDREF="131"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="292" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="4" isNegated="false" type="egl:eglx.lang.eint" >
+						<annotations ID="293" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:966" line="i:29" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="294" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="295" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:8" off="i:969" line="i:29" />
+				<container IDREF="1"/>
+				<expr ID="296" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="297" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:8" off="i:969" line="i:29" />
+					<LHS ID="298" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="rows" >
+						<qualifier ID="299" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout" >
+							<member IDREF="131"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="300" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="2" isNegated="false" type="egl:eglx.lang.eint" >
+						<annotations ID="301" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:976" line="i:29" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="302" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="303" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:979" line="i:29" />
+				<container IDREF="1"/>
+				<expr ID="304" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="305" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:979" line="i:29" />
+					<LHS ID="306" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="columns" >
+						<qualifier ID="307" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout" >
+							<member IDREF="131"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="308" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+						<annotations ID="309" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:989" line="i:29" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="310" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="311" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:39" off="i:997" line="i:30" />
+				<container IDREF="1"/>
+				<expr ID="312" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="313" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:39" off="i:997" line="i:30" />
+					<LHS ID="314" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="children" >
+						<qualifier ID="315" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout" >
+							<member IDREF="131"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="316" eClass="org.eclipse.edt.mof.egl.ArrayLiteral" >
+						<annotations ID="317" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:28" off="i:1008" line="i:30" />
+						<entries ID="318" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout2" >
+							<annotations ID="319" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:1010" line="i:30" />
+							<member IDREF="320"/>
+						</entries>
+						<entries ID="321" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout1" >
+							<annotations ID="322" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:1023" line="i:30" />
+							<member IDREF="323"/>
+						</entries>
+					</RHS>
+				</expr>
+			</statements>
+		</initializerStatements>
+	</fields>
+	<fields ID="323" eClass="org.eclipse.edt.mof.egl.Field" name="GridLayout1" type="egl:org.eclipse.edt.rui.widgets.gridlayout" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="324" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:146" off="i:1044" line="i:31" />
+		<container IDREF="1"/>
+		<initializerStatements ID="325" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<statements ID="326" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="327" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:54" off="i:1068" line="i:31" />
+				<container IDREF="1"/>
+				<expr ID="328" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="329" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:54" off="i:1068" line="i:31" />
+					<LHS ID="330" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="layoutData" >
+						<qualifier ID="331" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout1" >
+							<member IDREF="323"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="332" eClass="org.eclipse.edt.mof.egl.SetValuesExpression" >
+						<annotations ID="333" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1081" line="i:31" />
+						<target ID="334" eClass="org.eclipse.edt.mof.egl.NewExpression" id="org.eclipse.edt.rui.widgets.GridLayoutData" >
+							<annotations ID="335" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1081" line="i:31" />
+						</target>
+						<settings ID="336" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+							<annotations ID="337" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:23" off="i:1099" line="i:31" />
+							<container IDREF="1"/>
+							<statements ID="338" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+								<annotations ID="339" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1081" line="i:31" />
+								<container IDREF="1"/>
+								<expr ID="340" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+									<fields ID="341" eClass="org.eclipse.edt.mof.egl.Field" name="eze$SettingTarget1" type="egl:org.eclipse.edt.rui.widgets.gridlayoutdata" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+										<annotations ID="342" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1081" line="i:31" />
+										<container IDREF="1"/>
+										<initializerStatements ID="343" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+											<annotations ID="344" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1081" line="i:31" />
+											<container IDREF="1"/>
+											<statements ID="345" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+												<annotations ID="346" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1081" line="i:31" />
+												<container IDREF="1"/>
+												<expr ID="347" eClass="org.eclipse.edt.mof.egl.Assignment" >
+													<LHS ID="348" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+														<member IDREF="341"/>
+													</LHS>
+													<RHS ID="334" eClass="org.eclipse.edt.mof.egl.NewExpression" id="org.eclipse.edt.rui.widgets.GridLayoutData" >
+														<annotations ID="335" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1081" line="i:31" />
+													</RHS>
+												</expr>
+											</statements>
+										</initializerStatements>
+									</fields>
+								</expr>
+							</statements>
+							<statements ID="349" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+								<annotations ID="350" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:7" off="i:1101" line="i:31" />
+								<container IDREF="1"/>
+								<expr ID="351" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+									<annotations ID="352" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:7" off="i:1101" line="i:31" />
+									<LHS ID="353" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="row" >
+										<qualifier ID="354" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+											<member IDREF="341"/>
+										</qualifier>
+									</LHS>
+									<RHS ID="355" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+										<annotations ID="356" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:1107" line="i:31" />
+									</RHS>
+								</expr>
+							</statements>
+							<statements ID="357" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+								<annotations ID="358" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:1110" line="i:31" />
+								<container IDREF="1"/>
+								<expr ID="359" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+									<annotations ID="360" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:1110" line="i:31" />
+									<LHS ID="361" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="column" >
+										<qualifier ID="362" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+											<member IDREF="341"/>
+										</qualifier>
+									</LHS>
+									<RHS ID="363" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+										<annotations ID="364" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:1119" line="i:31" />
+									</RHS>
+								</expr>
+							</statements>
+						</settings>
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="365" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="366" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:1124" line="i:31" />
+				<container IDREF="1"/>
+				<expr ID="367" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="368" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:1124" line="i:31" />
+					<LHS ID="369" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="cellPadding" >
+						<qualifier ID="370" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout1" >
+							<member IDREF="323"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="371" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="4" isNegated="false" type="egl:eglx.lang.eint" >
+						<annotations ID="372" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:1138" line="i:31" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="373" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="374" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:8" off="i:1141" line="i:31" />
+				<container IDREF="1"/>
+				<expr ID="375" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="376" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:8" off="i:1141" line="i:31" />
+					<LHS ID="377" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="rows" >
+						<qualifier ID="378" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout1" >
+							<member IDREF="323"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="379" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+						<annotations ID="380" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:1148" line="i:31" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="381" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="382" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:1151" line="i:31" />
+				<container IDREF="1"/>
+				<expr ID="383" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="384" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:1151" line="i:31" />
+					<LHS ID="385" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="columns" >
+						<qualifier ID="386" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout1" >
+							<member IDREF="323"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="387" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+						<annotations ID="388" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:1161" line="i:31" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="389" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="390" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:18" off="i:1169" line="i:32" />
+				<container IDREF="1"/>
+				<expr ID="391" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="392" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:18" off="i:1169" line="i:32" />
+					<LHS ID="393" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="children" >
+						<qualifier ID="394" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout1" >
+							<member IDREF="323"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="395" eClass="org.eclipse.edt.mof.egl.ArrayLiteral" >
+						<annotations ID="396" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:7" off="i:1180" line="i:32" />
+						<entries ID="397" eClass="org.eclipse.edt.mof.egl.MemberName" id="Box" >
+							<annotations ID="398" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:3" off="i:1182" line="i:32" />
+							<member IDREF="399"/>
+						</entries>
+					</RHS>
+				</expr>
+			</statements>
+		</initializerStatements>
+	</fields>
+	<fields ID="399" eClass="org.eclipse.edt.mof.egl.Field" name="Box" type="egl:org.eclipse.edt.rui.widgets.box" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="400" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:114" off="i:1195" line="i:33" />
+		<container IDREF="1"/>
+		<initializerStatements ID="401" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<statements ID="402" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="403" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:54" off="i:1204" line="i:33" />
+				<container IDREF="1"/>
+				<expr ID="404" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="405" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:54" off="i:1204" line="i:33" />
+					<LHS ID="406" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="layoutData" >
+						<qualifier ID="407" eClass="org.eclipse.edt.mof.egl.MemberName" id="Box" >
+							<member IDREF="399"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="408" eClass="org.eclipse.edt.mof.egl.SetValuesExpression" >
+						<annotations ID="409" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1217" line="i:33" />
+						<target ID="410" eClass="org.eclipse.edt.mof.egl.NewExpression" id="org.eclipse.edt.rui.widgets.GridLayoutData" >
+							<annotations ID="411" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1217" line="i:33" />
+						</target>
+						<settings ID="412" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+							<annotations ID="413" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:23" off="i:1235" line="i:33" />
+							<container IDREF="1"/>
+							<statements ID="414" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+								<annotations ID="415" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1217" line="i:33" />
+								<container IDREF="1"/>
+								<expr ID="416" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+									<fields ID="417" eClass="org.eclipse.edt.mof.egl.Field" name="eze$SettingTarget1" type="egl:org.eclipse.edt.rui.widgets.gridlayoutdata" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+										<annotations ID="418" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1217" line="i:33" />
+										<container IDREF="1"/>
+										<initializerStatements ID="419" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+											<annotations ID="420" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1217" line="i:33" />
+											<container IDREF="1"/>
+											<statements ID="421" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+												<annotations ID="422" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1217" line="i:33" />
+												<container IDREF="1"/>
+												<expr ID="423" eClass="org.eclipse.edt.mof.egl.Assignment" >
+													<LHS ID="424" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+														<member IDREF="417"/>
+													</LHS>
+													<RHS ID="410" eClass="org.eclipse.edt.mof.egl.NewExpression" id="org.eclipse.edt.rui.widgets.GridLayoutData" >
+														<annotations ID="411" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1217" line="i:33" />
+													</RHS>
+												</expr>
+											</statements>
+										</initializerStatements>
+									</fields>
+								</expr>
+							</statements>
+							<statements ID="425" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+								<annotations ID="426" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:7" off="i:1237" line="i:33" />
+								<container IDREF="1"/>
+								<expr ID="427" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+									<annotations ID="428" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:7" off="i:1237" line="i:33" />
+									<LHS ID="429" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="row" >
+										<qualifier ID="430" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+											<member IDREF="417"/>
+										</qualifier>
+									</LHS>
+									<RHS ID="431" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+										<annotations ID="432" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:1243" line="i:33" />
+									</RHS>
+								</expr>
+							</statements>
+							<statements ID="433" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+								<annotations ID="434" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:1246" line="i:33" />
+								<container IDREF="1"/>
+								<expr ID="435" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+									<annotations ID="436" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:1246" line="i:33" />
+									<LHS ID="437" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="column" >
+										<qualifier ID="438" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+											<member IDREF="417"/>
+										</qualifier>
+									</LHS>
+									<RHS ID="439" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+										<annotations ID="440" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:1255" line="i:33" />
+									</RHS>
+								</expr>
+							</statements>
+						</settings>
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="441" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="442" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:9" off="i:1260" line="i:33" />
+				<container IDREF="1"/>
+				<expr ID="443" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="444" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:9" off="i:1260" line="i:33" />
+					<LHS ID="445" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="padding" >
+						<qualifier ID="446" eClass="org.eclipse.edt.mof.egl.MemberName" id="Box" >
+							<member IDREF="399"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="447" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="8" isNegated="false" type="egl:eglx.lang.eint" >
+						<annotations ID="448" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:1268" line="i:33" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="449" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="450" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:30" off="i:1276" line="i:34" />
+				<container IDREF="1"/>
+				<expr ID="451" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="452" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:30" off="i:1276" line="i:34" />
+					<LHS ID="453" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="children" >
+						<qualifier ID="454" eClass="org.eclipse.edt.mof.egl.MemberName" id="Box" >
+							<member IDREF="399"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="455" eClass="org.eclipse.edt.mof.egl.ArrayLiteral" >
+						<annotations ID="456" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:19" off="i:1287" line="i:34" />
+						<entries ID="457" eClass="org.eclipse.edt.mof.egl.MemberName" id="Button" >
+							<annotations ID="458" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:1289" line="i:34" />
+							<member IDREF="459"/>
+						</entries>
+						<entries ID="460" eClass="org.eclipse.edt.mof.egl.MemberName" id="Button1" >
+							<annotations ID="461" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:7" off="i:1297" line="i:34" />
+							<member IDREF="462"/>
+						</entries>
+					</RHS>
+				</expr>
+			</statements>
+		</initializerStatements>
+	</fields>
+	<fields ID="459" eClass="org.eclipse.edt.mof.egl.Field" name="Button" type="egl:dojo.widgets.dojobutton" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="463" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:99" off="i:1314" line="i:35" />
+		<container IDREF="1"/>
+		<initializerStatements ID="464" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<statements ID="465" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="466" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:1333" line="i:35" />
+				<container IDREF="1"/>
+				<expr ID="467" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="468" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:1333" line="i:35" />
+					<LHS ID="469" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="text" >
+						<qualifier ID="470" eClass="org.eclipse.edt.mof.egl.MemberName" id="Button" >
+							<member IDREF="459"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="471" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="整理房间" isHex="false" >
+						<annotations ID="472" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:1340" line="i:35" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="473" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="474" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:1353" line="i:36" />
+				<container IDREF="1"/>
+				<expr ID="475" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="476" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:1353" line="i:36" />
+					<LHS ID="477" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="font" >
+						<qualifier ID="478" eClass="org.eclipse.edt.mof.egl.MemberName" id="Button" >
+							<member IDREF="459"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="479" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="微软雅黑" isHex="false" >
+						<annotations ID="480" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:1360" line="i:36" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="481" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="482" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:1373" line="i:37" />
+				<container IDREF="1"/>
+				<expr ID="483" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="484" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:1373" line="i:37" />
+					<LHS ID="485" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="fontSize" >
+						<qualifier ID="486" eClass="org.eclipse.edt.mof.egl.MemberName" id="Button" >
+							<member IDREF="459"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="487" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="16" isHex="false" >
+						<annotations ID="488" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:4" off="i:1384" line="i:37" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="489" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="490" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:20" off="i:1390" line="i:37" />
+				<container IDREF="1"/>
+				<expr ID="491" eClass="org.eclipse.edt.mof.egl.Assignment" operator="::=" >
+					<annotations ID="492" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:20" off="i:1390" line="i:37" />
+					<LHS ID="493" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="onClick" >
+						<qualifier ID="494" eClass="org.eclipse.edt.mof.egl.MemberName" id="Button" >
+							<member IDREF="459"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="495" eClass="org.eclipse.edt.mof.egl.MemberName" id="showcall" >
+						<annotations ID="496" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:8" off="i:1402" line="i:37" />
+						<member IDREF="8"/>
+					</RHS>
+				</expr>
+			</statements>
+		</initializerStatements>
+	</fields>
+	<fields ID="462" eClass="org.eclipse.edt.mof.egl.Field" name="Button1" type="egl:dojo.widgets.dojobutton" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="497" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:100" off="i:1418" line="i:38" />
+		<container IDREF="1"/>
+		<initializerStatements ID="498" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<statements ID="499" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="500" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:1438" line="i:38" />
+				<container IDREF="1"/>
+				<expr ID="501" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="502" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:1438" line="i:38" />
+					<LHS ID="503" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="text" >
+						<qualifier ID="504" eClass="org.eclipse.edt.mof.egl.MemberName" id="Button1" >
+							<member IDREF="462"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="505" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="整理书包" isHex="false" >
+						<annotations ID="506" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:1445" line="i:38" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="507" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="508" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:1458" line="i:39" />
+				<container IDREF="1"/>
+				<expr ID="509" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="510" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:1458" line="i:39" />
+					<LHS ID="511" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="font" >
+						<qualifier ID="512" eClass="org.eclipse.edt.mof.egl.MemberName" id="Button1" >
+							<member IDREF="462"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="513" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="微软雅黑" isHex="false" >
+						<annotations ID="514" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:1465" line="i:39" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="515" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="516" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:1478" line="i:40" />
+				<container IDREF="1"/>
+				<expr ID="517" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="518" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:1478" line="i:40" />
+					<LHS ID="519" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="fontSize" >
+						<qualifier ID="520" eClass="org.eclipse.edt.mof.egl.MemberName" id="Button1" >
+							<member IDREF="462"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="521" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="16" isHex="false" >
+						<annotations ID="522" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:4" off="i:1489" line="i:40" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="523" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="524" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:20" off="i:1495" line="i:40" />
+				<container IDREF="1"/>
+				<expr ID="525" eClass="org.eclipse.edt.mof.egl.Assignment" operator="::=" >
+					<annotations ID="526" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:20" off="i:1495" line="i:40" />
+					<LHS ID="527" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="onClick" >
+						<qualifier ID="528" eClass="org.eclipse.edt.mof.egl.MemberName" id="Button1" >
+							<member IDREF="462"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="529" eClass="org.eclipse.edt.mof.egl.MemberName" id="showcall" >
+						<annotations ID="530" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:8" off="i:1507" line="i:40" />
+						<member IDREF="8"/>
+					</RHS>
+				</expr>
+			</statements>
+		</initializerStatements>
+	</fields>
+	<fields ID="320" eClass="org.eclipse.edt.mof.egl.Field" name="GridLayout2" type="egl:org.eclipse.edt.rui.widgets.gridlayout" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="531" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:149" off="i:1526" line="i:42" />
+		<container IDREF="1"/>
+		<initializerStatements ID="532" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<statements ID="533" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="534" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:54" off="i:1550" line="i:42" />
+				<container IDREF="1"/>
+				<expr ID="535" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="536" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:54" off="i:1550" line="i:42" />
+					<LHS ID="537" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="layoutData" >
+						<qualifier ID="538" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout2" >
+							<member IDREF="320"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="539" eClass="org.eclipse.edt.mof.egl.SetValuesExpression" >
+						<annotations ID="540" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1563" line="i:42" />
+						<target ID="541" eClass="org.eclipse.edt.mof.egl.NewExpression" id="org.eclipse.edt.rui.widgets.GridLayoutData" >
+							<annotations ID="542" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1563" line="i:42" />
+						</target>
+						<settings ID="543" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+							<annotations ID="544" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:23" off="i:1581" line="i:42" />
+							<container IDREF="1"/>
+							<statements ID="545" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+								<annotations ID="546" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1563" line="i:42" />
+								<container IDREF="1"/>
+								<expr ID="547" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+									<fields ID="548" eClass="org.eclipse.edt.mof.egl.Field" name="eze$SettingTarget1" type="egl:org.eclipse.edt.rui.widgets.gridlayoutdata" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+										<annotations ID="549" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1563" line="i:42" />
+										<container IDREF="1"/>
+										<initializerStatements ID="550" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+											<annotations ID="551" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1563" line="i:42" />
+											<container IDREF="1"/>
+											<statements ID="552" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+												<annotations ID="553" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1563" line="i:42" />
+												<container IDREF="1"/>
+												<expr ID="554" eClass="org.eclipse.edt.mof.egl.Assignment" >
+													<LHS ID="555" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+														<member IDREF="548"/>
+													</LHS>
+													<RHS ID="541" eClass="org.eclipse.edt.mof.egl.NewExpression" id="org.eclipse.edt.rui.widgets.GridLayoutData" >
+														<annotations ID="542" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1563" line="i:42" />
+													</RHS>
+												</expr>
+											</statements>
+										</initializerStatements>
+									</fields>
+								</expr>
+							</statements>
+							<statements ID="556" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+								<annotations ID="557" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:7" off="i:1583" line="i:42" />
+								<container IDREF="1"/>
+								<expr ID="558" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+									<annotations ID="559" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:7" off="i:1583" line="i:42" />
+									<LHS ID="560" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="row" >
+										<qualifier ID="561" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+											<member IDREF="548"/>
+										</qualifier>
+									</LHS>
+									<RHS ID="562" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="2" isNegated="false" type="egl:eglx.lang.eint" >
+										<annotations ID="563" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:1589" line="i:42" />
+									</RHS>
+								</expr>
+							</statements>
+							<statements ID="564" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+								<annotations ID="565" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:1592" line="i:42" />
+								<container IDREF="1"/>
+								<expr ID="566" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+									<annotations ID="567" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:1592" line="i:42" />
+									<LHS ID="568" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="column" >
+										<qualifier ID="569" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+											<member IDREF="548"/>
+										</qualifier>
+									</LHS>
+									<RHS ID="570" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+										<annotations ID="571" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:1601" line="i:42" />
+									</RHS>
+								</expr>
+							</statements>
+						</settings>
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="572" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="573" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:1606" line="i:42" />
+				<container IDREF="1"/>
+				<expr ID="574" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="575" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:1606" line="i:42" />
+					<LHS ID="576" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="cellPadding" >
+						<qualifier ID="577" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout2" >
+							<member IDREF="320"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="578" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="4" isNegated="false" type="egl:eglx.lang.eint" >
+						<annotations ID="579" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:1620" line="i:42" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="580" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="581" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:8" off="i:1623" line="i:42" />
+				<container IDREF="1"/>
+				<expr ID="582" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="583" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:8" off="i:1623" line="i:42" />
+					<LHS ID="584" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="rows" >
+						<qualifier ID="585" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout2" >
+							<member IDREF="320"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="586" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+						<annotations ID="587" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:1630" line="i:42" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="588" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="589" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:1633" line="i:42" />
+				<container IDREF="1"/>
+				<expr ID="590" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="591" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:1633" line="i:42" />
+					<LHS ID="592" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="columns" >
+						<qualifier ID="593" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout2" >
+							<member IDREF="320"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="594" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+						<annotations ID="595" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:1643" line="i:42" />
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="596" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="597" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:21" off="i:1651" line="i:43" />
+				<container IDREF="1"/>
+				<expr ID="598" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="599" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:21" off="i:1651" line="i:43" />
+					<LHS ID="600" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="children" >
+						<qualifier ID="601" eClass="org.eclipse.edt.mof.egl.MemberName" id="GridLayout2" >
+							<member IDREF="320"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="602" eClass="org.eclipse.edt.mof.egl.ArrayLiteral" >
+						<annotations ID="603" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:1662" line="i:43" />
+						<entries ID="604" eClass="org.eclipse.edt.mof.egl.MemberName" id="Boxcon" >
+							<annotations ID="605" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:1664" line="i:43" />
+							<member IDREF="37"/>
+						</entries>
+					</RHS>
+				</expr>
+			</statements>
+		</initializerStatements>
+	</fields>
+	<fields ID="37" eClass="org.eclipse.edt.mof.egl.Field" name="Boxcon" type="egl:org.eclipse.edt.rui.widgets.box" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="606" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:80" off="i:1680" line="i:44" />
+		<container IDREF="1"/>
+		<initializerStatements ID="607" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<statements ID="608" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="609" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:54" off="i:1692" line="i:44" />
+				<container IDREF="1"/>
+				<expr ID="610" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="611" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:54" off="i:1692" line="i:44" />
+					<LHS ID="612" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="layoutData" >
+						<qualifier ID="613" eClass="org.eclipse.edt.mof.egl.MemberName" id="Boxcon" >
+							<member IDREF="37"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="614" eClass="org.eclipse.edt.mof.egl.SetValuesExpression" >
+						<annotations ID="615" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1705" line="i:44" />
+						<target ID="616" eClass="org.eclipse.edt.mof.egl.NewExpression" id="org.eclipse.edt.rui.widgets.GridLayoutData" >
+							<annotations ID="617" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1705" line="i:44" />
+						</target>
+						<settings ID="618" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+							<annotations ID="619" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:23" off="i:1723" line="i:44" />
+							<container IDREF="1"/>
+							<statements ID="620" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+								<annotations ID="621" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1705" line="i:44" />
+								<container IDREF="1"/>
+								<expr ID="622" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+									<fields ID="623" eClass="org.eclipse.edt.mof.egl.Field" name="eze$SettingTarget1" type="egl:org.eclipse.edt.rui.widgets.gridlayoutdata" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+										<annotations ID="624" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1705" line="i:44" />
+										<container IDREF="1"/>
+										<initializerStatements ID="625" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+											<annotations ID="626" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1705" line="i:44" />
+											<container IDREF="1"/>
+											<statements ID="627" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+												<annotations ID="628" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1705" line="i:44" />
+												<container IDREF="1"/>
+												<expr ID="629" eClass="org.eclipse.edt.mof.egl.Assignment" >
+													<LHS ID="630" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+														<member IDREF="623"/>
+													</LHS>
+													<RHS ID="616" eClass="org.eclipse.edt.mof.egl.NewExpression" id="org.eclipse.edt.rui.widgets.GridLayoutData" >
+														<annotations ID="617" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:41" off="i:1705" line="i:44" />
+													</RHS>
+												</expr>
+											</statements>
+										</initializerStatements>
+									</fields>
+								</expr>
+							</statements>
+							<statements ID="631" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+								<annotations ID="632" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:7" off="i:1725" line="i:44" />
+								<container IDREF="1"/>
+								<expr ID="633" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+									<annotations ID="634" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:7" off="i:1725" line="i:44" />
+									<LHS ID="635" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="row" >
+										<qualifier ID="636" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+											<member IDREF="623"/>
+										</qualifier>
+									</LHS>
+									<RHS ID="637" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+										<annotations ID="638" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:1731" line="i:44" />
+									</RHS>
+								</expr>
+							</statements>
+							<statements ID="639" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+								<annotations ID="640" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:1734" line="i:44" />
+								<container IDREF="1"/>
+								<expr ID="641" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+									<annotations ID="642" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:1734" line="i:44" />
+									<LHS ID="643" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="column" >
+										<qualifier ID="644" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+											<member IDREF="623"/>
+										</qualifier>
+									</LHS>
+									<RHS ID="645" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+										<annotations ID="646" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:1743" line="i:44" />
+									</RHS>
+								</expr>
+							</statements>
+						</settings>
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="647" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="648" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:9" off="i:1748" line="i:44" />
+				<container IDREF="1"/>
+				<expr ID="649" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="650" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:9" off="i:1748" line="i:44" />
+					<LHS ID="651" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="padding" >
+						<qualifier ID="652" eClass="org.eclipse.edt.mof.egl.MemberName" id="Boxcon" >
+							<member IDREF="37"/>
+						</qualifier>
+					</LHS>
+					<RHS ID="653" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="8" isNegated="false" type="egl:eglx.lang.eint" >
+						<annotations ID="654" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:1756" line="i:44" />
+					</RHS>
+				</expr>
+			</statements>
+		</initializerStatements>
+	</fields>
+</Handler>

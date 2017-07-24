@@ -1,0 +1,11 @@
+package client.common;
+
+
+import eglx.persistence.Entity;
+import eglx.persistence.Id;
+import eglx.persistence.sql.*;
+
+record Article type Entity{@table{name = "USER_ARTICLE"}}
+   article_id int{@id,@GeneratedValue,@Column{name="article_id"}};
+    title string(255){@Column{name="title"}};
+end

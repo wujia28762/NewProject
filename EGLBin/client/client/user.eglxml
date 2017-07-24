@@ -1,0 +1,13 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<Record ID="1" eClass="org.eclipse.edt.mof.egl.Record" name="user" fileName="client/client/Login.egl" hasCompileErrors="false" packageName="client.client" isAbstract="false" >
+	<annotations ID="2" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:53" off="i:9426" line="i:258" />
+	<superTypes href="egl:eglx.lang.anyrecord"/>
+	<fields ID="3" eClass="org.eclipse.edt.mof.egl.Field" name="username" type="egl:eglx.lang.estring" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="4" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:16" off="i:9440" line="i:259" />
+		<container IDREF="1"/>
+	</fields>
+	<fields ID="5" eClass="org.eclipse.edt.mof.egl.Field" name="password" type="egl:eglx.lang.estring" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="6" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:16" off="i:9459" line="i:260" />
+		<container IDREF="1"/>
+	</fields>
+</Record>

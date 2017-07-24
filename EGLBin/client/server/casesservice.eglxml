@@ -1,0 +1,1091 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<Service ID="1" eClass="org.eclipse.edt.mof.egl.Service" name="CasesService" fileName="client/server/CasesService.egl" hasCompileErrors="false" packageName="client.server" isAbstract="false" >
+	<annotations ID="2" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:3350" off="i:211" line="i:9" />
+	<superTypes href="egl:eglx.lang.anystruct"/>
+	<functions ID="3" eClass="org.eclipse.edt.mof.egl.Function" name="addCases" isNullable="false" isStatic="false" isAbstract="false" >
+		<annotations ID="4" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:305" off="i:310" line="i:13" />
+		<container IDREF="1"/>
+		<parameters ID="5" eClass="org.eclipse.edt.mof.egl.FunctionParameter" name="newCases" type="egl:client.common.cases" isNullable="false" isStatic="false" isAbstract="false" accessKind="ACC_PRIVATE" parameterKind="PARM_IN" isDefinedSqlNullable="false" isField="false" isConst="false" >
+			<annotations ID="6" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:17" off="i:328" line="i:13" />
+			<container IDREF="3"/>
+		</parameters>
+		<statementBlock ID="7" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<container IDREF="3"/>
+			<statements ID="8" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+				<annotations ID="9" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:21" off="i:353" line="i:14" />
+				<container IDREF="3"/>
+				<expr ID="10" eClass="org.eclipse.edt.mof.egl.FunctionInvocation" id="logEntry" >
+					<annotations ID="11" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:20" off="i:353" line="i:14" />
+					<arguments ID="12" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="addCases" isHex="false" >
+						<annotations ID="13" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:362" line="i:14" />
+					</arguments>
+					<target IDREF="14"/>
+				</expr>
+			</statements>
+			<statements ID="15" eClass="org.eclipse.edt.mof.egl.TryStatement" >
+				<annotations ID="16" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:228" off="i:381" line="i:15" />
+				<container IDREF="3"/>
+				<tryBlock ID="17" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+					<annotations ID="18" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:228" off="i:381" line="i:15" />
+					<container IDREF="3"/>
+					<statements ID="19" eClass="org.eclipse.edt.mof.eglx.persistence.sql.SqlAddStatement" hasExplicitSql="true" sqlString="insert into CASES&#10;     &#09;&#09;&#09;&#09;&#09;(casename)&#10;     &#09;&#09;&#09;&#09;values&#10;     &#09;&#09;&#09;&#09;&#09;(?)" >
+						<annotations ID="20" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:138" off="i:392" line="i:16" />
+						<container IDREF="3"/>
+						<targets ID="21" eClass="org.eclipse.edt.mof.egl.MemberName" id="newCases" >
+							<annotations ID="22" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:8" off="i:396" line="i:16" />
+							<member IDREF="5"/>
+						</targets>
+						<dataSource ID="23" eClass="org.eclipse.edt.mof.egl.MemberName" id="myCasesService" >
+							<annotations ID="24" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:14" off="i:408" line="i:16" />
+							<member IDREF="25"/>
+						</dataSource>
+					</statements>
+				</tryBlock>
+				<exceptionBlocks ID="26" eClass="org.eclipse.edt.mof.egl.ExceptionBlock" >
+					<annotations ID="27" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:61" off="i:538" line="i:23" />
+					<container IDREF="3"/>
+					<statements ID="28" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+						<annotations ID="29" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:17" off="i:582" line="i:24" />
+						<container IDREF="3"/>
+						<expr ID="30" eClass="org.eclipse.edt.mof.egl.FunctionInvocation" id="logException" >
+							<annotations ID="31" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:16" off="i:582" line="i:24" />
+							<arguments ID="32" eClass="org.eclipse.edt.mof.egl.MemberName" id="ex" >
+								<annotations ID="33" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:595" line="i:24" />
+								<member IDREF="34"/>
+							</arguments>
+							<target IDREF="35"/>
+						</expr>
+					</statements>
+					<exception ID="34" eClass="org.eclipse.edt.mof.egl.Parameter" name="ex" type="egl:eglx.persistence.sql.sqlexception" isNullable="false" isStatic="false" isAbstract="false" >
+						<annotations ID="36" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:550" line="i:23" />
+					</exception>
+				</exceptionBlocks>
+			</statements>
+		</statementBlock>
+	</functions>
+	<functions ID="37" eClass="org.eclipse.edt.mof.egl.Function" name="getAllCases" type="egl:eglx.lang.elist&lt;client.common.cases&gt;" isNullable="false" isStatic="false" isAbstract="false" >
+		<annotations ID="38" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:341" off="i:621" line="i:28" />
+		<container IDREF="1"/>
+		<statementBlock ID="39" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<container IDREF="37"/>
+			<statements ID="40" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+				<annotations ID="41" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:667" line="i:29" />
+				<container IDREF="37"/>
+				<expr ID="42" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+					<annotations ID="43" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:667" line="i:29" />
+					<fields ID="44" eClass="org.eclipse.edt.mof.egl.Field" name="casess" type="egl:eglx.lang.elist&lt;client.common.cases&gt;" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+						<annotations ID="45" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:667" line="i:29" />
+						<container IDREF="37"/>
+					</fields>
+				</expr>
+			</statements>
+			<statements ID="46" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+				<annotations ID="47" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:24" off="i:689" line="i:30" />
+				<container IDREF="37"/>
+				<expr ID="48" eClass="org.eclipse.edt.mof.egl.FunctionInvocation" id="logEntry" >
+					<annotations ID="49" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:23" off="i:689" line="i:30" />
+					<arguments ID="50" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="getAllCases" isHex="false" >
+						<annotations ID="51" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:698" line="i:30" />
+					</arguments>
+					<target IDREF="14"/>
+				</expr>
+			</statements>
+			<statements ID="52" eClass="org.eclipse.edt.mof.egl.TryStatement" >
+				<annotations ID="53" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:214" off="i:720" line="i:31" />
+				<container IDREF="37"/>
+				<tryBlock ID="54" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+					<annotations ID="55" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:214" off="i:720" line="i:31" />
+					<container IDREF="37"/>
+					<statements ID="56" eClass="org.eclipse.edt.mof.eglx.persistence.sql.SqlGetByKeyStatement" hasExplicitSql="true" sqlString="select&#10;     &#09;&#09;&#09;&#09;&#09;case_id&#44; casename&#10;     &#09;&#09;&#09;&#09;from CASES" >
+						<annotations ID="57" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:124" off="i:731" line="i:32" />
+						<container IDREF="37"/>
+						<targets ID="58" eClass="org.eclipse.edt.mof.egl.MemberName" id="casess" >
+							<annotations ID="59" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:735" line="i:32" />
+							<member IDREF="44"/>
+						</targets>
+						<dataSource ID="60" eClass="org.eclipse.edt.mof.egl.MemberName" id="myCasesService" >
+							<annotations ID="61" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:14" off="i:747" line="i:32" />
+							<member IDREF="25"/>
+						</dataSource>
+					</statements>
+				</tryBlock>
+				<exceptionBlocks ID="62" eClass="org.eclipse.edt.mof.egl.ExceptionBlock" >
+					<annotations ID="63" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:61" off="i:863" line="i:38" />
+					<container IDREF="37"/>
+					<statements ID="64" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+						<annotations ID="65" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:17" off="i:907" line="i:39" />
+						<container IDREF="37"/>
+						<expr ID="66" eClass="org.eclipse.edt.mof.egl.FunctionInvocation" id="logException" >
+							<annotations ID="67" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:16" off="i:907" line="i:39" />
+							<arguments ID="68" eClass="org.eclipse.edt.mof.egl.MemberName" id="ex" >
+								<annotations ID="69" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:920" line="i:39" />
+								<member IDREF="70"/>
+							</arguments>
+							<target IDREF="35"/>
+						</expr>
+					</statements>
+					<exception ID="70" eClass="org.eclipse.edt.mof.egl.Parameter" name="ex" type="egl:eglx.persistence.sql.sqlexception" isNullable="false" isStatic="false" isAbstract="false" >
+						<annotations ID="71" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:875" line="i:38" />
+					</exception>
+				</exceptionBlocks>
+			</statements>
+			<statements ID="72" eClass="org.eclipse.edt.mof.egl.ReturnStatement" >
+				<annotations ID="73" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:941" line="i:41" />
+				<container IDREF="37"/>
+				<expression ID="74" eClass="org.eclipse.edt.mof.egl.MemberName" id="casess" >
+					<annotations ID="75" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:948" line="i:41" />
+					<member IDREF="44"/>
+				</expression>
+			</statements>
+		</statementBlock>
+	</functions>
+	<functions ID="76" eClass="org.eclipse.edt.mof.egl.Function" name="editCases" isNullable="false" isStatic="false" isAbstract="false" >
+		<annotations ID="77" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:353" off="i:968" line="i:44" />
+		<container IDREF="1"/>
+		<parameters ID="78" eClass="org.eclipse.edt.mof.egl.FunctionParameter" name="chgCases" type="egl:client.common.cases" isNullable="false" isStatic="false" isAbstract="false" accessKind="ACC_PRIVATE" parameterKind="PARM_IN" isDefinedSqlNullable="false" isField="false" isConst="false" >
+			<annotations ID="79" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:17" off="i:987" line="i:44" />
+			<container IDREF="76"/>
+		</parameters>
+		<statementBlock ID="80" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<container IDREF="76"/>
+			<statements ID="81" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+				<annotations ID="82" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:22" off="i:1014" line="i:45" />
+				<container IDREF="76"/>
+				<expr ID="83" eClass="org.eclipse.edt.mof.egl.FunctionInvocation" id="logEntry" >
+					<annotations ID="84" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:21" off="i:1014" line="i:45" />
+					<arguments ID="85" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="editCases" isHex="false" >
+						<annotations ID="86" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:1023" line="i:45" />
+					</arguments>
+					<target IDREF="14"/>
+				</expr>
+			</statements>
+			<statements ID="87" eClass="org.eclipse.edt.mof.egl.TryStatement" >
+				<annotations ID="88" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:270" off="i:1045" line="i:46" />
+				<container IDREF="76"/>
+				<tryBlock ID="89" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+					<annotations ID="90" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:270" off="i:1045" line="i:46" />
+					<container IDREF="76"/>
+					<statements ID="91" eClass="org.eclipse.edt.mof.eglx.persistence.sql.SqlReplaceStatement" hasExplicitSql="true" sqlString="update CASES&#10;     &#09;  &#09;&#09;&#09;set&#10;     &#09;  &#09;&#09;&#09;&#09;casename = ?&#10;     &#09;  &#09;&#09;&#09;where&#10;     &#09;  &#09;&#09;&#09;&#09;case_id = ?" >
+						<annotations ID="92" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:173" off="i:1058" line="i:47" />
+						<container IDREF="76"/>
+						<targets ID="93" eClass="org.eclipse.edt.mof.egl.MemberName" id="chgCases" >
+							<annotations ID="94" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:8" off="i:1066" line="i:47" />
+							<member IDREF="78"/>
+						</targets>
+						<dataSource ID="95" eClass="org.eclipse.edt.mof.egl.MemberName" id="myCasesService" >
+							<annotations ID="96" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:14" off="i:1078" line="i:47" />
+							<member IDREF="25"/>
+						</dataSource>
+					</statements>
+				</tryBlock>
+				<exceptionBlocks ID="97" eClass="org.eclipse.edt.mof.egl.ExceptionBlock" >
+					<annotations ID="98" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:61" off="i:1242" line="i:55" />
+					<container IDREF="76"/>
+					<statements ID="99" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+						<annotations ID="100" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:17" off="i:1286" line="i:56" />
+						<container IDREF="76"/>
+						<expr ID="101" eClass="org.eclipse.edt.mof.egl.FunctionInvocation" id="logException" >
+							<annotations ID="102" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:16" off="i:1286" line="i:56" />
+							<arguments ID="103" eClass="org.eclipse.edt.mof.egl.MemberName" id="ex" >
+								<annotations ID="104" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:1299" line="i:56" />
+								<member IDREF="105"/>
+							</arguments>
+							<target IDREF="35"/>
+						</expr>
+					</statements>
+					<exception ID="105" eClass="org.eclipse.edt.mof.egl.Parameter" name="ex" type="egl:eglx.persistence.sql.sqlexception" isNullable="false" isStatic="false" isAbstract="false" >
+						<annotations ID="106" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:1254" line="i:55" />
+					</exception>
+				</exceptionBlocks>
+			</statements>
+		</statementBlock>
+	</functions>
+	<functions ID="107" eClass="org.eclipse.edt.mof.egl.Function" name="deleteCases" isNullable="false" isStatic="false" isAbstract="false" >
+		<annotations ID="108" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:389" off="i:1327" line="i:60" />
+		<container IDREF="1"/>
+		<parameters ID="109" eClass="org.eclipse.edt.mof.egl.FunctionParameter" name="delCases" type="egl:client.common.cases" isNullable="false" isStatic="false" isAbstract="false" accessKind="ACC_PRIVATE" parameterKind="PARM_IN" isDefinedSqlNullable="false" isField="false" isConst="false" >
+			<annotations ID="110" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:17" off="i:1348" line="i:60" />
+			<container IDREF="107"/>
+		</parameters>
+		<statementBlock ID="111" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<container IDREF="107"/>
+			<statements ID="112" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+				<annotations ID="113" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:24" off="i:1373" line="i:61" />
+				<container IDREF="107"/>
+				<expr ID="114" eClass="org.eclipse.edt.mof.egl.FunctionInvocation" id="logEntry" >
+					<annotations ID="115" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:23" off="i:1373" line="i:61" />
+					<arguments ID="116" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="deleteCases" isHex="false" >
+						<annotations ID="117" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:1382" line="i:61" />
+					</arguments>
+					<target IDREF="14"/>
+				</expr>
+			</statements>
+			<statements ID="118" eClass="org.eclipse.edt.mof.egl.TryStatement" >
+				<annotations ID="119" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:306" off="i:1404" line="i:62" />
+				<container IDREF="107"/>
+				<tryBlock ID="120" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+					<annotations ID="121" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:306" off="i:1404" line="i:62" />
+					<container IDREF="107"/>
+					<statements ID="122" eClass="org.eclipse.edt.mof.eglx.persistence.sql.SqlDeleteStatement" hasExplicitSql="true" sqlString="delete from CASES&#10;     &#09;&#09;&#09;&#09;where&#10;     &#09;&#09;&#09;&#09;&#09;case_id = ?" >
+						<annotations ID="123" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:129" off="i:1415" line="i:63" />
+						<container IDREF="107"/>
+						<targets ID="124" eClass="org.eclipse.edt.mof.egl.MemberName" id="delCases" >
+							<annotations ID="125" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:8" off="i:1422" line="i:63" />
+							<member IDREF="109"/>
+						</targets>
+						<dataSource ID="126" eClass="org.eclipse.edt.mof.egl.MemberName" id="myCasesService" >
+							<annotations ID="127" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:14" off="i:1436" line="i:63" />
+							<member IDREF="25"/>
+						</dataSource>
+					</statements>
+				</tryBlock>
+				<exceptionBlocks ID="128" eClass="org.eclipse.edt.mof.egl.ExceptionBlock" >
+					<annotations ID="129" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:148" off="i:1552" line="i:69" />
+					<container IDREF="107"/>
+					<statements ID="130" eClass="org.eclipse.edt.mof.egl.IfStatement" >
+						<annotations ID="131" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:109" off="i:1591" line="i:70" />
+						<container IDREF="107"/>
+						<condition ID="132" eClass="org.eclipse.edt.mof.egl.BinaryExpression" operator="!=" >
+							<annotations ID="133" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:22" off="i:1594" line="i:70" />
+							<operands ID="134" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="SQLState" >
+								<annotations ID="135" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:1594" line="i:70" />
+								<qualifier ID="136" eClass="org.eclipse.edt.mof.egl.MemberName" id="ex" >
+									<annotations ID="137" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:1594" line="i:70" />
+									<member IDREF="138"/>
+								</qualifier>
+							</operands>
+							<operands ID="139" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="02000" isHex="false" >
+								<annotations ID="140" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:7" off="i:1609" line="i:70" />
+							</operands>
+						</condition>
+						<trueBranch ID="141" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+							<annotations ID="142" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:109" off="i:1591" line="i:70" />
+							<container IDREF="107"/>
+							<statements ID="143" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+								<annotations ID="144" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:26" off="i:1660" line="i:71" />
+								<container IDREF="107"/>
+								<expr ID="145" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+									<annotations ID="146" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:26" off="i:1660" line="i:71" />
+									<fields ID="147" eClass="org.eclipse.edt.mof.egl.Field" name="logException" type="egl:eglx.persistence.sql.sqlexception" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+										<annotations ID="148" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:12" off="i:1660" line="i:71" />
+										<container IDREF="107"/>
+									</fields>
+								</expr>
+							</statements>
+						</trueBranch>
+					</statements>
+					<exception ID="138" eClass="org.eclipse.edt.mof.egl.Parameter" name="ex" type="egl:eglx.persistence.sql.sqlexception" isNullable="false" isStatic="false" isAbstract="false" >
+						<annotations ID="149" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:1564" line="i:69" />
+					</exception>
+				</exceptionBlocks>
+			</statements>
+		</statementBlock>
+	</functions>
+	<functions ID="150" eClass="org.eclipse.edt.mof.egl.Function" name="createDefaultTableCases" type="egl:eglx.lang.elist&lt;client.common.cases&gt;" isNullable="false" isStatic="false" isAbstract="false" >
+		<annotations ID="151" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1040" off="i:1722" line="i:76" />
+		<container IDREF="1"/>
+		<statementBlock ID="152" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<container IDREF="150"/>
+			<statements ID="153" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+				<annotations ID="154" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:1780" line="i:77" />
+				<container IDREF="150"/>
+				<expr ID="155" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+					<annotations ID="156" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:1780" line="i:77" />
+					<fields ID="157" eClass="org.eclipse.edt.mof.egl.Field" name="Casess" type="egl:eglx.lang.elist&lt;client.common.cases&gt;" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+						<annotations ID="158" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:1780" line="i:77" />
+						<container IDREF="150"/>
+					</fields>
+				</expr>
+			</statements>
+			<statements ID="159" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+				<annotations ID="160" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:36" off="i:1802" line="i:78" />
+				<container IDREF="150"/>
+				<expr ID="161" eClass="org.eclipse.edt.mof.egl.FunctionInvocation" id="logEntry" >
+					<annotations ID="162" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:35" off="i:1802" line="i:78" />
+					<arguments ID="163" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="createDefaultTableCases" isHex="false" >
+						<annotations ID="164" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:25" off="i:1811" line="i:78" />
+					</arguments>
+					<target IDREF="14"/>
+				</expr>
+			</statements>
+			<statements ID="165" eClass="org.eclipse.edt.mof.egl.TryStatement" >
+				<annotations ID="166" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:889" off="i:1845" line="i:79" />
+				<container IDREF="150"/>
+				<tryBlock ID="167" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+					<annotations ID="168" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:889" off="i:1845" line="i:79" />
+					<container IDREF="150"/>
+					<statements ID="169" eClass="org.eclipse.edt.mof.egl.TryStatement" >
+						<annotations ID="170" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:287" off="i:1856" line="i:80" />
+						<container IDREF="150"/>
+						<tryBlock ID="171" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+							<annotations ID="172" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:287" off="i:1856" line="i:80" />
+							<container IDREF="150"/>
+							<statements ID="173" eClass="org.eclipse.edt.mof.eglx.persistence.sql.SqlExecuteStatement" hasExplicitSql="true" sqlString="delete from Cases" >
+								<annotations ID="174" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:107" off="i:1868" line="i:81" />
+								<container IDREF="150"/>
+								<dataSource ID="175" eClass="org.eclipse.edt.mof.egl.MemberName" id="myCasesService" >
+									<annotations ID="176" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:14" off="i:1881" line="i:81" />
+									<member IDREF="25"/>
+								</dataSource>
+							</statements>
+						</tryBlock>
+						<exceptionBlocks ID="177" eClass="org.eclipse.edt.mof.egl.ExceptionBlock" >
+							<annotations ID="178" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:148" off="i:1984" line="i:85" />
+							<container IDREF="150"/>
+							<statements ID="179" eClass="org.eclipse.edt.mof.egl.IfStatement" >
+								<annotations ID="180" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:103" off="i:2029" line="i:86" />
+								<container IDREF="150"/>
+								<condition ID="181" eClass="org.eclipse.edt.mof.egl.BinaryExpression" operator="!=" >
+									<annotations ID="182" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:22" off="i:2032" line="i:86" />
+									<operands ID="183" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="SQLState" >
+										<annotations ID="184" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:2032" line="i:86" />
+										<qualifier ID="185" eClass="org.eclipse.edt.mof.egl.MemberName" id="ex" >
+											<annotations ID="186" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:2032" line="i:86" />
+											<member IDREF="187"/>
+										</qualifier>
+									</operands>
+									<operands ID="188" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="02000" isHex="false" >
+										<annotations ID="189" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:7" off="i:2047" line="i:86" />
+									</operands>
+								</condition>
+								<trueBranch ID="190" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+									<annotations ID="191" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:103" off="i:2029" line="i:86" />
+									<container IDREF="150"/>
+									<statements ID="192" eClass="org.eclipse.edt.mof.egl.ThrowStatement" >
+										<annotations ID="193" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:9" off="i:2103" line="i:87" />
+										<container IDREF="150"/>
+										<exception ID="194" eClass="org.eclipse.edt.mof.egl.MemberName" id="ex" >
+											<annotations ID="195" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:2109" line="i:87" />
+											<member IDREF="187"/>
+										</exception>
+									</statements>
+								</trueBranch>
+							</statements>
+							<exception ID="187" eClass="org.eclipse.edt.mof.egl.Parameter" name="ex" type="egl:eglx.persistence.sql.sqlexception" isNullable="false" isStatic="false" isAbstract="false" >
+								<annotations ID="196" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:1996" line="i:85" />
+							</exception>
+						</exceptionBlocks>
+					</statements>
+					<statements ID="197" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+						<annotations ID="198" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:84" off="i:2151" line="i:90" />
+						<container IDREF="150"/>
+						<expr ID="199" eClass="org.eclipse.edt.mof.egl.FunctionInvocation" id="addCases" >
+							<annotations ID="200" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:83" off="i:2151" line="i:90" />
+							<arguments ID="201" eClass="org.eclipse.edt.mof.egl.SetValuesExpression" >
+								<annotations ID="202" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:73" off="i:2160" line="i:90" />
+								<target ID="203" eClass="org.eclipse.edt.mof.egl.NewExpression" id="client.common.Cases" >
+									<annotations ID="204" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:73" off="i:2160" line="i:90" />
+								</target>
+								<settings ID="205" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+									<annotations ID="206" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:64" off="i:2169" line="i:90" />
+									<container IDREF="150"/>
+									<statements ID="207" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+										<annotations ID="208" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:73" off="i:2160" line="i:90" />
+										<container IDREF="150"/>
+										<expr ID="209" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+											<fields ID="210" eClass="org.eclipse.edt.mof.egl.Field" name="eze$SettingTarget1" type="egl:client.common.cases" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+												<annotations ID="211" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:73" off="i:2160" line="i:90" />
+												<container IDREF="150"/>
+												<initializerStatements ID="212" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+													<annotations ID="213" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:73" off="i:2160" line="i:90" />
+													<container IDREF="150"/>
+													<statements ID="214" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+														<annotations ID="215" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:73" off="i:2160" line="i:90" />
+														<container IDREF="150"/>
+														<expr ID="216" eClass="org.eclipse.edt.mof.egl.Assignment" >
+															<LHS ID="217" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+																<member IDREF="210"/>
+															</LHS>
+															<RHS ID="203" eClass="org.eclipse.edt.mof.egl.NewExpression" id="client.common.Cases" >
+																<annotations ID="204" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:73" off="i:2160" line="i:90" />
+															</RHS>
+														</expr>
+													</statements>
+												</initializerStatements>
+											</fields>
+										</expr>
+									</statements>
+									<statements ID="218" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+										<annotations ID="219" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:2170" line="i:90" />
+										<container IDREF="150"/>
+										<expr ID="220" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+											<annotations ID="221" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:2170" line="i:90" />
+											<LHS ID="222" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="case_id" >
+												<qualifier ID="223" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+													<member IDREF="210"/>
+												</qualifier>
+											</LHS>
+											<RHS ID="224" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="1" isNegated="false" type="egl:eglx.lang.eint" >
+												<annotations ID="225" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:2180" line="i:90" />
+											</RHS>
+										</expr>
+									</statements>
+									<statements ID="226" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+										<annotations ID="227" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:34" off="i:2183" line="i:90" />
+										<container IDREF="150"/>
+										<expr ID="228" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+											<annotations ID="229" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:34" off="i:2183" line="i:90" />
+											<LHS ID="230" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="casename" >
+												<qualifier ID="231" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+													<member IDREF="210"/>
+												</qualifier>
+											</LHS>
+											<RHS ID="232" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="电子谷物数粒仪PCB抄板开发与IC解密研究" isHex="false" >
+												<annotations ID="233" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:23" off="i:2194" line="i:90" />
+											</RHS>
+										</expr>
+									</statements>
+								</settings>
+							</arguments>
+							<target IDREF="3"/>
+						</expr>
+					</statements>
+					<statements ID="234" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+						<annotations ID="235" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:83" off="i:2248" line="i:92" />
+						<container IDREF="150"/>
+						<expr ID="236" eClass="org.eclipse.edt.mof.egl.FunctionInvocation" id="addCases" >
+							<annotations ID="237" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:82" off="i:2248" line="i:92" />
+							<arguments ID="238" eClass="org.eclipse.edt.mof.egl.SetValuesExpression" >
+								<annotations ID="239" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:72" off="i:2257" line="i:92" />
+								<target ID="240" eClass="org.eclipse.edt.mof.egl.NewExpression" id="client.common.Cases" >
+									<annotations ID="241" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:72" off="i:2257" line="i:92" />
+								</target>
+								<settings ID="242" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+									<annotations ID="243" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:63" off="i:2266" line="i:92" />
+									<container IDREF="150"/>
+									<statements ID="244" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+										<annotations ID="245" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:72" off="i:2257" line="i:92" />
+										<container IDREF="150"/>
+										<expr ID="246" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+											<fields ID="247" eClass="org.eclipse.edt.mof.egl.Field" name="eze$SettingTarget1" type="egl:client.common.cases" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+												<annotations ID="248" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:72" off="i:2257" line="i:92" />
+												<container IDREF="150"/>
+												<initializerStatements ID="249" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+													<annotations ID="250" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:72" off="i:2257" line="i:92" />
+													<container IDREF="150"/>
+													<statements ID="251" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+														<annotations ID="252" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:72" off="i:2257" line="i:92" />
+														<container IDREF="150"/>
+														<expr ID="253" eClass="org.eclipse.edt.mof.egl.Assignment" >
+															<LHS ID="254" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+																<member IDREF="247"/>
+															</LHS>
+															<RHS ID="240" eClass="org.eclipse.edt.mof.egl.NewExpression" id="client.common.Cases" >
+																<annotations ID="241" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:72" off="i:2257" line="i:92" />
+															</RHS>
+														</expr>
+													</statements>
+												</initializerStatements>
+											</fields>
+										</expr>
+									</statements>
+									<statements ID="255" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+										<annotations ID="256" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:2267" line="i:92" />
+										<container IDREF="150"/>
+										<expr ID="257" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+											<annotations ID="258" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:2267" line="i:92" />
+											<LHS ID="259" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="case_id" >
+												<qualifier ID="260" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+													<member IDREF="247"/>
+												</qualifier>
+											</LHS>
+											<RHS ID="261" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="2" isNegated="false" type="egl:eglx.lang.eint" >
+												<annotations ID="262" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:2277" line="i:92" />
+											</RHS>
+										</expr>
+									</statements>
+									<statements ID="263" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+										<annotations ID="264" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:33" off="i:2280" line="i:92" />
+										<container IDREF="150"/>
+										<expr ID="265" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+											<annotations ID="266" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:33" off="i:2280" line="i:92" />
+											<LHS ID="267" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="casename" >
+												<qualifier ID="268" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+													<member IDREF="247"/>
+												</qualifier>
+											</LHS>
+											<RHS ID="269" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="高压断路器程控仪PCB改板及样机定制开发" isHex="false" >
+												<annotations ID="270" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:22" off="i:2291" line="i:92" />
+											</RHS>
+										</expr>
+									</statements>
+								</settings>
+							</arguments>
+							<target IDREF="3"/>
+						</expr>
+					</statements>
+					<statements ID="271" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+						<annotations ID="272" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:82" off="i:2344" line="i:94" />
+						<container IDREF="150"/>
+						<expr ID="273" eClass="org.eclipse.edt.mof.egl.FunctionInvocation" id="addCases" >
+							<annotations ID="274" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:81" off="i:2344" line="i:94" />
+							<arguments ID="275" eClass="org.eclipse.edt.mof.egl.SetValuesExpression" >
+								<annotations ID="276" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:71" off="i:2353" line="i:94" />
+								<target ID="277" eClass="org.eclipse.edt.mof.egl.NewExpression" id="client.common.Cases" >
+									<annotations ID="278" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:71" off="i:2353" line="i:94" />
+								</target>
+								<settings ID="279" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+									<annotations ID="280" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:62" off="i:2362" line="i:94" />
+									<container IDREF="150"/>
+									<statements ID="281" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+										<annotations ID="282" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:71" off="i:2353" line="i:94" />
+										<container IDREF="150"/>
+										<expr ID="283" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+											<fields ID="284" eClass="org.eclipse.edt.mof.egl.Field" name="eze$SettingTarget1" type="egl:client.common.cases" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+												<annotations ID="285" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:71" off="i:2353" line="i:94" />
+												<container IDREF="150"/>
+												<initializerStatements ID="286" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+													<annotations ID="287" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:71" off="i:2353" line="i:94" />
+													<container IDREF="150"/>
+													<statements ID="288" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+														<annotations ID="289" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:71" off="i:2353" line="i:94" />
+														<container IDREF="150"/>
+														<expr ID="290" eClass="org.eclipse.edt.mof.egl.Assignment" >
+															<LHS ID="291" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+																<member IDREF="284"/>
+															</LHS>
+															<RHS ID="277" eClass="org.eclipse.edt.mof.egl.NewExpression" id="client.common.Cases" >
+																<annotations ID="278" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:71" off="i:2353" line="i:94" />
+															</RHS>
+														</expr>
+													</statements>
+												</initializerStatements>
+											</fields>
+										</expr>
+									</statements>
+									<statements ID="292" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+										<annotations ID="293" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:2363" line="i:94" />
+										<container IDREF="150"/>
+										<expr ID="294" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+											<annotations ID="295" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:2363" line="i:94" />
+											<LHS ID="296" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="case_id" >
+												<qualifier ID="297" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+													<member IDREF="284"/>
+												</qualifier>
+											</LHS>
+											<RHS ID="298" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="3" isNegated="false" type="egl:eglx.lang.eint" >
+												<annotations ID="299" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:2373" line="i:94" />
+											</RHS>
+										</expr>
+									</statements>
+									<statements ID="300" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+										<annotations ID="301" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:32" off="i:2376" line="i:94" />
+										<container IDREF="150"/>
+										<expr ID="302" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+											<annotations ID="303" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:32" off="i:2376" line="i:94" />
+											<LHS ID="304" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="casename" >
+												<qualifier ID="305" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+													<member IDREF="284"/>
+												</qualifier>
+											</LHS>
+											<RHS ID="306" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="自动滤材测试仪PCB抄板及技术资料提取" isHex="false" >
+												<annotations ID="307" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:21" off="i:2387" line="i:94" />
+											</RHS>
+										</expr>
+									</statements>
+								</settings>
+							</arguments>
+							<target IDREF="3"/>
+						</expr>
+					</statements>
+					<statements ID="308" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+						<annotations ID="309" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:81" off="i:2439" line="i:96" />
+						<container IDREF="150"/>
+						<expr ID="310" eClass="org.eclipse.edt.mof.egl.FunctionInvocation" id="addCases" >
+							<annotations ID="311" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:80" off="i:2439" line="i:96" />
+							<arguments ID="312" eClass="org.eclipse.edt.mof.egl.SetValuesExpression" >
+								<annotations ID="313" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:70" off="i:2448" line="i:96" />
+								<target ID="314" eClass="org.eclipse.edt.mof.egl.NewExpression" id="client.common.Cases" >
+									<annotations ID="315" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:70" off="i:2448" line="i:96" />
+								</target>
+								<settings ID="316" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+									<annotations ID="317" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:61" off="i:2457" line="i:96" />
+									<container IDREF="150"/>
+									<statements ID="318" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+										<annotations ID="319" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:70" off="i:2448" line="i:96" />
+										<container IDREF="150"/>
+										<expr ID="320" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+											<fields ID="321" eClass="org.eclipse.edt.mof.egl.Field" name="eze$SettingTarget1" type="egl:client.common.cases" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+												<annotations ID="322" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:70" off="i:2448" line="i:96" />
+												<container IDREF="150"/>
+												<initializerStatements ID="323" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+													<annotations ID="324" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:70" off="i:2448" line="i:96" />
+													<container IDREF="150"/>
+													<statements ID="325" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+														<annotations ID="326" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:70" off="i:2448" line="i:96" />
+														<container IDREF="150"/>
+														<expr ID="327" eClass="org.eclipse.edt.mof.egl.Assignment" >
+															<LHS ID="328" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+																<member IDREF="321"/>
+															</LHS>
+															<RHS ID="314" eClass="org.eclipse.edt.mof.egl.NewExpression" id="client.common.Cases" >
+																<annotations ID="315" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:70" off="i:2448" line="i:96" />
+															</RHS>
+														</expr>
+													</statements>
+												</initializerStatements>
+											</fields>
+										</expr>
+									</statements>
+									<statements ID="329" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+										<annotations ID="330" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:2458" line="i:96" />
+										<container IDREF="150"/>
+										<expr ID="331" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+											<annotations ID="332" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:2458" line="i:96" />
+											<LHS ID="333" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="case_id" >
+												<qualifier ID="334" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+													<member IDREF="321"/>
+												</qualifier>
+											</LHS>
+											<RHS ID="335" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="4" isNegated="false" type="egl:eglx.lang.eint" >
+												<annotations ID="336" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:2468" line="i:96" />
+											</RHS>
+										</expr>
+									</statements>
+									<statements ID="337" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+										<annotations ID="338" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:31" off="i:2471" line="i:96" />
+										<container IDREF="150"/>
+										<expr ID="339" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+											<annotations ID="340" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:31" off="i:2471" line="i:96" />
+											<LHS ID="341" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="casename" >
+												<qualifier ID="342" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+													<member IDREF="321"/>
+												</qualifier>
+											</LHS>
+											<RHS ID="343" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="解析落地式恒温培养振荡器抄板完成项目" isHex="false" >
+												<annotations ID="344" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:20" off="i:2482" line="i:96" />
+											</RHS>
+										</expr>
+									</statements>
+								</settings>
+							</arguments>
+							<target IDREF="3"/>
+						</expr>
+					</statements>
+					<statements ID="345" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+						<annotations ID="346" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:82" off="i:2533" line="i:98" />
+						<container IDREF="150"/>
+						<expr ID="347" eClass="org.eclipse.edt.mof.egl.FunctionInvocation" id="addCases" >
+							<annotations ID="348" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:81" off="i:2533" line="i:98" />
+							<arguments ID="349" eClass="org.eclipse.edt.mof.egl.SetValuesExpression" >
+								<annotations ID="350" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:71" off="i:2542" line="i:98" />
+								<target ID="351" eClass="org.eclipse.edt.mof.egl.NewExpression" id="client.common.Cases" >
+									<annotations ID="352" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:71" off="i:2542" line="i:98" />
+								</target>
+								<settings ID="353" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+									<annotations ID="354" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:62" off="i:2551" line="i:98" />
+									<container IDREF="150"/>
+									<statements ID="355" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+										<annotations ID="356" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:71" off="i:2542" line="i:98" />
+										<container IDREF="150"/>
+										<expr ID="357" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+											<fields ID="358" eClass="org.eclipse.edt.mof.egl.Field" name="eze$SettingTarget1" type="egl:client.common.cases" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+												<annotations ID="359" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:71" off="i:2542" line="i:98" />
+												<container IDREF="150"/>
+												<initializerStatements ID="360" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+													<annotations ID="361" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:71" off="i:2542" line="i:98" />
+													<container IDREF="150"/>
+													<statements ID="362" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+														<annotations ID="363" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:71" off="i:2542" line="i:98" />
+														<container IDREF="150"/>
+														<expr ID="364" eClass="org.eclipse.edt.mof.egl.Assignment" >
+															<LHS ID="365" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+																<member IDREF="358"/>
+															</LHS>
+															<RHS ID="351" eClass="org.eclipse.edt.mof.egl.NewExpression" id="client.common.Cases" >
+																<annotations ID="352" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:71" off="i:2542" line="i:98" />
+															</RHS>
+														</expr>
+													</statements>
+												</initializerStatements>
+											</fields>
+										</expr>
+									</statements>
+									<statements ID="366" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+										<annotations ID="367" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:2552" line="i:98" />
+										<container IDREF="150"/>
+										<expr ID="368" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+											<annotations ID="369" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:2552" line="i:98" />
+											<LHS ID="370" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="case_id" >
+												<qualifier ID="371" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+													<member IDREF="358"/>
+												</qualifier>
+											</LHS>
+											<RHS ID="372" eClass="org.eclipse.edt.mof.egl.IntegerLiteral" value="5" isNegated="false" type="egl:eglx.lang.eint" >
+												<annotations ID="373" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:1" off="i:2562" line="i:98" />
+											</RHS>
+										</expr>
+									</statements>
+									<statements ID="374" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+										<annotations ID="375" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:32" off="i:2565" line="i:98" />
+										<container IDREF="150"/>
+										<expr ID="376" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+											<annotations ID="377" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:32" off="i:2565" line="i:98" />
+											<LHS ID="378" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="casename" >
+												<qualifier ID="379" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+													<member IDREF="358"/>
+												</qualifier>
+											</LHS>
+											<RHS ID="380" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="解析超声波固体悬浮物浓度仪克隆完成项目" isHex="false" >
+												<annotations ID="381" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:21" off="i:2576" line="i:98" />
+											</RHS>
+										</expr>
+									</statements>
+								</settings>
+							</arguments>
+							<target IDREF="3"/>
+						</expr>
+					</statements>
+					<statements ID="382" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+						<annotations ID="383" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:22" off="i:2628" line="i:100" />
+						<container IDREF="150"/>
+						<expr ID="384" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+							<annotations ID="385" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:21" off="i:2628" line="i:100" />
+							<LHS ID="386" eClass="org.eclipse.edt.mof.egl.MemberName" id="Casess" >
+								<annotations ID="387" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:2628" line="i:100" />
+								<member IDREF="157"/>
+							</LHS>
+							<RHS ID="388" eClass="org.eclipse.edt.mof.egl.FunctionInvocation" id="getAllCases" >
+								<annotations ID="389" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:2636" line="i:100" />
+								<target IDREF="37"/>
+							</RHS>
+						</expr>
+					</statements>
+				</tryBlock>
+				<exceptionBlocks ID="390" eClass="org.eclipse.edt.mof.egl.ExceptionBlock" >
+					<annotations ID="391" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:60" off="i:2664" line="i:101" />
+					<container IDREF="150"/>
+					<statements ID="392" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+						<annotations ID="393" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:17" off="i:2707" line="i:102" />
+						<container IDREF="150"/>
+						<expr ID="394" eClass="org.eclipse.edt.mof.egl.FunctionInvocation" id="logException" >
+							<annotations ID="395" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:16" off="i:2707" line="i:102" />
+							<arguments ID="396" eClass="org.eclipse.edt.mof.egl.MemberName" id="ex" >
+								<annotations ID="397" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:2720" line="i:102" />
+								<member IDREF="398"/>
+							</arguments>
+							<target IDREF="35"/>
+						</expr>
+					</statements>
+					<exception ID="398" eClass="org.eclipse.edt.mof.egl.Parameter" name="ex" type="egl:eglx.lang.anyexception" isNullable="false" isStatic="false" isAbstract="false" >
+						<annotations ID="399" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:2676" line="i:101" />
+					</exception>
+				</exceptionBlocks>
+			</statements>
+			<statements ID="400" eClass="org.eclipse.edt.mof.egl.ReturnStatement" >
+				<annotations ID="401" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:2741" line="i:104" />
+				<container IDREF="150"/>
+				<expression ID="402" eClass="org.eclipse.edt.mof.egl.MemberName" id="Casess" >
+					<annotations ID="403" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:6" off="i:2748" line="i:104" />
+					<member IDREF="157"/>
+				</expression>
+			</statements>
+		</statementBlock>
+	</functions>
+	<functions ID="14" eClass="org.eclipse.edt.mof.egl.Function" name="logEntry" isNullable="false" isStatic="false" isAbstract="false" accessKind="ACC_PRIVATE" >
+		<annotations ID="404" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:160" off="i:2828" line="i:110" />
+		<container IDREF="1"/>
+		<parameters ID="405" eClass="org.eclipse.edt.mof.egl.FunctionParameter" name="serviceFunction" type="egl:eglx.lang.estring" isNullable="false" isStatic="false" isAbstract="false" accessKind="ACC_PRIVATE" parameterKind="PARM_IN" isDefinedSqlNullable="false" isField="false" isConst="false" >
+			<annotations ID="406" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:25" off="i:2854" line="i:110" />
+			<container IDREF="14"/>
+		</parameters>
+		<statementBlock ID="407" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<container IDREF="14"/>
+			<statements ID="408" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="409" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:32" off="i:2889" line="i:111" />
+				<container IDREF="14"/>
+				<expr ID="410" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+					<annotations ID="411" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:31" off="i:2889" line="i:111" />
+					<LHS ID="412" eClass="org.eclipse.edt.mof.egl.MemberName" id="activeService" >
+						<annotations ID="413" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:2889" line="i:111" />
+						<member IDREF="414"/>
+					</LHS>
+					<RHS ID="415" eClass="org.eclipse.edt.mof.egl.MemberName" id="serviceFunction" >
+						<annotations ID="416" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:2905" line="i:111" />
+						<member IDREF="405"/>
+					</RHS>
+				</expr>
+			</statements>
+			<statements ID="417" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+				<annotations ID="418" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:50" off="i:2930" line="i:112" />
+				<container IDREF="14"/>
+				<expr ID="419" eClass="org.eclipse.edt.mof.egl.FunctionInvocation" id="log" >
+					<annotations ID="420" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:49" off="i:2930" line="i:112" />
+					<arguments ID="421" eClass="org.eclipse.edt.mof.egl.BinaryExpression" operator="+" >
+						<annotations ID="422" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:44" off="i:2934" line="i:112" />
+						<operands ID="423" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="Entry:  ArticleService&#44; " isHex="false" >
+							<annotations ID="424" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:26" off="i:2934" line="i:112" />
+						</operands>
+						<operands ID="425" eClass="org.eclipse.edt.mof.egl.MemberName" id="serviceFunction" >
+							<annotations ID="426" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:2963" line="i:112" />
+							<member IDREF="405"/>
+						</operands>
+					</arguments>
+					<target IDREF="427"/>
+				</expr>
+			</statements>
+		</statementBlock>
+	</functions>
+	<functions ID="35" eClass="org.eclipse.edt.mof.egl.Function" name="logException" isNullable="false" isStatic="false" isAbstract="false" accessKind="ACC_PRIVATE" >
+		<annotations ID="428" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:442" off="i:2993" line="i:114" />
+		<container IDREF="1"/>
+		<parameters ID="429" eClass="org.eclipse.edt.mof.egl.FunctionParameter" name="ex" type="egl:eglx.persistence.sql.sqlexception" isNullable="true" isStatic="false" isAbstract="false" accessKind="ACC_PRIVATE" parameterKind="PARM_IN" isDefinedSqlNullable="false" isField="false" isConst="false" >
+			<annotations ID="430" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:16" off="i:3023" line="i:114" />
+			<container IDREF="35"/>
+		</parameters>
+		<statementBlock ID="431" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<container IDREF="35"/>
+			<statements ID="432" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+				<annotations ID="433" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:75" off="i:3049" line="i:115" />
+				<container IDREF="35"/>
+				<expr ID="434" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+					<annotations ID="435" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:75" off="i:3049" line="i:115" />
+					<fields ID="436" eClass="org.eclipse.edt.mof.egl.Field" name="accumulatedMessage" type="egl:eglx.lang.estring" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="true" isImplicit="false" isSystemField="false" >
+						<annotations ID="437" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:18" off="i:3049" line="i:115" />
+						<container IDREF="35"/>
+						<initializerStatements ID="438" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+							<annotations ID="439" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:46" off="i:3077" line="i:115" />
+							<container IDREF="1"/>
+							<statements ID="440" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+								<annotations ID="441" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:46" off="i:3077" line="i:115" />
+								<container IDREF="1"/>
+								<expr ID="442" eClass="org.eclipse.edt.mof.egl.Assignment" >
+									<LHS ID="443" eClass="org.eclipse.edt.mof.egl.MemberName" id="accumulatedMessage" >
+										<member IDREF="436"/>
+									</LHS>
+									<RHS ID="444" eClass="org.eclipse.edt.mof.egl.BinaryExpression" operator="+" >
+										<annotations ID="445" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:46" off="i:3077" line="i:115" />
+										<operands ID="446" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="Exception:  ArticleService&#44; " isHex="false" >
+											<annotations ID="447" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:30" off="i:3077" line="i:115" />
+										</operands>
+										<operands ID="448" eClass="org.eclipse.edt.mof.egl.MemberName" id="activeService" >
+											<annotations ID="449" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:3110" line="i:115" />
+											<member IDREF="414"/>
+										</operands>
+									</RHS>
+								</expr>
+							</statements>
+						</initializerStatements>
+					</fields>
+				</expr>
+			</statements>
+			<statements ID="450" eClass="org.eclipse.edt.mof.egl.WhileStatement" >
+				<annotations ID="451" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:199" off="i:3133" line="i:116" />
+				<container IDREF="35"/>
+				<condition ID="452" eClass="org.eclipse.edt.mof.egl.BinaryExpression" operator="!=" >
+					<annotations ID="453" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:3139" line="i:116" />
+					<operands ID="454" eClass="org.eclipse.edt.mof.egl.MemberName" id="ex" >
+						<annotations ID="455" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:3139" line="i:116" />
+						<member IDREF="429"/>
+					</operands>
+					<operands ID="456" eClass="org.eclipse.edt.mof.egl.NullLiteral" >
+						<annotations ID="457" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:4" off="i:3145" line="i:116" />
+					</operands>
+				</condition>
+				<body ID="458" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+					<annotations ID="459" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:199" off="i:3133" line="i:116" />
+					<container IDREF="35"/>
+					<statements ID="460" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+						<annotations ID="461" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:122" off="i:3163" line="i:117" />
+						<container IDREF="35"/>
+						<expr ID="462" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+							<annotations ID="463" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:121" off="i:3163" line="i:117" />
+							<LHS ID="464" eClass="org.eclipse.edt.mof.egl.MemberName" id="accumulatedMessage" >
+								<annotations ID="465" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:18" off="i:3163" line="i:117" />
+								<member IDREF="436"/>
+							</LHS>
+							<RHS ID="466" eClass="org.eclipse.edt.mof.egl.BinaryExpression" operator="+" >
+								<annotations ID="467" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:100" off="i:3184" line="i:117" />
+								<operands ID="468" eClass="org.eclipse.edt.mof.egl.BinaryExpression" operator="+" >
+									<annotations ID="469" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:87" off="i:3184" line="i:117" />
+									<operands ID="470" eClass="org.eclipse.edt.mof.egl.BinaryExpression" operator="+" >
+										<annotations ID="471" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:70" off="i:3184" line="i:117" />
+										<operands ID="472" eClass="org.eclipse.edt.mof.egl.BinaryExpression" operator="+" >
+											<annotations ID="473" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:36" off="i:3184" line="i:117" />
+											<operands ID="474" eClass="org.eclipse.edt.mof.egl.MemberName" id="accumulatedMessage" >
+												<annotations ID="475" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:18" off="i:3184" line="i:117" />
+												<member IDREF="436"/>
+											</operands>
+											<operands ID="476" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="&#44; SQLSTATE = " isHex="false" >
+												<annotations ID="477" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:15" off="i:3205" line="i:117" />
+											</operands>
+										</operands>
+										<operands ID="478" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="SQLState" >
+											<annotations ID="479" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:11" off="i:3243" line="i:118" />
+											<qualifier ID="480" eClass="org.eclipse.edt.mof.egl.MemberName" id="ex" >
+												<annotations ID="481" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:3243" line="i:118" />
+												<member IDREF="429"/>
+											</qualifier>
+										</operands>
+									</operands>
+									<operands ID="482" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="&#44; message = " isHex="false" >
+										<annotations ID="483" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:14" off="i:3257" line="i:118" />
+									</operands>
+								</operands>
+								<operands ID="484" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="message" >
+									<annotations ID="485" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:10" off="i:3274" line="i:118" />
+									<qualifier ID="486" eClass="org.eclipse.edt.mof.egl.MemberName" id="ex" >
+										<annotations ID="487" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:3274" line="i:118" />
+										<member IDREF="429"/>
+									</qualifier>
+								</operands>
+							</RHS>
+						</expr>
+					</statements>
+					<statements ID="488" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+						<annotations ID="489" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:22" off="i:3298" line="i:119" />
+						<container IDREF="35"/>
+						<expr ID="490" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+							<annotations ID="491" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:21" off="i:3298" line="i:119" />
+							<LHS ID="492" eClass="org.eclipse.edt.mof.egl.MemberName" id="ex" >
+								<annotations ID="493" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:3298" line="i:119" />
+								<member IDREF="429"/>
+							</LHS>
+							<RHS ID="494" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="nextException" >
+								<annotations ID="495" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:16" off="i:3303" line="i:119" />
+								<qualifier ID="496" eClass="org.eclipse.edt.mof.egl.MemberName" id="ex" >
+									<annotations ID="497" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:2" off="i:3303" line="i:119" />
+									<member IDREF="429"/>
+								</qualifier>
+							</RHS>
+						</expr>
+					</statements>
+				</body>
+			</statements>
+			<statements ID="498" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+				<annotations ID="499" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:24" off="i:3341" line="i:121" />
+				<container IDREF="35"/>
+				<expr ID="500" eClass="org.eclipse.edt.mof.egl.FunctionInvocation" id="log" >
+					<annotations ID="501" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:23" off="i:3341" line="i:121" />
+					<arguments ID="502" eClass="org.eclipse.edt.mof.egl.MemberName" id="accumulatedMessage" >
+						<annotations ID="503" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:18" off="i:3345" line="i:121" />
+						<member IDREF="436"/>
+					</arguments>
+					<target IDREF="427"/>
+				</expr>
+			</statements>
+			<statements ID="504" eClass="org.eclipse.edt.mof.egl.ThrowStatement" >
+				<annotations ID="505" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:53" off="i:3374" line="i:122" />
+				<container IDREF="35"/>
+				<exception ID="506" eClass="org.eclipse.edt.mof.egl.SetValuesExpression" >
+					<annotations ID="507" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:46" off="i:3380" line="i:122" />
+					<target ID="508" eClass="org.eclipse.edt.mof.egl.NewExpression" id="eglx.lang.AnyException" >
+						<annotations ID="509" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:46" off="i:3380" line="i:122" />
+					</target>
+					<settings ID="510" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+						<annotations ID="511" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:30" off="i:3396" line="i:122" />
+						<container IDREF="35"/>
+						<statements ID="512" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+							<annotations ID="513" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:46" off="i:3380" line="i:122" />
+							<container IDREF="35"/>
+							<expr ID="514" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+								<fields ID="515" eClass="org.eclipse.edt.mof.egl.Field" name="eze$SettingTarget1" type="egl:eglx.lang.anyexception" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+									<annotations ID="516" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:46" off="i:3380" line="i:122" />
+									<container IDREF="35"/>
+									<initializerStatements ID="517" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+										<annotations ID="518" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:46" off="i:3380" line="i:122" />
+										<container IDREF="35"/>
+										<statements ID="519" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+											<annotations ID="520" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:46" off="i:3380" line="i:122" />
+											<container IDREF="35"/>
+											<expr ID="521" eClass="org.eclipse.edt.mof.egl.Assignment" >
+												<LHS ID="522" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+													<member IDREF="515"/>
+												</LHS>
+												<RHS ID="508" eClass="org.eclipse.edt.mof.egl.NewExpression" id="eglx.lang.AnyException" >
+													<annotations ID="509" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:46" off="i:3380" line="i:122" />
+												</RHS>
+											</expr>
+										</statements>
+									</initializerStatements>
+								</fields>
+							</expr>
+						</statements>
+						<statements ID="523" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+							<annotations ID="524" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:28" off="i:3397" line="i:122" />
+							<container IDREF="35"/>
+							<expr ID="525" eClass="org.eclipse.edt.mof.egl.Assignment" operator="=" >
+								<annotations ID="526" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:28" off="i:3397" line="i:122" />
+								<LHS ID="527" eClass="org.eclipse.edt.mof.egl.MemberAccess" id="message" >
+									<qualifier ID="528" eClass="org.eclipse.edt.mof.egl.MemberName" id="eze$SettingTarget1" >
+										<member IDREF="515"/>
+									</qualifier>
+								</LHS>
+								<RHS ID="529" eClass="org.eclipse.edt.mof.egl.MemberName" id="accumulatedMessage" >
+									<annotations ID="530" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:18" off="i:3407" line="i:122" />
+									<member IDREF="436"/>
+								</RHS>
+							</expr>
+						</statements>
+					</settings>
+				</exception>
+			</statements>
+		</statementBlock>
+	</functions>
+	<functions ID="427" eClass="org.eclipse.edt.mof.egl.Function" name="log" isNullable="false" isStatic="false" isAbstract="false" accessKind="ACC_PRIVATE" >
+		<annotations ID="531" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:116" off="i:3440" line="i:124" />
+		<container IDREF="1"/>
+		<parameters ID="532" eClass="org.eclipse.edt.mof.egl.FunctionParameter" name="text" type="egl:eglx.lang.estring" isNullable="false" isStatic="false" isAbstract="false" accessKind="ACC_PRIVATE" parameterKind="PARM_IN" isDefinedSqlNullable="false" isField="false" isConst="false" >
+			<annotations ID="533" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:14" off="i:3461" line="i:124" />
+			<container IDREF="427"/>
+		</parameters>
+		<statementBlock ID="534" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<container IDREF="427"/>
+			<statements ID="535" eClass="org.eclipse.edt.mof.egl.IfStatement" >
+				<annotations ID="536" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:63" off="i:3485" line="i:125" />
+				<container IDREF="427"/>
+				<condition ID="537" eClass="org.eclipse.edt.mof.egl.MemberName" id="logActive" >
+					<annotations ID="538" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:9" off="i:3488" line="i:125" />
+					<member IDREF="539"/>
+				</condition>
+				<trueBranch ID="540" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+					<annotations ID="541" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:63" off="i:3485" line="i:125" />
+					<container IDREF="427"/>
+					<statements ID="542" eClass="org.eclipse.edt.mof.egl.FunctionStatement" >
+						<annotations ID="543" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:25" off="i:3511" line="i:126" />
+						<container IDREF="427"/>
+						<expr ID="544" eClass="org.eclipse.edt.mof.egl.QualifiedFunctionInvocation" id="writeStdout" >
+							<annotations ID="545" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:24" off="i:3511" line="i:126" />
+							<arguments ID="546" eClass="org.eclipse.edt.mof.egl.MemberName" id="text" >
+								<annotations ID="547" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:4" off="i:3530" line="i:126" />
+								<member IDREF="532"/>
+							</arguments>
+							<qualifier ID="548" eClass="org.eclipse.edt.mof.egl.PartName" id="SysLib" packageName="eglx.lang" >
+								<annotations ID="549" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:18" off="i:3511" line="i:126" />
+							</qualifier>
+						</expr>
+					</statements>
+				</trueBranch>
+			</statements>
+		</statementBlock>
+	</functions>
+	<fields ID="25" eClass="org.eclipse.edt.mof.egl.Field" name="myCasesService" type="egl:eglx.persistence.sql.sqldatasource" isNullable="true" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="550" eClass="egl:eglx.lang.resource" uri="binding:eLearnDerby" />
+		<annotations ID="551" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:68" off="i:236" line="i:11" />
+		<container IDREF="1"/>
+	</fields>
+	<fields ID="539" eClass="org.eclipse.edt.mof.egl.Field" name="logActive" type="egl:eglx.lang.eboolean" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="true" isImplicit="false" isSystemField="false" >
+		<annotations ID="552" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:25" off="i:2771" line="i:108" />
+		<container IDREF="1"/>
+		<initializerStatements ID="553" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<annotations ID="554" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:4" off="i:2791" line="i:108" />
+			<container IDREF="1"/>
+			<statements ID="555" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+				<annotations ID="556" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:4" off="i:2791" line="i:108" />
+				<container IDREF="1"/>
+				<expr ID="557" eClass="org.eclipse.edt.mof.egl.Assignment" >
+					<LHS ID="558" eClass="org.eclipse.edt.mof.egl.MemberName" id="logActive" >
+						<member IDREF="539"/>
+					</LHS>
+					<RHS ID="559" eClass="org.eclipse.edt.mof.egl.BooleanLiteral" value="yes" >
+						<annotations ID="560" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:4" off="i:2791" line="i:108" />
+					</RHS>
+				</expr>
+			</statements>
+		</initializerStatements>
+	</fields>
+	<fields ID="414" eClass="org.eclipse.edt.mof.egl.Field" name="activeService" type="egl:eglx.lang.estring" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="false" isImplicit="false" isSystemField="false" >
+		<annotations ID="561" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:21" off="i:2802" line="i:109" />
+		<container IDREF="1"/>
+	</fields>
+</Service>

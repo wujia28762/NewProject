@@ -1,0 +1,92 @@
+package client.client;
+
+import eglx.ui.rui.RUIHandler;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import dojo.widgets.DojoButton;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import org.eclipse.edt.rui.widgets.Button;
+import org.eclipse.edt.rui.widgets.Image;
+import org.eclipse.edt.rui.widgets.BoxLib;
+import org.eclipse.edt.rui.widgets.HyperLink;
+import org.eclipse.edt.rui.widgets.HTML;
+
+handler ReLesson2 type RUIhandler{initialUI =[ui], onConstructionFunction = start, cssFile = "css/e-Learning.css", title = ""}
+
+    ui GridLayout{columns = 1, rows = 1, cellPadding = 4, children = [ Lesson1Box ]};
+    Lesson1Box Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ TitleBox, contentBox ],
+    	width = "900",
+    	columns = 1 };
+    	
+    TitleBox Box{ padding=8,
+    	children = [ LessonTitle, ButtonsBox ], 
+    	backgroundColor = "LightSkyBlue",
+    	width = "900",
+    	height = "50",
+    	columns = 2 };
+    LessonTitle TextLabel{ text="文具", 
+    	font = "华文新魏",
+    	fontSize = "30" };
+    ButtonsBox Box{ padding=8,
+    	marginTop = 20,
+    	marginLeft = 10,
+    	columns = 8,
+    	children = [ Button1, Button2, Button3, Button4, Button5, Button6, Button7, Button8 ] };
+    Button1 Button{ text = "课程简介",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button2 Button{ text = "教师简介",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button3 Button{ text = "指定教材",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button4 Button{ text = "学习方法",
+    	fontSize = "14",
+    	font = "微软雅黑" }; 
+    Button5 Button{ text = "教学目标",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button6 Button{ text = "教学重点",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button7 Button{ text = "作业习题",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button8 Button{ text = "授课时长",
+    	fontSize = "14",
+    	font = "微软雅黑" }; 
+    	
+    contentBox Box{padding=8,columns=1, children=[topBox, bodyBox]};	
+    topBox Box{padding=8, columns=2, children=[leftBox],
+    	width = "840"};    
+    		
+    leftBox Box{padding=8, columns=2,
+    	children = [ leftImage, leftText ]};
+    leftImage Image{
+    	src = "E:\\workspace\\pictures\\图标.jpg"
+    };
+    leftText TextLabel{ text = "课 程 简 介",
+    	fontSize = "16" };
+    	
+    
+  
+   bodyBox Box{padding=8, columns=1,
+   	children = [ HTML1 ]};
+   HTML1 HTML{ text= "<li><b>◆创设情景，认识6~10各数</b></li><p>师：新学期到了，同学们都买了什么文具？ （出示图）</p>"+
+                     "<p>1．你能数数这个文具店里有哪些文具吗？</p>"+
+                     "<p>2．数一数每种文具有几个？</p>"+
+                     "<p>3．教师零乱贴出6~10的数字卡片。</p>"+
+                     "<p>4．指导学生看书连线：我们的书中也有一个小小文具店，你能数一数，把学习用具和数字朋友连起来吗？同学们独立完成，说说你是怎样连的？学生回答时教师连线。</p>"+
+                     "<li><b> ◆实践活动，感知身边的数学</b></li><p>师：小小文具店的各种文具我们数清楚了，可是我们小朋友的文具盒里有些什么呢？老师也想了解一下，谁愿意数一数，再告诉大家？</p>"+
+                     "<p>1．数出自己文具盒里的文具，记在心里，再和同桌的伙伴说一说。</p>"+
+                     "<p>2．再指定2~3组学习伙伴汇报给大家听，注意引导学生语言简洁明了</p>",
+   	width = "800",
+   	fontSize = "14" }; 	
+
+    function start()
+    end
+end
+

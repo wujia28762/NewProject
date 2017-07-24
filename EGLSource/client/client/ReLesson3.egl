@@ -1,0 +1,89 @@
+package client.client;
+
+import eglx.ui.rui.RUIHandler;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import dojo.widgets.DojoButton;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import org.eclipse.edt.rui.widgets.Button;
+import org.eclipse.edt.rui.widgets.Image;
+import org.eclipse.edt.rui.widgets.BoxLib;
+import org.eclipse.edt.rui.widgets.HyperLink;
+import org.eclipse.edt.rui.widgets.HTML;
+
+handler ReLesson3 type RUIhandler{initialUI =[ui], onConstructionFunction = start, cssFile = "css/e-Learning.css", title = ""}
+
+    ui GridLayout{columns = 1, rows = 1, cellPadding = 4, children = [ Lesson1Box ]};
+    Lesson1Box Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ TitleBox, contentBox ],
+    	width = "900",
+    	columns = 1 };
+    	
+    TitleBox Box{ padding=8,
+    	children = [ LessonTitle, ButtonsBox ], 
+    	backgroundColor = "LightSkyBlue",
+    	width = "900",
+    	height = "50",
+    	columns = 2 };
+    LessonTitle TextLabel{ text="高矮", 
+    	font = "华文新魏",
+    	fontSize = "30" };
+    ButtonsBox Box{ padding=8,
+    	marginTop = 20,
+    	marginLeft = 10,
+    	columns = 8,
+    	children = [ Button1, Button2, Button3, Button4, Button5, Button6, Button7, Button8 ] };
+    Button1 Button{ text = "课程简介",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button2 Button{ text = "教师简介",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button3 Button{ text = "指定教材",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button4 Button{ text = "学习方法",
+    	fontSize = "14",
+    	font = "微软雅黑" }; 
+    Button5 Button{ text = "教学目标",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button6 Button{ text = "教学重点",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button7 Button{ text = "作业习题",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button8 Button{ text = "授课时长",
+    	fontSize = "14",
+    	font = "微软雅黑" }; 
+    	
+    contentBox Box{padding=8,columns=1, children=[topBox, bodyBox]};	
+    topBox Box{padding=8, columns=2, children=[leftBox],
+    	width = "840"};    
+    		
+    leftBox Box{padding=8, columns=2,
+    	children = [ leftImage, leftText ]};
+    leftImage Image{
+    	src = "E:\\workspace\\pictures\\图标.jpg"
+    };
+    leftText TextLabel{ text = "课 程 简 介",
+    	fontSize = "16" };
+    	
+    
+  
+   bodyBox Box{padding=8, columns=1,
+   	children = [ HTML1 ]};
+   HTML1 HTML{ text= "<li><b>活动一、情境引入 </b></li><p>播放《柯南》片段，你喜欢柯南吗?柯南抓坏人可厉害呢，为什么呢?因为他观察事物非常仔细，细小的差别也能看出。今天我们就学习他这种细致入微的观察精神，看谁观察最仔细!</p>"+
+                    "<li><b>活动二：观察主题图</b></li><p>出示主题图</p>"+
+                    "<p>观察图，和同桌互相说一说图上有几个人，他们在干什么?引导学生仔细观察：你怎么知道是在路上?你怎么知道是盲人?   </p>"+
+                    "<p>把图上的三个人进行比较，你发现了什么?</p>"+
+                    "<p>他们三个人中，谁高，谁矮?（ 比较后板书：高 矮）  </p>"+
+                    "<p>图上的两个小朋友，又是谁高谁矮呢？  </p>",
+   	width = "800",
+   	fontSize = "14" }; 	
+
+    function start()
+    end
+end

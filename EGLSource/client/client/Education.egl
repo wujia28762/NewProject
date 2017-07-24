@@ -1,0 +1,99 @@
+package client.client;
+
+// RUI Handler
+
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.Div;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.GridLayoutLib;
+import org.eclipse.edt.rui.widgets.HyperLink;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import dojo.widgets.DojoTitlePane;
+import eglx.ui.rui.RUIHandler;
+
+//
+//
+
+handler Education type RUIhandler{initialUI =[ui
+            ], onConstructionFunction = start, cssFile = "css/NewProject.css", title = ""}
+
+    ui GridLayout{columns = 1, rows = 2, cellPadding = 4, children = [ GridLayout, Box ]};
+    Box Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ TextLabel ] };
+    TextLabel TextLabel{ text = "教育资讯",
+    	color = "YellowGreen",
+    	font = "华文行楷",
+    	fontSize = "25",
+    	paddingLeft = 400 };
+    GridLayout GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1 }, cellPadding = 4, rows = 1, columns = 3,
+     children = [ Box1, BoxNewProduct, Boxbody ] };
+      Boxbody Box{ layoutData = new GridLayoutData{ row = 1, column = 1,
+        verticalAlignment = GridLayoutLib.VALIGN_TOP,
+    	horizontalAlignment = GridLayoutLib.ALIGN_RIGHT }, padding=8,
+    	children = [ Product ],
+    	width = "300"  };
+    BoxNewProduct Box{ layoutData = new GridLayoutData{ row = 1, column = 2,
+        verticalAlignment = GridLayoutLib.VALIGN_TOP,
+    	horizontalAlignment = GridLayoutLib.ALIGN_RIGHT }, padding=8,
+    	children = [ NewProduct ],
+    	width = "300" };
+    NewProduct DojoTitlePane{ title = "教育头条", isOpen=true, duration=1000, width="300", children = [ new Div {
+        children = [ NewProduct1,NewProduct2,NewProduct3,NewProduct4,NewProduct5,NewProductMore ]
+        } ],
+        font = "微软雅黑",
+    	fontSize = "14" };
+    NewProduct1 HyperLink{ text = "媒体：让孩子远离“毒跑道”还靠法律发威！",
+    	href = "http://www.zhly.cn/education/content/index/id/12031" };
+    NewProduct2 HyperLink{ text = "美国大学入学考试ACT题外泄 取消香港韩国考试",
+    	href = "http://www.zhly.cn/education/content/index/id/12028" };
+    NewProduct3 HyperLink{ text = "教育部：重点教育单位领导任内至少审计一次",
+    	href = "http://www.zhly.cn/education/content/index/id/12024" };
+    NewProduct4 HyperLink{ text = "北京市教委叫停借“早培班”名义选拔考试",
+    	href = "http://www.zhly.cn/education/content/index/id/12021" };
+    NewProduct5 HyperLink{ text = "禁止在职教师有偿在线授课？教育部：尚在研究中",
+    	href = "http://www.zhly.cn/education/content/index/id/12015" };
+    NewProductMore HyperLink{ text = "了解更多",
+    	href = "了解更多",
+    	marginTop = 10  };
+    Product DojoTitlePane{ title = "本周推荐", isOpen=true, duration=1000, width="300", children = [ new Div {
+        children = [ Product1,Product2,Product3,Product4,ProductMore ]
+        } ],
+        font = "微软雅黑",
+    	fontSize = "14" };
+    Product1 HyperLink{ text = "教育法修订：违规招生学校最高可撤销招生资格",
+    	href = "http://www.zhly.cn/education/content/index/id/11928" };
+    Product2 HyperLink{ text = "科普知识：专家教你避开空气污染的10个实用良方",
+    	href = "http://www.zhly.cn/education/content/index/id/11931#p=1" };
+    Product3 HyperLink{ text = "历史故事：毛泽东勤学故事",
+    	href = "http://www.zhly.cn/education/content/index/id/11932" };
+    Product4 HyperLink{ text = "构建教育发展预警机制大有必要",
+    	href = "http://www.zhly.cn/education/content/index/id/11875" };
+    ProductMore HyperLink{ text = "了解更多",
+    	href = "了解更多",
+    	marginTop = 10 };
+    Box1 Box{ layoutData = new GridLayoutData{ row = 1, column = 3 ,
+        verticalAlignment = GridLayoutLib.VALIGN_TOP,
+    	horizontalAlignment = GridLayoutLib.ALIGN_RIGHT}, padding=8,
+    	children = [ ProductOne ] ,
+    	width = "300" };
+    ProductOne DojoTitlePane{ title = "社会百态", isOpen=true, duration=1000, width="300", children = [ new Div {
+         children = [ ProductOne1,ProductOne2,ProductOne3,ProductOne4,ProductOneMore ]
+       } ] ,
+        font = "微软雅黑",
+    	fontSize = "14" };
+    ProductOne1 HyperLink{ text = " 9岁女孩立19条家规:爸爸每晚只能玩一小时手机",
+    	href = "http://www.zhly.cn/education/content/index/id/12030" };
+    ProductOne2 HyperLink{ text = "教育部公安部严查“黑校车” 农村要因地制宜",
+    	href = "http://www.zhly.cn/education/content/index/id/12019" };
+    ProductOne3 HyperLink{ text = " 武汉3000多小学生集体数落成人玩手机：没完没了",
+    	href = "http://www.zhly.cn/education/content/index/id/12016" };
+    ProductOne4 HyperLink{ text = "3岁儿童公交车内放鞭炮 母亲忙打电话放任不管",
+    	href = "http://www.zhly.cn/education/content/index/id/11982" };
+    ProductOneMore HyperLink{ text = "了解更多",
+    	href = "了解更多",
+    	marginTop = 10 };
+
+    function start()
+    end
+end

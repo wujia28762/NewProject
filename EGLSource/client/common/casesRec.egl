@@ -1,0 +1,11 @@
+package client.common;
+
+
+import eglx.persistence.Entity;
+import eglx.persistence.Id;
+import eglx.persistence.sql.*;
+
+record Cases type Entity{@table{name = "USER_CASES"}}
+    case_id int{@id,@GeneratedValue,@Column{name="case_id"}};
+    casename string(100){@Column{name="casename"}};
+end

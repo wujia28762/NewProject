@@ -1,0 +1,11 @@
+SMAP
+articleRec.java
+egl
+*S egl
+*F
++ 1 articleRec.egl
+client/common/articleRec.egl
+*L
+*E
+8#1;itemName;itemName;eglx.lang.EString
+*X

@@ -1,0 +1,102 @@
+package client.client;
+
+import eglx.ui.rui.RUIHandler;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import dojo.widgets.DojoButton;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import org.eclipse.edt.rui.widgets.Button;
+import org.eclipse.edt.rui.widgets.Image;
+import org.eclipse.edt.rui.widgets.BoxLib;
+import org.eclipse.edt.rui.widgets.HyperLink;
+import org.eclipse.edt.rui.widgets.HTML;
+
+handler A type RUIhandler{initialUI =[ui], onConstructionFunction = start, cssFile = "css/e-Learning.css", title = ""}
+
+    ui GridLayout{columns = 1, rows = 1, cellPadding = 4, children = [ Lesson1Box ]};
+    Lesson1Box Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ TitleBox, contentBox ],
+    	width = "900",
+    	columns = 1 };
+    	
+    TitleBox Box{ padding=8,
+    	children = [ LessonTitle, ButtonsBox ], 
+    	backgroundColor = "LightSkyBlue",
+    	width = "900",
+    	height = "50",
+    	columns = 2 };
+    LessonTitle TextLabel{ text="电子测量技术", 
+    	font = "华文新魏",
+    	fontSize = "30" };
+    ButtonsBox Box{ padding=8,
+    	marginTop = 20,
+    	marginLeft = 10,
+    	columns = 8,
+    	children = [ Button1, Button2, Button3, Button4, Button5, Button6, Button7, Button8 ] };
+    Button1 Button{ text = "课程简介",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button2 Button{ text = "教师简介",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button3 Button{ text = "指定教材",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button4 Button{ text = "学习方法",
+    	fontSize = "14",
+    	font = "微软雅黑" }; 
+    Button5 Button{ text = "实验指导",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button6 Button{ text = "作业习题",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button7 Button{ text = "参考文献",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button8 Button{ text = "授课时长",
+    	fontSize = "14",
+    	font = "微软雅黑" }; 
+    	
+    contentBox Box{padding=8,columns=1, children=[topBox, bodyBox]};	
+    topBox Box{padding=8, columns=2, children=[leftBox, rightBox],
+    	width = "840"};    
+    		
+    leftBox Box{padding=8, columns=2,
+    	children = [ leftImage, leftText ]};
+    leftImage Image{
+    	src = "E:\\workspace\\e-Learning\\pictures\\图标.jpg"
+    };
+    leftText TextLabel{ text = "课 程 简 介",
+    	fontSize = "16" };
+    	
+    rightBox Box{padding=8, columns=1,
+    	children = [ rightText, HyperLink1, HyperLink2 ],
+    	marginLeft = 480};
+    rightText TextLabel{ text = "扩展阅读：",
+    	fontSize = "14",
+    	font = "华文行楷" };
+    HyperLink1 HyperLink{ text = "电子测量技术杂志—中国知网",
+    	fontSize = "14",
+    	marginTop = 2,
+    	font = "华文楷体",
+    	href = "http://mall.cnki.net/magazine/magalist/DZCL.htm",
+    	target = "_blank" };
+    HyperLink2 HyperLink{ text = "国外电子测量技术",
+    	fontSize = "14",
+    	font = "华文楷体",
+    	href = "http://www.cqvip.com/qk/94755X/200510/",
+    	target = "_blank" };	
+    	
+   bodyBox Box{padding=8, columns=1,
+   	children = [ HTML1 ]};
+   HTML1 HTML{ text="<li><b>1. 课程概述与指导思想</b></li><p>在实际测量工作中，由于外界条件、仪器本身和观测者技术水平等的不同，必然导致对同一测量对象进行的若干次测量所得到的结果彼此不同，或在各观测值与其理论值之间仍存在差异。也就是说，测量结果含有误差是不可避免的。为了消除或减少误差，需要对误差的来源、性质及其产生和传播的规律进行研究，来解决测量中经常遇到的一些问题。例如，在一系列的观测值中如何确定最可靠值；如何来评定测量的精度；什么样的误差是被许可的，即如何确定误差的限度。所有这些问题都要运用误差理论来得到解决。</p>"+
+                    "<li><b>2. 教学内容</b></li><p>本课程根据电子测量技术课程教学的基本要求，结合编者多年的教学实践，为进一步提高学生的职业技能与自主创新能力编写而成。在内容取材及安排上，以“必须”和“够用”为前提，讲清概念，强化应用。</p>"+
+                    "<p>本课程分为10课时，分别是电子测量的基础知识、测量误差与数据处理、电流电压与功率的测量、常用电子元器件的测量、测量用信号发生器、时间与频率的测量、电子示波器、频域测量技术、数据域测试技术及现代电子测量技术。每章均配有经典例题和习题，此外，每章最后还编写有相应的实验与实训。本课程可供从事电子电工技术的工程技术人员学习参考。</p>",
+   	width = "800",
+   	fontSize = "14" }; 	
+
+    function start()
+    end
+end

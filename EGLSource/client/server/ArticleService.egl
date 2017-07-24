@@ -1,0 +1,196 @@
+package client.server;
+
+import org.eclipse.edt.eunit.runtime.Log;
+import eglx.lang.Resource;
+import eglx.persistence.sql.SQLDataSource;
+import eglx.persistence.sql.SQLException;
+import client.common.Article;
+import client.common.Lesson;
+
+service ArticleService
+	
+	myArticleService SQLDataSource?{@Resource{uri="binding:eLearnDerby"}};
+    
+
+     function addArticle(newArticle Article in)
+     	logEntry("addArticles");
+     	try
+     		add newArticle to myArticleService with
+     			#sql{
+     				insert into ARTICLE
+     					(title)
+     				values
+     					(?)
+     			};
+     		onException(ex sqlException)
+               logException(ex);
+     	end
+     end
+
+     function getAllArticles() returns(article[])
+     	Articles Article[];
+     	logEntry("getAllArticles");
+     	try
+     		get Articles from myArticleService with
+     			#sql{
+     				select
+     					article_id, title
+     				from ARTICLE
+     			};
+     		onException(ex sqlException)
+               logException(ex);
+     	end
+     	return(Articles); 
+     end
+
+     function editArticle(chgArticle Article in)
+     	  logEntry("editArticles");
+     	  try
+     	  	replace chgArticle to myArticleService with
+     	  		#sql{
+     	  			update ARTICLE
+     	  			set
+     	  				title = ?
+     	  			where
+     	  				article_id = ?
+     	  		};
+     	    onException(ex sqlException)
+               logException(ex);
+          end
+     end
+
+     function deleteArticle(delArticle Article in)
+     	logEntry("deleteArticles");
+     	try
+     		delete delArticle from myArticleService;
+     		onException(ex SQLException)
+          if(ex.SQLState != "02000") // sql state is five digits
+              logException sqlException;
+          end
+     	end
+     end
+     
+     function createDefaultTable() returns(article[])
+     	Articles Article[];
+     	logEntry("createDefaultTable");
+     	try
+     		try
+     			execute from myArticleService
+     			   with #sql{
+                    delete from Article
+                    };
+     			onException(ex SQLException)
+                if(ex.SQLState != "02000")  // sqlState is five digits
+                   throw ex;
+                end
+     		end
+     		addArticle(new Article{article_id = 1, title = "热烈欢迎Testo店面总经理光临我司指导工作"
+              });
+            addArticle(new Article{article_id = 2, title = "我公司荣获Testo2012年度十佳代理平台奖奖杯"
+              });
+            addArticle(new Article{article_id = 3, title = "热烈祝贺我司在广东电网公司珠海供电局电测专业工器具购置项目中标"
+              });
+            addArticle(new Article{article_id = 4, title = "热烈祝贺我公司成为Testo 608-H2温湿度表全国总代理平台"
+              });
+            addArticle(new Article{article_id = 5, title = "福禄克热像仪新产品Ti32暨新品发布会"
+              });
+            addArticle(new Article{article_id = 6, title = "福禄克公司向灾区捐赠百台测试仪器"
+              });
+            addArticle(new Article{article_id = 7, title = "福禄克最尖端的数字式手持万用表287/289火热预售"
+              });
+            addArticle(new Article{article_id = 8, title = "亚辰新站即日闪亮登场"
+              });
+            addArticle(new Article{article_id = 9, title = "竭诚为客户服务：现推出热像仪免费检测活动"
+              });
+            addArticle(new Article{article_id = 10, title = "美国福禄克公司推出新式Fluke 8845A 和8846A精密数字多用表"
+              });
+            addArticle(new Article{article_id = 11, title = "热烈祝贺我司工程师曾志强获得2008年2月热像仪培训-技术冠军竞赛"
+              });
+            addArticle(new Article{article_id = 12, title = "我司荣中标中国电力技术装备有限公司2012年第二批(设备类)集中规模招标采购项目"
+              }); 
+            addArticle(new Article{article_id = 13, title = "FLUKE新产品Ti10、Ti25一月十五日隆重上市！"
+              });
+            articles= getAllArticles(); 
+            onException(ex anyException)
+              logException(ex);
+     	end
+     	return(articles);
+     end
+     
+     function createDefaultTableNotice() returns(article[])
+     	Articles Article[];
+     	logEntry("createDefaultTableNotice");
+     	try
+     		try
+     			execute from myArticleService
+     			   with #sql{
+                    delete from Article
+                    };
+     			onException(ex SQLException)
+                if(ex.SQLState != "02000")  // sqlState is five digits
+                   throw ex;
+                end
+     		end
+     		addArticle(new Article{article_id = 1, title = "部份共立KYORITSU仪器仪表开始做活动啦"
+              });
+            addArticle(new Article{article_id = 2, title = "福禄克北京维修站迁址通知"
+              });
+            addArticle(new Article{article_id = 3, title = "2013年春节放假安排通知"
+              });
+            articles= getAllArticles(); 
+            onException(ex anyException)
+              logException(ex);
+     	end
+     	return(articles); 
+     end
+     
+      function createDefaultTableReport() returns(article[])
+     	Articles Article[];
+     	logEntry("createDefaultTableReport");
+     	try
+     		try
+     			execute from myArticleService
+     			   with #sql{
+                    delete from Article
+                    };
+     			onException(ex SQLException)
+                if(ex.SQLState != "02000")  // sqlState is five digits
+                   throw ex;
+                end
+     		end
+     		addArticle(new Article{article_id = 1, title = "中国离子色谱30年纪念活动开幕 场面火爆备受关注"
+              });
+            addArticle(new Article{article_id = 2, title = "推广节能与新能源客车 显著降低城市环境治理压力"
+              });
+            addArticle(new Article{article_id = 3, title = "成都国际环境监测仪器展 恒生石油大放异彩"
+              });
+            articles= getAllArticles(); 
+            onException(ex anyException)
+              logException(ex);
+     	end
+     	return(articles); 
+     end
+
+     logActive boolean = true;
+     activeService string;
+    private function logEntry(serviceFunction string in)
+        activeService = serviceFunction;
+        log("Entry:  ArticleService, " + serviceFunction);
+    end
+    private function logException(ex sqlException?)
+        accumulatedMessage string = "Exception:  ArticleService, " + activeService;
+        while(ex != null)
+            accumulatedMessage = accumulatedMessage + ", SQLSTATE = " +
+                    ex.SQLState + ", message = " + ex.message;
+            ex = ex.nextException;
+        end
+        log(accumulatedMessage);
+        throw new anyException{message = accumulatedMessage};
+    end
+    private function log(text string in)
+        if(logActive)
+            sysLib.writeStdOut(text);
+        end
+    end
+     
+end

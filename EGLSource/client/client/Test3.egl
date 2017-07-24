@@ -1,0 +1,68 @@
+package client.client;
+
+// RUI Handler
+
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.HyperLink;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import eglx.ui.rui.Event;
+import eglx.ui.rui.RUIHandler;
+import dojo.widgets.DojoButton;
+
+//
+//
+
+handler Test3 type RUIhandler{initialUI =[ui
+            ], onConstructionFunction = start, cssFile = "css/NewProject1.css", title = ""}
+
+    ui GridLayout{columns = 1, rows = 2, cellPadding = 1, children = [ GridLayout, conBox ]};
+    conBox Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ con ] ,
+    	backgroundColor = "Turquoise",
+    	width = "790"};
+    con TextLabel{ text="三、加减法（一）",
+    	font = "华文行楷",
+    	fontSize = "20",
+    	fontWeight = "bolder" };
+    GridLayout GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1 }, cellPadding = 4, rows = 2, columns = 1,
+    	children = [ GridLayout2, GridLayout1 ] };
+    GridLayout1 GridLayout{ layoutData = new GridLayoutData{ row = 1, column = 1 }, cellPadding = 4, rows = 1, columns = 1,
+    	children = [ Box ] };
+    Box Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ Button, Button1, Button2, Button3, Button4 ] };
+    Button DojoButton{ text = "有几支铅笔",
+    	font = "微软雅黑",
+    	fontSize = "16", onClick ::= showcall };
+    Button1 DojoButton{ text = "有几辆车",
+    	font = "微软雅黑",
+    	fontSize = "16", onClick ::= showcall };
+    Button2 DojoButton{ text = "摘果子",
+    	font = "微软雅黑",
+    	fontSize = "16", onClick ::= showcall };
+    Button3 DojoButton{ text = "小猫吃鱼",
+    	font = "微软雅黑",
+    	fontSize = "16", onClick ::= showcall };
+    Button4 DojoButton{ text = "猜数游戏",
+    	font = "微软雅黑",
+    	fontSize = "16", onClick ::= showcall };
+   
+    GridLayout2 GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1 }, cellPadding = 4, rows = 1, columns = 1,
+    	children = [ Boxcon ] };
+    Boxcon Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8 };
+    function start()
+    end
+    
+    function showcall(event Event in)
+    	button DojoButton=event.widget;
+       Boxcon.children = [ ];
+        case (button.text)
+        	when("有几支铅笔")   Boxcon.appendChild(new pencil{}.ui);
+        	when("有几辆车")   Boxcon.appendChild(new car{}.ui);
+        	when("摘果子")   Boxcon.appendChild(new fruit{}.ui);
+        	when("小猫吃鱼")   Boxcon.appendChild(new fish{}.ui);
+        	when("猜数游戏")   Boxcon.appendChild(new number{}.ui);
+        end
+    end
+end

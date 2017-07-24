@@ -1,0 +1,210 @@
+package client.client;
+
+// RUI Handler
+
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.Button;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.TextField;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import dojo.widgets.DojoButton;
+import dojo.widgets.DojoContentPane;
+import dojo.widgets.DojoDialog;
+import dojo.widgets.DojoLib;
+import dojo.widgets.DojoTabContainer;
+import eglx.ui.rui.Event;
+import eglx.ui.rui.RUIHandler;
+
+//
+//
+
+handler UserIn type RUIhandler{initialUI =[ui
+            ], onConstructionFunction = start, cssFile = "css/NewProject.css", title = ""}
+
+    ui GridLayout{columns = 1, rows = 2, cellPadding = 4, children = [ UserBox, BodyBox ],
+    	width = "850"};
+    BodyBox Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ TextLabel ] };
+    TextLabel TextLabel{ text = "个人中心",
+    	color = "YellowGreen",
+    	font = "华文行楷",
+    	fontSize = "25",
+    	fontWeight = "bolder",
+    	paddingLeft = 350 };
+    UserBox Box{ layoutData = new GridLayoutData{ row = 2, column = 1 }, padding=8,
+    	children = [ TabContainer ] };
+    TabContainer DojoTabContainer{
+		width = "800", height = "400", tabPosition = DojoLib.POSITION_LEFT, //onTabSelected ::= TabSelected,
+		children = [
+			new DojoContentPane { title = "个人信息", children = [ userinfoBox ] },
+			new DojoContentPane { title = "我的课程", children = [
+			]},
+			new DojoContentPane { title = "我的消息", children = [
+			]}
+		]
+	};
+    userinfoBox Box{padding=8, columns=1,
+    		children = [  IDBox, nameBox, birthdayBox, nclassBox, classBox, teacherBox, parentsBox, addressBox  ]};
+    
+    IDBox Box{ padding=8,
+    	children = [ IDTextlabel, IDLabel, reviseButton ] };
+    IDTextlabel TextLabel{ text = "学号：",
+    	font = "宋体",
+    	fontSize = "16",
+    	fontWeight = "bolder",
+    	marginLeft = 60 };
+    IDLabel TextLabel{ text = "1101",
+    	font = "宋体",
+    	fontSize = "16",
+    	fontWeight = "bolder" };
+    reviseButton DojoButton{ text = "修改个人信息",
+    	marginLeft = 400,
+    	font = "微软雅黑",
+    	fontSize = "14" , onClick ::= editButton_onClick};
+    nameBox Box{ padding=8,
+    	children = [ nameTextlabel, nameLabel ] };
+    nameTextlabel TextLabel{ text = "姓名：",
+    	font = "宋体",
+    	fontSize = "16",
+    	fontWeight = "bolder",
+    	marginLeft = 60 };
+    nameLabel TextLabel{ text = "张彤",
+    	font = "宋体",
+    	fontSize = "16",
+    	fontWeight = "bolder" };
+   	birthdayBox Box{ padding=8,
+    	children = [ birthdayTextLabel, birthdayLabel ] };
+    birthdayTextLabel TextLabel{ text = "出生日期：",
+    	font = "宋体",
+    	fontSize = "16",
+    	fontWeight = "bolder",
+    	marginLeft = 60 };
+   birthdayLabel TextLabel{ text = "07/24/1999",
+    	font = "宋体",
+    	fontSize = "16",
+    	fontWeight = "bolder" }; 
+    nclassBox Box{ padding=8,
+    	children = [ nclassTextlabel, nclassLabel ] };
+    nclassTextlabel TextLabel{ text = "所在年级：",
+    	font = "宋体",
+    	fontSize = "16",
+    	fontWeight = "bolder",
+    	marginLeft = 60 };
+    nclassLabel TextLabel{ text = "一年级",
+    	font = "宋体",
+    	fontSize = "16",
+    	fontWeight = "bolder" };
+    classBox Box{ padding=8,
+    	children = [ mclassTextlabel, mclassLabel ] };
+    mclassTextlabel TextLabel{ text = "所在班级：",
+    	font = "宋体",
+    	fontSize = "16",
+    	fontWeight = "bolder",
+    	marginLeft = 60 };
+    mclassLabel TextLabel{ text = "（1）班",
+    	font = "宋体",
+    	fontSize = "16",
+    	fontWeight = "bolder" };
+    teacherBox Box{ padding=8,
+    	children = [ teacherTextlabel, teacherLabel ] };
+    teacherTextlabel TextLabel{ text = "班主任：",
+    	font = "宋体",
+    	fontSize = "16",
+    	fontWeight = "bolder",
+    	marginLeft = 60 };
+    teacherLabel TextLabel{ text = "李艳",
+    	font = "宋体",
+    	fontSize = "16",
+    	fontWeight = "bolder" };
+    parentsBox Box{ padding=8,
+    	children = [ parentsTextlabel, parentsLabel ] };
+    parentsTextlabel TextLabel{ text = "家长联系方式：",
+    	font = "宋体",
+    	fontSize = "16",
+    	fontWeight = "bolder",
+    	marginLeft = 60 };
+    parentsLabel TextLabel{ text = "13711111111",
+    	font = "宋体",
+    	fontSize = "16",
+    	fontWeight = "bolder" };
+    addressBox Box{ padding=8,
+   	    children = [ addressTextLabel, addressLabel ] };
+    addressTextLabel TextLabel{ text = "家庭住址：",
+   	    font = "宋体",
+   	    fontSize = "16",
+   	    fontWeight = "bolder",
+   	    marginLeft = 60 };
+   addressLabel TextLabel{ text = "沈阳市皇姑区黄河北大街253号",
+   	    font = "宋体",
+     	fontSize = "16",
+     	fontWeight = "bolder" };	   
+    	
+    editfield DojoDialog{
+        title="修改个人信息", padding=20, 
+        backgroundColor ="AliceBlue",
+        draggable = true,
+        children=[RevBox]};
+    RevBox Box{padding=4, columns =1,
+       children=[content]};              	
+    content box{
+       columns =1,backgroundColor="lightBlue", padding=1,
+       children = [new Box{padding=8, columns=2,children=[ID, IDTextField]},
+                   new Box{padding=8, columns=2,children=[name, nameTextField]},
+                   new Box{padding=8, columns=2,children=[birthday, birthdayTextField]},
+                   new Box{padding=8, columns=2,children=[nclass, nclassTextField]},
+                   new Box{padding=8, columns=2,children=[mclass, mclassTextField]},
+                   new Box{padding=8, columns=2,children=[teacher, teacherTextField]},
+                   new Box{padding=8, columns=2,children=[parents, parentsTextField]},
+                   new Box{padding=8, columns=2,children=[address, addressTextField]},
+                   new Box{padding=8, columns=2,children=[saveButton, closeButton]}] 
+    };   
+    saveButton Button{text="保存",
+       font = "微软雅黑",
+       fontSize = "12",
+       onClick ::= saveInfo};  
+   closeButton Button{text="关闭",
+       font = "微软雅黑",
+       fontSize = "12",
+       onClick ::= hideDialog};  
+       
+   ID TextLabel{text="学号："};
+   name TextLabel{text="姓名："};
+   birthday TextLabel{text="出生日期："};
+   nclass TextLabel{text="所在年级："};
+   mclass TextLabel{text="所在班级："};
+   teacher TextLabel{text="班主任："};
+   parents TextLabel{text="家长联系电话："};
+   address TextLabel{text="家庭住址："};    
+         
+   IDTextField TextField{marginLeft = 20};    
+   nameTextField TextField{marginLeft = 20};
+   birthdayTextField TextField{marginLeft = 20};
+   nclassTextField TextField{marginLeft = 20};
+   mclassTextField TextField{marginLeft = 20};
+   teacherTextField TextField{marginLeft = 20};
+   parentsTextField TextField{marginLeft = 20};
+   addressTextField TextField{marginLeft = 20};
+  
+    function start()
+    end
+        
+    function editButton_onClick(event Event in)
+    	editfield.showDialog();
+    end
+    
+    function hideDialog(e Event in) 
+    	editfield.hideDialog();
+    end
+    
+    function saveInfo(e Event in) 
+    	IDLabel.setText(IDTextField.text);
+    	nameLabel.setText(nameTextField.text);
+    	birthdayLabel.setText(birthdayTextField.text);
+    	nclassLabel.setText(nclassTextField.text);
+    	mclassLabel.setText(mclassTextField.text);
+    	teacherLabel.setText(teacherTextField.text);
+    	parentsLabel.setText(parentsTextField.text);
+    	addressLabel.setText(addressTextField.text);
+    end
+end

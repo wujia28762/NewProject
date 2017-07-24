@@ -1,0 +1,11 @@
+SMAP
+casesRec.java
+egl
+*S egl
+*F
++ 1 casesRec.egl
+client/common/casesRec.egl
+*L
+*E
+8#1;itemName;itemName;eglx.lang.EString
+*X

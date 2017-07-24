@@ -1,0 +1,65 @@
+package client.client;
+
+// RUI Handler
+
+import eglx.ui.rui.RUIHandler;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.Image;
+
+//
+//
+
+handler light type RUIhandler{initialUI =[ui
+            ], onConstructionFunction = start, cssFile = "css/NewProject1.css", title = ""}
+
+    ui GridLayout{columns = 1, rows = 2, cellPadding = 4, children = [ GridLayout, TextLabel ]};
+    TextLabel TextLabel{ layoutData = new GridLayoutData{ row = 1, column = 1 }, text = "轻重",
+    	font = "宋体",
+    	fontSize = "28",
+    	fontWeight = "bold" };
+    GridLayout GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1 }, cellPadding = 4, rows = 4, columns = 1,
+    	children = [ GridLayout3, GridLayout2, GridLayout1, TextLabel1 ] };
+    TextLabel1 TextLabel{ layoutData = new GridLayoutData{ row = 1, column = 1 }, text = "课堂直通车..........................................课上学一学",
+    	font = "华文行楷",
+    	fontSize = "24" };
+    GridLayout1 GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1 }, cellPadding = 4, rows = 3, columns = 1,
+    	children = [ TextLabel4, Box, TextLabel2 ] };
+    TextLabel2 TextLabel{ layoutData = new GridLayoutData{ row = 1, column = 1 }, text = "一、看图在（ ）里填数字，在_________上填上“多”“少”或“同样多”。",
+    	font = "微软雅黑",
+    	fontSize = "18" };
+    Box Box{ layoutData = new GridLayoutData{ row = 2, column = 1 }, padding=8,
+    	children = [ Image ] };
+    Image Image{
+    	src = "E:\\workspace\\pictures\\30.jpg"
+    };
+    GridLayout2 GridLayout{ layoutData = new GridLayoutData{ row = 3, column = 1 }, cellPadding = 4, rows = 2, columns = 1,
+    	children = [ Box1, TextLabel3 ] };
+    TextLabel3 TextLabel{ layoutData = new GridLayoutData{ row = 1, column = 1 }, text = "二、看谁先吃到萝卜。",
+    	font = "微软雅黑",
+    	fontSize = "18" };
+    Box1 Box{ layoutData = new GridLayoutData{ row = 2, column = 1 }, padding=8,
+    	children = [ Image1 ] };
+    Image1 Image{
+    	src = "E:\\workspace\\pictures\\31.jpg"
+    };
+    GridLayout3 GridLayout{ layoutData = new GridLayoutData{ row = 4, column = 1 }, cellPadding = 4, rows = 2, columns = 1,
+    	children = [ Box2, TextLabel5 ] };
+    TextLabel4 TextLabel{ layoutData = new GridLayoutData{ row = 3, column = 1 }, text = "　（ ）比（ ）_______ （ ）和（ ）_______ （ ）比（ ）________",
+    	font = "微软雅黑",
+    	fontSize = "16" };
+    TextLabel5 TextLabel{ layoutData = new GridLayoutData{ row = 1, column = 1 }, text = "三、在（ ）里填上“＞”“＜”或“＝”号。",
+    	font = "微软雅黑",
+    	fontSize = "18" };
+    Box2 Box{ layoutData = new GridLayoutData{ row = 2, column = 1 }, padding=8,
+    	children = [ Image2 ] };
+    Image2 Image{
+    	src = "E:\\workspace\\pictures\\32.jpg",
+    	marginLeft = 50
+    };
+
+    function start()
+    end
+end

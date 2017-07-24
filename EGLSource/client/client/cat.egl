@@ -1,0 +1,67 @@
+package client.client;
+
+// RUI Handler
+
+import eglx.ui.rui.RUIHandler;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.Image;
+
+//
+//
+
+handler cat type RUIhandler{initialUI =[ui
+            ], onConstructionFunction = start, cssFile = "css/NewProject1.css", title = ""}
+
+    ui GridLayout{columns = 1, rows = 2, cellPadding = 4, children = [ GridLayout, TextLabel ]};
+    TextLabel TextLabel{ layoutData = new GridLayoutData{ row = 1, column = 1 }, text = "小猫钓鱼",
+    	font = "宋体",
+    	fontSize = "28",
+    	fontWeight = "bold" };
+    GridLayout GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1 }, cellPadding = 4, rows = 4, columns = 1,
+    	children = [ GridLayout3, GridLayout2, GridLayout1, TextLabel1 ] };
+    TextLabel1 TextLabel{ layoutData = new GridLayoutData{ row = 1, column = 1 }, text = "课堂直通车..........................................课上学一学",
+    	font = "华文行楷",
+    	fontSize = "24" };
+    GridLayout1 GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1 }, cellPadding = 4, rows = 2, columns = 1,
+    	children = [ Box, TextLabel2 ] };
+    TextLabel2 TextLabel{ layoutData = new GridLayoutData{ row = 1, column = 1 }, text = "一、在□里填数。",
+    	font = "微软雅黑",
+    	fontSize = "18" };
+    Box Box{ layoutData = new GridLayoutData{ row = 2, column = 1 }, padding=8,
+    	children = [ Image, Image3 ] };
+    Image Image{
+    	src = "E:\\workspace\\pictures\\16.jpg"
+    };
+    GridLayout2 GridLayout{ layoutData = new GridLayoutData{ row = 3, column = 1 }, cellPadding = 4, rows = 2, columns = 1,
+    	children = [ Box1, TextLabel3 ] };
+    TextLabel3 TextLabel{ layoutData = new GridLayoutData{ row = 1, column = 1 }, text = "二、看图填数。",
+    	font = "微软雅黑",
+    	fontSize = "18" };
+    Box1 Box{ layoutData = new GridLayoutData{ row = 2, column = 1 }, padding=8,
+    	children = [ Image1 ] };
+    Image1 Image{
+    	src = "E:\\workspace\\pictures\\17.jpg"
+    };
+    GridLayout3 GridLayout{ layoutData = new GridLayoutData{ row = 4, column = 1 }, cellPadding = 4, rows = 2, columns = 1,
+    	children = [ Box2, TextLabel4 ] };
+    TextLabel4 TextLabel{ layoutData = new GridLayoutData{ row = 1, column = 1 }, text = "三、下图的各种情况，都可以用什么数来表示？",
+    	font = "微软雅黑",
+    	fontSize = "18" };
+    Box2 Box{ layoutData = new GridLayoutData{ row = 2, column = 1 }, padding=8,
+    	children = [ Image2 ] };
+    Image2 Image{
+    	src = "E:\\workspace\\pictures\\18.jpg"
+    };
+    Image3 Image{
+    	src = "E:\\workspace\\pictures\\19.jpg",
+    	marginTop = 80,
+    	marginLeft = -300
+    };
+
+    function start()
+    end
+end
+

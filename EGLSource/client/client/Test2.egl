@@ -1,0 +1,60 @@
+package client.client;
+
+// RUI Handler
+
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.HyperLink;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import eglx.ui.rui.Event;
+import eglx.ui.rui.RUIHandler;
+import dojo.widgets.DojoButton;
+
+//
+//
+
+handler Test2 type RUIhandler{initialUI =[ui
+            ], onConstructionFunction = start, cssFile = "css/NewProject1.css", title = ""}
+
+    ui GridLayout{columns = 1, rows = 2, cellPadding = 1, children = [ GridLayout, conBox ]};
+    conBox Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ con ] ,
+    	backgroundColor = "Turquoise",
+    	width = "790"};
+    con TextLabel{ text="二、比较",
+    	font = "华文行楷",
+    	fontSize = "20",
+    	fontWeight = "bolder" };
+    GridLayout GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1 }, cellPadding = 4, rows = 2, columns = 1,
+    	children = [ GridLayout2, GridLayout1 ] };
+    GridLayout1 GridLayout{ layoutData = new GridLayoutData{ row = 1, column = 1 }, cellPadding = 4, rows = 1, columns = 1,
+    	children = [ Box ] };
+    Box Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ Button, Button1, Button2 ] };
+    Button DojoButton{ text = "动物乐园",
+    	font = "微软雅黑",
+    	fontSize = "16", onClick ::= showcall };
+    Button1 DojoButton{ text = "高矮",
+    	font = "微软雅黑",
+    	fontSize = "16", onClick ::= showcall };
+    Button2 DojoButton{ text = "轻重",
+    	font = "微软雅黑",
+    	fontSize = "16", onClick ::= showcall };
+    	
+    GridLayout2 GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1 }, cellPadding = 4, rows = 1, columns = 1,
+    	children = [ Boxcon ] };
+    Boxcon Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8 };
+
+    function start()
+    end
+     function showcall(event Event in)
+    	button DojoButton=event.widget;
+       Boxcon.children = [ ];
+        case (button.text)
+        	when("动物乐园")   Boxcon.appendChild(new animal{}.ui);
+        	when("高矮")   Boxcon.appendChild(new top{}.ui);
+        	when("轻重")   Boxcon.appendChild(new light{}.ui);
+        end
+    end
+end

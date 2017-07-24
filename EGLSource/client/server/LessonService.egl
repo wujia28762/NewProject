@@ -1,0 +1,146 @@
+package client.server;
+
+import org.eclipse.edt.eunit.runtime.Log;
+import client.common.Lesson;
+import eglx.lang.Resource;
+import eglx.persistence.sql.SQLDataSource;
+import eglx.persistence.sql.SQLException;
+
+service LessonService
+	
+	myLessonService SQLDataSource?{@Resource{uri="binding:eLearnDerby"}};
+	
+	function addLesson(newLesson Lesson in)
+		logEntry("addLessons");
+		try
+			add newLesson to myLessonService with
+				#sql{
+					insert into LESSON
+						(lessonname, coursecom, URL)
+					values
+						(?, ?, ?)
+				};
+			onException(ex sqlException)
+               logException(ex);
+		end
+	end
+    
+    function getAllLessons()returns(lesson[])
+    	Lessons Lesson[];
+    	logEntry("getAllLessons");
+    	try
+    		get lessons from myLessonService with
+    			#sql{
+    				select
+    					lesson_id, lessonname, coursecom, URL
+    				from LESSON
+    			};
+    		onException(ex sqlException)
+               logException(ex);
+    	end
+    	return(Lessons);
+    end
+    
+    function editLesson(chgLesson Lesson in)
+    	logEntry("editLesson");
+    	try
+    		replace chgLesson to myLessonService with
+    			#sql{
+    				update LESSON
+    				set
+    					lessonname = ?,
+    					coursecom = ?,
+    					URL = ?
+    				where
+    					lesson_id = ?
+    			};
+    		onException(ex sqlException)
+               logException(ex);
+    	end
+    end
+    
+    function deleteLesson(delLesson Lesson in)
+    	logEntry("editLesson");
+    	try
+    		delete delLesson from myLessonService with
+    			#sql{
+    				delete from LESSON
+    				where
+    					lesson_id = ?
+    			};
+    		onException(ex SQLException)
+          if(ex.SQLState != "02000") // sql state is five digits
+              logException sqlException;
+          end
+    	end
+    end
+    
+    function createDefaultTableLesson() returns(lesson[])
+     	Lessons Lesson[];
+     	logEntry("createDefaultTable");
+     	try
+     		try
+     			execute from myLessonService
+     			with #sql{
+                    delete from Lesson
+                    };
+     			onException(ex SQLException)
+                if(ex.SQLState != "02000")  // sqlState is five digits
+                   throw ex;
+                end
+     		end
+     	addLesson(new Lesson{lesson_id = 1, 
+     	                     lessonname = "可爱的校园",
+     	                     coursecom = "本课程本着突出实用性、实践性的原则，主要内容包括电路的基本概念和定律，电路的等效变换，线性电路的一般分析方法和基本定理，正弦交流电路，互感电路及理想变压器，非正弦周期性信号电路，瞬态电路等。",
+     	                     _url ="选择"
+              });
+        addLesson(new Lesson{lesson_id = 2, 
+     	                     lessonname = "快乐的家园",
+     	                     coursecom = "本课程全面、系统地介绍了电子技术的基础知识和基本技术，将基础理论与应用紧密结合，注重体现知识的实用性和前沿性。共分11章，前6章为模拟电路部分，后5章为数字电路部分，编者将两部分内容有机地融为一体。主要内容包括半导体器件、放大电路、集成运算放大器、直流稳压电源、逻辑代数、逻辑门电路、组合逻辑电路、集成触发器、时序逻辑电路以及模/数与数/模转换等。",
+     	                     _url ="选择"
+              });
+        addLesson(new Lesson{lesson_id = 3, 
+     	                     lessonname = "玩具",
+     	                     coursecom = "本课程为进一步提高学习者的职业技能与自主创新能力而设定。在内容取材及安排上，以“必须”和“够用”为前提，讲清概念，强化应用。本课程分为10章，分别是电子测量的基础知识、测量误差与数据处理、电流电压与功率的测量、常用电子元器件的测量、测量用信号发生器、时间与频率的测量、电子示波器、频域测量技术、数据域测试技术及现代电子测量技术。",
+     	                     _url ="选择"
+              });
+        addLesson(new Lesson{lesson_id = 4, 
+     	                     lessonname = "小猫钓鱼",
+     	                     coursecom = "本课程内容包括6章：信号与系统分析基础、连续信号的频域分析与处理、连续信号的复频域分析与处理、离散信号的分析与处理、数字信号处理、信号分析与处理的MATLAB实现。",
+     	                     _url ="选择"
+              });
+         addLesson(new Lesson{lesson_id = 5, 
+     	                     lessonname = "文具",
+     	                     coursecom = "本课程中的现代微机系统的主机板，讨论了系统中起核心作用的芯片组；在存储器部分增加了“存储器层次体系结构”和“主存储器的组织”内容，以反映现代存储器的特点：在输入输出接口部分，则增加讨论以“北桥”、“南桥”芯片支持的多种总线输入输出体系结构，取代单一的ISA总线体系结构。",
+     	                     _url ="选择"
+              });
+        lessons= getAllLessons(); 
+            onException(ex anyException)
+              logException(ex);
+     	end
+     	return(lessons);
+    end
+
+
+    logActive boolean = true;
+    activeService string;
+    private function logEntry(serviceFunction string in)
+        activeService = serviceFunction;
+        log("Entry:  LessonService, " + serviceFunction);
+    end
+     private function logException(ex sqlException?)
+        accumulatedMessage string = "Exception:  LessonService, " + activeService;
+        while(ex != null)
+            accumulatedMessage = accumulatedMessage + ", SQLSTATE = " +
+                    ex.SQLState + ", message = " + ex.message;
+            ex = ex.nextException;
+        end
+        log(accumulatedMessage);
+        throw new anyException{message = accumulatedMessage};
+    end
+    private function log(text string in)
+        if(logActive)
+            sysLib.writeStdOut(text);
+        end
+    end
+end

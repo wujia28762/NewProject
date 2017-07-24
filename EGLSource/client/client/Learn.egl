@@ -1,0 +1,352 @@
+package client.client;
+
+// RUI Handler
+
+import org.eclipse.edt.eunit.runtime.Log;
+import org.eclipse.edt.rui.mvc.Controller;
+import org.eclipse.edt.rui.mvc.FormField;
+import org.eclipse.edt.rui.mvc.FormManager;
+import org.eclipse.edt.rui.mvc.MVC;
+import org.eclipse.edt.rui.mvc.MVCValidStateSetter;
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.DataGrid;
+import org.eclipse.edt.rui.widgets.DataGridColumn;
+import org.eclipse.edt.rui.widgets.DataGridLib;
+import org.eclipse.edt.rui.widgets.Div;
+import org.eclipse.edt.rui.widgets.FloatRight;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.GridLayoutLib;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import client.common.Lesson;
+import client.server.LessonService;
+import dojo.widgets.DojoButton;
+import dojo.widgets.DojoContentPane;
+import dojo.widgets.DojoDialog;
+import dojo.widgets.DojoLib;
+import dojo.widgets.DojoTabContainer;
+import dojo.widgets.DojoTextArea;
+import dojo.widgets.DojoTextField;
+import dojo.widgets.DojoTitlePane;
+import eglx.http.HttpProxy;
+import eglx.persistence.sql.SQLDataSource;
+import eglx.services.ServiceInvocationException;
+import eglx.ui.rui.Event;
+import eglx.ui.rui.RUIHandler;
+import eglx.ui.rui.Widget;
+//
+//
+
+handler Learn type RUIhandler{initialUI =[ui
+            ], onConstructionFunction = start, cssFile = "css/NewProject1.css", title = ""}
+            
+     myLessonService SQLDataSource?; 
+    dedicatedServiceBinding HTTPProxy; 
+
+    ui GridLayout{columns = 1, rows = 2, cellPadding = 1, children = [ cuteBox, conBox ]};
+    conBox Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ con ] ,
+    	backgroundColor = "Turquoise",
+    	width = "790"};
+    con TextLabel{ text="一、生活中的数",
+    	font = "华文行楷",
+    	fontSize = "20",
+    	fontWeight = "bolder" };
+    cuteBox Box{ layoutData = new GridLayoutData{ row = 2, column = 1 }, padding=8 ,
+    	children = [ TabContainer ],
+    	columns = 1 };
+    TabContainer DojoTabContainer{
+		width = "730", tabPosition = DojoLib.POSITION_LEFT,  //onTabSelected ::= TabSelected,
+		children = [
+			new DojoContentPane { title = "所有课程", children = [ BoxLesson ] }, 
+			new DojoContentPane { title = "我的课程", children = [GridLayout  ] }
+		],	   
+		height = "1000",
+		selection = 2
+	};
+
+     BoxLesson Box{ padding=8,
+    	width = "630",
+    	children = [ GridLayoutLesson ] };
+    GridLayoutLesson GridLayout{ cellPadding = 4, rows = 3, columns = 2,
+    	children = [ gridlayoutbutton, mylesson_ui] };
+    GridLayoutButton GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1 }, cellPadding = 4, rows = 1, columns = 3,
+		children = [ ButtonCourse, ButtonEdit, ButtonLessons ] };
+	ButtonLessons DojoButton{ layoutData = new GridLayoutData{ row = 1, column = 1 }, text = "查看所有课程",
+		font = "微软雅黑",
+		fontSize = "14", onClick ::= sampleData };
+	ButtonEdit DojoButton{ layoutData = new GridLayoutData{ row = 1, column = 2 }, text = "编辑",
+		font = "微软雅黑",
+		fontSize = "14", onClick ::= showDialog };
+	ButtonCourse DojoButton{ layoutData = new GridLayoutData{ row = 1, column = 3 }, text = "加入我的课程",
+		font = "微软雅黑",
+		fontSize = "14" };
+		
+    myLesson Lesson[]; 
+	myLesson_ui DataGrid { layoutData = new GridLayoutData{ row = 1, column = 1,
+		verticalAlignment = GridLayoutLib.VALIGN_TOP },
+		selectionListeners::= cellClickedLesson,//function cellClicked founded
+		columns = [
+			//new DataGridColumn {name = "lesson_id", displayName = "", width = 20},
+			new DataGridColumn {name = "lessonname", displayName = "课程名称", width = 120},
+			new DataGridColumn {name = "coursecom", displayName = "课程简介", width = 320}
+			//new DataGridColumn {name = "_url", displayName = "课程选择", width = 100}
+		],
+		data = myLesson as any[],
+		showCheckBoxes = true,
+		selectionMode = DataGridLib.SINGLE_SELECTION,
+		width = "600",
+		fontSize = "14",
+		font = "宋体",
+		pageSize = 10
+	};
+	
+	selectedLesson Lesson;
+	selectedLesson_ui GridLayout { rows = 4, columns = 2, cellPadding = 4, children = [ selectedLesson_lesson_id_nameLabel,selectedLesson_lesson_id_field,selectedLesson_lessonname_nameLabel,selectedLesson_lessonname_field,selectedLesson_coursecom_nameLabel,selectedLesson_coursecom_area/*,selectedLesson__url_nameLabel/*,selectedLesson__url_comboBox*/ ],
+		width = "120" };
+
+	selectedLesson_lesson_id_nameLabel TextLabel { text="课程序号:" , layoutData = new GridLayoutData { row = 1, column = 1},width = "60" };
+	selectedLesson_lesson_id_field DojoTextField {layoutData = new GridLayoutData { row = 1, column = 2},width ="100",readOnly = true };
+	selectedLesson_lesson_id_controller Controller { @MVC {model = selectedLesson.lesson_id, view = selectedLesson_lesson_id_field}, validStateSetter = handleValidStateChange_selectedLesson};
+	selectedLesson_lesson_id_formField FormField { controller = selectedLesson_lesson_id_controller, nameLabel = selectedLesson_lesson_id_nameLabel};
+
+	selectedLesson_lessonname_nameLabel TextLabel { text="课程名称:" , layoutData = new GridLayoutData { row = 2, column = 1},width = "60" };
+	selectedLesson_lessonname_field DojoTextField {layoutData = new GridLayoutData { row = 2, column = 2},width ="500" };
+	selectedLesson_lessonname_controller Controller { @MVC {model = selectedLesson.lessonname, view = selectedLesson_lessonname_field}, validStateSetter = handleValidStateChange_selectedLesson};
+	selectedLesson_lessonname_formField FormField { controller = selectedLesson_lessonname_controller, nameLabel = selectedLesson_lessonname_nameLabel};
+
+	selectedLesson_coursecom_nameLabel TextLabel { text="课程简介:" , layoutData = new GridLayoutData { row = 3, column = 1},width = "60" };
+	selectedLesson_coursecom_area DojoTextArea { layoutData = new GridLayoutData { row = 3, column = 2},width ="500" };
+	selectedLesson_coursecom_controller Controller { @MVC {model = selectedLesson.coursecom, view = selectedLesson_coursecom_area}, validStateSetter = handleValidStateChange_selectedLesson};
+	selectedLesson_coursecom_formField FormField { controller = selectedLesson_coursecom_controller, nameLabel = selectedLesson_coursecom_nameLabel};
+
+//	selectedLesson__url_nameLabel TextLabel { text="课程选择:" , layoutData = new GridLayoutData { row = 4, column = 1},width = "60" };
+//	selectedLesson__url_comboBox DojoComboBox { values = ["选择","不选择"] , layoutData = new GridLayoutData { row = 4, column = 2},width ="100" };
+//	selectedLesson__url_controller Controller { @MVC {model = selectedLesson._url, view = selectedLesson__url_comboBox}, validStateSetter = handleValidStateChange_selectedLesson};
+//	selectedLesson__url_formField FormField { controller = selectedLesson__url_controller, nameLabel = selectedLesson__url_nameLabel};	
+	
+//	selectedLesson__url_nameLabel TextLabel { text="课程选择:" , layoutData = new GridLayoutData { row = 4, column = 1},width = "60" };
+//	selectedLesson__url_field DojoTextField { layoutData = new GridLayoutData { row = 4, column = 2},width ="100" };
+//	selectedLesson__url_controller Controller { @MVC {model = selectedLesson._url, view = selectedLesson__url_field}, validStateSetter = handleValidStateChange_selectedLesson};
+//	selectedLesson__url_formField FormField { controller = selectedLesson__url_controller, nameLabel = selectedLesson__url_nameLabel};	
+
+	selectedLesson_form FormManager {entries = [ selectedLesson_lesson_id_formField,selectedLesson_lessonname_formField,selectedLesson_coursecom_formField/*,selectedLesson__url_formField*/ ] };
+	
+    dialog DojoDialog{ 
+       title = "编辑框",
+       padding = 20,
+       backgroundColor ="AliceBlue",
+       draggable = true,
+       children = [content]
+    };
+    content box{
+       columns =1
+    };
+    info Div{
+       padding = 10, width = 600, backgroundColor ="lightBlue",
+       children =[
+         new DojoTitlePane{title = "课程编辑", isOpen=true, duration=1000, width = "600", children = [ new Div {
+			children = [ selectedLesson_ui ]
+		} ] }]
+    };
+    buttonBar FloatRight{
+       marginTop = 9,
+       children = [
+         new DojoButton{text = "添加", onClick ::= addRow },
+         new DojoButton{text = "删除",onClick ::= deleteRow },
+         new DojoButton{text = "清空", onClick ::= clearAllFields },
+         new DojoButton{text = "保存",onClick ::= selectedLesson_form_Submit },
+         new DojoButton{text ="关闭",marginRight=0,onClick::= hideDialog}]
+    };
+ 
+   // casesContentPane 子元素
+//    BoxCases Box{ padding=8,
+//    	width = "630",
+//    	children = [ new cases2{}.ui ] };
+   // 我的课程子子模块
+//    BoxMyLearn Box{ padding=8,width="630",
+//        children = [new MyLesson{}.ui]};
+      
+   
+    function start()
+    end
+    
+    function cellClickedLesson(grid DataGrid in) 
+    	//Auto-generated method stub
+    	selectedLesson = myLesson_ui.getSelection()[1] as Lesson;
+    	selectedLesson_form.publish();
+    end
+    
+    function readFromTable()
+     	call LessonService.getAllLessons()  
+     		using dedicatedServiceBinding
+     		returning to updateAll
+     		onException serviceExceptionHandler;
+     end
+    
+    function serviceExceptionHandler(ex anyException)
+          try
+              throw ex;
+          onException(serviceEx ServiceInvocationException)
+              log("Failure:  service invocation, exception = " +
+                              serviceEx.message);
+              log("Detail 1:  " + serviceEx.detail1);
+              log("Detail 2:  " + serviceEx.detail2);
+              log("Detail 3:  " + serviceEx.detail3);
+          onException(anyex anyException)
+              log("Failure:  service invocation, exception = " + anyex.message);
+          end
+          throw ex; 
+     end
+    
+     
+      GridLayout GridLayout{ cellPadding = 4, rows = 2, columns = 1,
+     	children = [ MyLearnRecommend, MyLearn ] };
+     MyLearn Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+     	children = [ TextLabel, Box ] };
+     TextLabel TextLabel{ text = "我的课程",
+     	font = "微软雅黑",
+     	fontSize = "16",
+     	fontWeight = "bold" };
+     Box Box{ padding=8,
+     	width = "480",
+     	height = "320" ,
+     	borderColor = "DodgerBlue",
+    	borderStyle = "solid",
+    	children = [new MyLearn{}.ui]};
+     MyLearnRecommend Box{ layoutData = new GridLayoutData{ row = 2, column = 1 }, padding=8,
+     	children = [ TextLabel1, Box1 ] };
+     TextLabel1 TextLabel{ text = "相关推荐",
+     	font = "微软雅黑",
+     	fontSize = "16",
+     	fontWeight = "bold" };
+     Box1 Box{ padding=8,
+     	width = "480",
+     	height = "120" ,
+     	borderColor = "DodgerBlue",
+    	borderStyle = "solid",
+    	children = [new MyLearnRecommend{}.ui]};
+    	
+    logActive boolean = true;
+ 
+     function log(text string in)
+          if(logActive)
+              sysLib.writeStderr(text);
+          end
+     end
+    
+    function selectedLesson_form_Submit(event Event in)
+    	if(selectedLesson_form.isValid())
+    		selectedLesson_form.commit();
+    		 for(i int from 1 to myLesson.getSize())
+     		 	if(myLesson[i].lesson_id == selectedLesson.lesson_id)
+     		 		myLesson[i] = selectedLesson;
+     		 		exit for;
+     		 	end
+     		 end
+     	call LessonService.editLesson(selectedLesson)
+        	using dedicatedServiceBinding
+        	returning to recordRevised
+        	onException serviceExceptionHandler; 
+    	end
+    end
+    
+    function selectedLesson_form_Publish(event Event in)
+    	selectedLesson_form.publish();
+    	selectedLesson_form_Validate();
+    end
+    
+    function selectedLesson_form_Validate()
+    	selectedLesson_form.isValid();
+    end
+    
+    function handleValidStateChange_selectedLesson(view Widget in, valid boolean in)
+    	for (n int from selectedLesson_form.entries.getSize() to 1 decrement by 1)
+    		entry FormField = selectedLesson_form.entries[n];
+    		if(entry.controller.view == view)
+    			if(valid)
+    				// TODO: handle valid value
+    			else
+    				msg String? = entry.controller.getErrorMessage();
+    				// TODO: handle invalid value
+    			end
+    		end
+    	end
+    end
+       
+    function addrow(event Event in)
+    	call LessonService.addLesson(new Lesson)
+     	using dedicatedServiceBinding
+     	returning to recordAdded	
+     	onException serviceExceptionHandler;
+    end   
+    
+    function deleteRow(enevt Event in)
+    	for(i int from 1 to myLesson.getSize())
+     		if(myLesson[i].lesson_id == selectedLesson.lesson_id)
+     			myLesson.removeElement(i);
+     			exit for;
+     		end
+     	end
+     	call LessonService.deleteLesson(selectedLesson)
+     	using dedicatedServiceBinding
+     	returning to recordRevised
+     	onException serviceExceptionHandler;	
+    end  
+     
+    function clearAllFields(event Event in)  
+        saveID int = selectedLesson.lesson_id;//retain the key
+     	selectedLesson = new Lesson{};
+     	selectedLesson.lesson_id = saveID;
+     	selectedLesson_form.publish(); 
+    end
+    
+    function selectedArticle_form_Submit(event Event in)
+    	if(selectedLesson_form.isValid())
+     		selectedLesson_form.commit();
+     		 // update allPayments with new version of selectedPayment
+     		 for(i int from 1 to myLesson.getSize())
+     		 	if(myLesson[i].lesson_id == selectedLesson.lesson_id)
+     		 		myLesson[i] = selectedLesson;
+     		 		exit for;
+     		 	end
+     		 end
+        call LessonService.editLesson(selectedLesson)
+        	using dedicatedServiceBinding
+        	returning to recordRevised
+        	onException serviceExceptionHandler; 
+        	
+     	end
+    end
+      
+     function updateAll(retResult Lesson[] in)
+     	myLesson = retResult;
+     	myLesson_ui.data = myLesson as any[];
+     end
+     
+     function recordAdded()
+     	readFromTable();
+     end 
+     
+     function recordRevised()
+     	myLesson_ui.data = myLesson as any[];
+     end
+     
+      function sampleData(event Event in)
+     	call LessonService.createDefaultTableLesson()
+     		using dedicatedServiceBinding
+     		returning to updateAll
+     		onException serviceExceptionHandler; 
+     end  
+      
+    function showDialog(event Event in)
+     	content.children = 
+     	        [info,buttonBar];
+     	        dialog.showDialog();
+     end
+     function hideDialog(event Event in)
+     	dialog.hideDialog(); 
+     end
+     
+     
+end

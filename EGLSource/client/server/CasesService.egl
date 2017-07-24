@@ -1,0 +1,130 @@
+package client.server;
+
+import org.eclipse.edt.eunit.runtime.Log;
+import client.common.Cases;
+import eglx.lang.Resource;
+import eglx.persistence.sql.SQLDataSource;
+import eglx.persistence.sql.SQLException;
+
+service CasesService
+ 
+  myCasesService SQLDataSource?{@Resource{uri="binding:eLearnDerby"}};
+  
+  function addCases(newCases Cases in)
+     	logEntry("addCases");
+     	try
+     		add newCases to myCasesService with
+     			#sql{
+     				insert into CASES
+     					(casename)
+     				values
+     					(?)
+     			};
+     		onException(ex sqlException)
+               logException(ex);
+     	end
+  end
+  
+  function getAllCases() returns(Cases[])
+     	casess Cases[];
+     	logEntry("getAllCases");
+     	try
+     		get casess from myCasesService with
+     			#sql{
+     				select
+     					case_id, casename
+     				from CASES
+     			};
+     		onException(ex sqlException)
+               logException(ex);
+     	end
+     	return(casess);
+  end
+  
+  function editCases(chgCases Cases in)
+     	  logEntry("editCases");
+     	  try
+     	  	replace chgCases to myCasesService with
+     	  		#sql{
+     	  			update CASES
+     	  			set
+     	  				casename = ?
+     	  			where
+     	  				case_id = ?
+     	  		};
+     	  	 onException(ex sqlException)
+               logException(ex);
+     	  end
+  end
+  
+  function deleteCases(delCases Cases in)
+     	logEntry("deleteCases");
+     	try
+     		delete delCases from myCasesService with
+     			#sql{
+     				delete from CASES
+     				where
+     					case_id = ?
+     			};
+     		onException(ex SQLException)
+          if(ex.SQLState != "02000") // sql state is five digits
+              logException sqlException;
+          end
+     	end
+  end
+  
+  function createDefaultTableCases() returns(cases[])
+     	Casess Cases[];
+     	logEntry("createDefaultTableCases");
+     	try
+     		try
+     			execute from myCasesService
+     			with #sql{
+                    delete from Cases
+                    };
+     			onException(ex SQLException)
+                if(ex.SQLState != "02000")  // sqlState is five digits
+                   throw ex;
+                end
+     		end
+     		addCases(new Cases{case_id = 1, casename = "电子谷物数粒仪PCB抄板开发与IC解密研究"
+              });
+            addCases(new Cases{case_id = 2, casename = "高压断路器程控仪PCB改板及样机定制开发"
+              });
+            addCases(new Cases{case_id = 3, casename = "自动滤材测试仪PCB抄板及技术资料提取"
+              });
+            addCases(new Cases{case_id = 4, casename = "解析落地式恒温培养振荡器抄板完成项目"
+              });
+            addCases(new Cases{case_id = 5, casename = "解析超声波固体悬浮物浓度仪克隆完成项目"
+              });
+            casess= getAllCases(); 
+            onException(ex anyException)
+              logException(ex);
+     	end
+     	return(casess);
+  end
+  
+  
+  logActive boolean = true;
+     activeService string;
+    private function logEntry(serviceFunction string in)
+        activeService = serviceFunction;
+        log("Entry:  ArticleService, " + serviceFunction);
+    end
+    private function logException(ex sqlException?)
+        accumulatedMessage string = "Exception:  ArticleService, " + activeService;
+        while(ex != null)
+            accumulatedMessage = accumulatedMessage + ", SQLSTATE = " +
+                    ex.SQLState + ", message = " + ex.message;
+            ex = ex.nextException;
+        end
+        log(accumulatedMessage);
+        throw new anyException{message = accumulatedMessage};
+    end
+    private function log(text string in)
+        if(logActive)
+            sysLib.writeStdOut(text);
+        end
+    end
+
+end

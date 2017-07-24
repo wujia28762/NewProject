@@ -1,0 +1,242 @@
+package client.client;
+
+// RUI Handler
+
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.HyperLink;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import dojo.widgets.DojoButton;
+import dojo.widgets.DojoContentPane;
+import dojo.widgets.DojoLib;
+import dojo.widgets.DojoTabContainer;
+import eglx.ui.rui.Event;
+import eglx.ui.rui.RUIHandler;
+
+//
+//
+
+handler Test type RUIhandler{initialUI =[ui
+            ], onConstructionFunction = start, cssFile = "css/NewProject.css", title = ""}
+            
+    ui GridLayout{columns = 1, rows = 2, cellPadding = 4, children = [ TabContainer, Box ]};
+    Box Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ TextLabel ] };
+    TextLabel TextLabel{ text = "在线测试",
+    	fontWeight = "bolder",
+    	font = "华文行楷",
+    	color = "YellowGreen",
+    	fontSize = "25",
+    	paddingLeft = 380 };
+    TabContainer DojoTabContainer{ layoutData = new GridLayoutData{ row = 2, column = 1 },
+		width = "900", height = "400", tabPosition = DojoLib.POSITION_TOP, //onTabSelected ::= TabSelected,
+		children = [
+			new DojoContentPane { title = "一年级", children = [ TabContainer1 ] },
+			new DojoContentPane { title = "二年级", children = []},
+			new DojoContentPane { title = "三年级", children = []},
+			new DojoContentPane { title = "四年级", children = []},
+			new DojoContentPane { title = "五年级", children = []},
+			new DojoContentPane { title = "六年级", children = []}
+		],
+		height = "1000",
+		selection = 1
+	};
+    TabContainer1 DojoTabContainer{
+		width = "730", height = "800", tabPosition = DojoLib.POSITION_LEFT, //onTabSelected ::= TabSelected,
+		children = [
+			new DojoContentPane { title = "测试题库", children = [ GridLayout ],
+				width = "730",
+				height = "600" },
+			new DojoContentPane { title = "我的试题", children = [ BoxCircuitTest,BoxElecTecTest,BoxElecMeaTest,BoxSignalAnaTest,BoxComprehensiveTest]}
+		],
+		selection = 2
+	};
+	 GridLayout GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1 }, cellPadding = 4, rows = 2, columns = 1,
+    	children = [ GridLayout2, GridLayout1 ] };
+    GridLayout1 GridLayout{ layoutData = new GridLayoutData{ row = 1, column = 1 }, cellPadding = 4, rows = 1, columns = 2,
+    	children = [ Box2, Box1 ] };
+    Box1 Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ TextLabel1 ] };
+    TextLabel1 TextLabel{ text = "请选择测试章节：",
+    	font = "微软雅黑",
+    	fontSize = "18" };
+    Box2 Box{ layoutData = new GridLayoutData{ row = 1, column = 2 }, padding=8,
+    	children = [ Button1, Button2, Button3, Button4 ] };
+    Button1 DojoButton{ text = "一、生活中的数",
+    	font = "微软雅黑",
+    	fontSize = "15", onClick ::= showcall };
+    Button2 DojoButton{ text = "二、比较",
+    	font = "微软雅黑",
+    	fontSize = "15", onClick ::= showcall };
+    Button3 DojoButton{ text = "三、加减法（一）",
+    	font = "微软雅黑",
+    	fontSize = "15", onClick ::= showcall };
+    Button4 DojoButton{ text = "四、分类",
+    	font = "微软雅黑",
+    	fontSize = "15" , onClick ::= showcall};
+    GridLayout2 GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1 }, cellPadding = 4, rows = 1, columns = 1,
+    	children = [ BoxBody ] };
+    BoxBody Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	width = "790" };
+	 BoxCircuitTest Box{ padding=8,
+    	width = "640",
+    	height = "30",
+    	children = [ TextLabelCircuitTest, HyperLinkCircuitTest1, HyperLinkCircuitTest2, HyperLinkCircuitTest3 , HyperLinkCircuitTest4, HyperLinkCircuitTest5] };
+    HyperLinkCircuitTest1 HyperLink{ text = "可爱的校园",
+    	href = "http://192.168.1.119:5590/NewProject/client/client/cute.html",
+    	font = "微软雅黑",
+    	fontSize = "14" };
+    TextLabelCircuitTest TextLabel{ text = "【一、生活中的数】",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	fontWeight = "bold" };
+    HyperLinkCircuitTest2 HyperLink{ text = "快乐的家园",
+    	href = "http://192.168.1.119:5590/NewProject/client/client/happy.html",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	marginLeft = 10 };
+    HyperLinkCircuitTest3 HyperLink{ text = "玩具",
+    	href = "http://192.168.1.119:5590/NewProject/client/client/toy.html",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	marginLeft = 10 };
+    HyperLinkCircuitTest4 HyperLink{ text = "小猫钓鱼",
+    	href = "http://192.168.1.119:5590/NewProject/client/client/cat.html",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	marginLeft = 10 };
+    HyperLinkCircuitTest5 HyperLink{ text = "文具",
+    	href = "http://192.168.1.119:5590/NewProject/client/client/stationery.html",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	marginLeft = 10 };
+    BoxElecTecTest Box{ padding=8,
+    	width = "640",
+    	height = "30",
+    	children = [ TextLabelElecTecTest, HyperLinkElecTecTest1, HyperLinkElecTecTest2, HyperLinkElecTecTest3 ] };
+    HyperLinkElecTecTest1 HyperLink{ text = "动物乐园",
+    	href = "http://192.168.1.119:5590/NewProject/client/client/animal.html",
+    	font = "微软雅黑",
+    	fontSize = "14" };
+    TextLabelElecTecTest TextLabel{ text = "【二、比较】",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	fontWeight = "bold" };
+    HyperLinkElecTecTest2 HyperLink{ text = "高矮",
+    	href = "http://192.168.1.119:5590/NewProject/client/client/top.html",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	marginLeft = 10 };
+    HyperLinkElecTecTest3 HyperLink{ text = "轻重",
+    	href = "http://192.168.1.119:5590/NewProject/client/client/light.html",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	marginLeft = 10 };
+    BoxElecMeaTest  Box{ padding=8,
+    	width = "640",
+    	height = "30",
+    	children = [ TextLabelElecMeaTest, HyperLinkElecMeaTest1, HyperLinkElecMeaTest2, HyperLinkElecMeaTest3, HyperLinkElecMeaTest4, HyperLinkElecMeaTest5 ] };
+    HyperLinkElecMeaTest1 HyperLink{ text = "有几支铅笔",
+    	href = "http://192.168.1.119:5590/NewProject/client/client/pencil.html",
+    	font = "微软雅黑",
+    	fontSize = "14" };
+    TextLabelElecMeaTest TextLabel{ text = "【三、加减法（一）】",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	fontWeight = "bold" };
+    HyperLinkElecMeaTest2 HyperLink{ text = "有几辆车",
+    	href = "http://192.168.1.119:5590/NewProject/client/client/car.html",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	marginLeft = 10 };
+    HyperLinkElecMeaTest3 HyperLink{ text = "摘果子",
+    	href = "http://192.168.1.119:5590/NewProject/client/client/fruit.html",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	marginLeft = 10 };
+    HyperLinkElecMeaTest4 HyperLink{ text = "小猫吃鱼",
+    	href = "http://192.168.1.119:5590/NewProject/client/client/fish.html",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	marginLeft = 10 };
+    HyperLinkElecMeaTest5 HyperLink{ text = "猜数游戏",
+    	href = "http://192.168.1.119:5590/NewProject/client/client/number.html",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	marginLeft = 10 };
+    BoxSignalAnaTest Box{ padding=8,
+    	width = "640",
+    	height = "30",
+    	children = [ TextLabelSignalAnaTest, HyperLinkSignalAnaTest1, HyperLinkSignalAnaTest2 ] };
+    HyperLinkSignalAnaTest1 HyperLink{ text = "整理房间",
+    	href = "http://192.168.1.119:5590/NewProject/client/client/room.html",
+    	font = "微软雅黑",
+    	fontSize = "14" };
+    TextLabelSignalAnaTest TextLabel{ text = "【四、分类】",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	fontWeight = "bold" };
+    HyperLinkSignalAnaTest2 HyperLink{ text = "整理书包",
+    	href = "http://192.168.1.119:5590/NewProject/client/client/bag.html",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	marginLeft = 10 };
+   
+    BoxComprehensiveTest Box{ padding=8,
+    	width = "640",
+    	height = "30",
+    	children = [ TextLabelComprehensiveTest, HyperLinkComprehensiveTest1, HyperLinkComprehensiveTest2,HyperLinkComprehensiveTest3,HyperLinkComprehensiveTest4 ] };
+    HyperLinkComprehensiveTest1 HyperLink{ text = "综合测试题（1）",
+    	href = "ComprehensiveTest1",
+    	font = "微软雅黑",
+    	fontSize = "14" };
+    TextLabelComprehensiveTest TextLabel{ text = "【综合测试题】",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	fontWeight = "bold" };
+    HyperLinkComprehensiveTest2 HyperLink{ text = "综合测试题（2）",
+    	href = "ComprehensiveTest2",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	marginLeft = 10 };
+    HyperLinkComprehensiveTest3 HyperLink{ text = "综合测试题（3）",
+    	href = "ComprehensiveTest3",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	marginLeft = 10 };
+    HyperLinkComprehensiveTest4 HyperLink{ text = "综合测试题（4）",
+    	href = "ComprehensiveTest4",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	marginLeft = 10 }; 
+    BoxMyTest Box{ padding=8,
+    	borderColor = "DodgerBlue",
+    	borderStyle = "solid",
+    	width = "610",
+    	children = []
+       };
+    BoxMyResult Box{ padding=8,
+    	borderColor = "DodgerBlue",
+    	borderStyle = "solid",
+    	width = "610",
+    	children = []
+       };
+    
+   
+    function start()
+    end 
+     
+    function showcall(event Event in)
+     button DojoButton=event.widget;
+       BoxBody.children = [ ];
+        case (button.text)
+        	when("一、生活中的数")   Boxbody.appendChild(new Test1{}.ui);
+        	when("二、比较")   Boxbody.appendChild(new Test2{}.ui);
+        	when("三、加减法（一）")   Boxbody.appendChild(new Test3{}.ui);
+        	when("四、分类")   Boxbody.appendChild(new Test4{}.ui);
+        end	 
+    end 
+end
+
+   

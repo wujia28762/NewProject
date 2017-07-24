@@ -1,0 +1,9 @@
+package client.server;
+
+service LoginService
+
+	variableName string;
+	function register()
+	end
+
+end

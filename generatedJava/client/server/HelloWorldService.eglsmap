@@ -1,0 +1,16 @@
+SMAP
+HelloWorldService.java
+egl
+*S egl
+*F
++ 1 HelloWorldService.egl
+client/server/HelloWorldService.egl
+*L
+6#1:30,2
+7#1:32
+5#1:33
+*E
+5#1;F:sayHello;sayHello;(Ljava/lang/String;)Ljava/lang/String;
+5#1;name;name;eglx.lang.EString
+6#1;ret;ret;eglx.lang.EString
+*X

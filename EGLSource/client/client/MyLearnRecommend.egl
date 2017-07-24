@@ -1,0 +1,47 @@
+package client.client;
+
+import eglx.ui.rui.RUIHandler;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import dojo.widgets.DojoButton;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import org.eclipse.edt.rui.widgets.HyperLink;
+import org.eclipse.edt.rui.widgets.Image;
+
+handler MyLearnRecommend type RUIhandler{initialUI =[ui], onConstructionFunction = start, cssFile = "css/e-Learning.css", title = "myLearningRecommend"}
+
+    ui GridLayout{columns = 1, rows = 1, cellPadding = 4, children = [ LearningRecommendBox ]};
+    
+    LearningRecommendBox Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=4,
+    	children = [ bodyBox, box2 ],
+    	columns = 2 };
+    	
+   bodyBox  Box{padding=4, columns=1,
+        children=[head, HyperLink1, HyperLink2, HyperLink3]};	  	
+    head TextLabel{ text="可能符合您需求的课程列表：",
+    	font = "微软雅黑",
+    	fontSize = "14" };
+    HyperLink1 HyperLink{ text="玩具",
+        href = "http://192.168.1.119:5590/NewProject/client/client/ReLesson1.html",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	marginTop = 10 };
+    HyperLink2 HyperLink{ text="文具",
+        font = "微软雅黑",
+    	fontSize = "14",
+    	href = "http://192.168.1.119:5590/NewProject/client/client/ReLesson2.html" };
+    HyperLink3 HyperLink{ text = "高矮",
+    	font = "微软雅黑",
+    	fontSize = "14",
+    	href = "http://192.168.1.119:5590/NewProject/client/client/ReLesson3.html"};
+    Box2 Box{ padding=8,
+    	children = [ myImage ],
+    	marginLeft = 70 };
+    myImage Image{
+    	src = "E:\\workspace\\pictures\\recimage_副本.jpg"
+    };
+
+    function start()
+    end
+end

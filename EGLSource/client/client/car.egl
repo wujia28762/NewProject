@@ -1,0 +1,76 @@
+package client.client;
+
+// RUI Handler
+
+import eglx.ui.rui.RUIHandler;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.Image;
+
+//
+//
+
+handler car type RUIhandler{initialUI =[ui
+            ], onConstructionFunction = start, cssFile = "css/NewProject1.css", title = ""}
+
+    ui GridLayout{columns = 1, rows = 2, cellPadding = 4, children = [ GridLayout, TextLabel ]};
+    TextLabel TextLabel{ layoutData = new GridLayoutData{ row = 1, column = 1 }, text = "有几辆车",
+    	font = "宋体",
+    	fontSize = "28",
+    	fontWeight = "bold" };
+    GridLayout GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1 }, cellPadding = 4, rows = 5, columns = 1,
+    	children = [ GridLayout3, GridLayout4, GridLayout2, GridLayout1, TextLabel1 ] };
+    TextLabel1 TextLabel{ layoutData = new GridLayoutData{ row = 1, column = 1 }, text = "课堂直通车..........................................课上学一学",
+    	font = "华文行楷",
+    	fontSize = "24" };
+    GridLayout1 GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1 }, cellPadding = 4, rows = 2, columns = 1,
+    	children = [ Box, TextLabel2 ] };
+    TextLabel2 TextLabel{ layoutData = new GridLayoutData{ row = 1, column = 1 }, text = "一、选数填空。",
+    	font = "微软雅黑",
+    	fontSize = "18" };
+    Box Box{ layoutData = new GridLayoutData{ row = 2, column = 1 }, padding=8,
+    	children = [ Image, Image3 ] };
+    Image Image{
+    	src = "E:\\workspace\\pictures\\36.jpg"
+    };
+    GridLayout2 GridLayout{ layoutData = new GridLayoutData{ row = 3, column = 1 }, cellPadding = 4, rows = 2, columns = 1,
+    	children = [ Box1, TextLabel3 ] };
+    TextLabel3 TextLabel{ layoutData = new GridLayoutData{ row = 1, column = 1 }, text = "二、比一比，看谁做得又对又快！",
+    	font = "微软雅黑",
+    	fontSize = "18" };
+    Box1 Box{ layoutData = new GridLayoutData{ row = 2, column = 1 }, padding=8,
+    	children = [ Image1, Image4 ] };
+    Image1 Image{
+    	src = "E:\\workspace\\pictures\\38.jpg",
+    	marginLeft = 15
+    };
+    GridLayout4 GridLayout{ layoutData = new GridLayoutData{ row = 4, column = 1 }, cellPadding = 4, rows = 2, columns = 1,
+    	children = [ Box2, TextLabel6 ] };
+    TextLabel6 TextLabel{ layoutData = new GridLayoutData{ row = 1, column = 1 }, text = "三、回答下面问题。",
+    	font = "微软雅黑",
+    	fontSize = "18" };
+    Box2 Box{ layoutData = new GridLayoutData{ row = 2, column = 1 }, padding=8,
+    	children = [ Image2 ] };
+    Image2 Image{
+    	src = "E:\\workspace\\pictures\\40.jpg"
+    };
+    Image3 Image{
+    	src = "E:\\workspace\\pictures\\37.jpg",
+    	marginTop = 3,
+    	marginLeft = 50
+    };
+    Image4 Image{
+    	src = "E:\\workspace\\pictures\\39.jpg",
+    	marginLeft = 100
+    };
+    GridLayout3 GridLayout{ layoutData = new GridLayoutData{ row = 5, column = 1 }, cellPadding = 4, rows = 1, columns = 1,
+    	children = [ TextLabel4 ] };
+    TextLabel4 TextLabel{ layoutData = new GridLayoutData{ row = 1, column = 1 }, text = "四、把3个△分成两排，有几种分法？请画出来。",
+    	font = "微软雅黑",
+    	fontSize = "18" };
+
+    function start()
+    end
+end

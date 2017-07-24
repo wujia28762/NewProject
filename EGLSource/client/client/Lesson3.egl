@@ -1,0 +1,90 @@
+package client.client;
+
+import eglx.ui.rui.RUIHandler;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import dojo.widgets.DojoButton;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import org.eclipse.edt.rui.widgets.Button;
+import org.eclipse.edt.rui.widgets.Image;
+import org.eclipse.edt.rui.widgets.BoxLib;
+import org.eclipse.edt.rui.widgets.HyperLink;
+import org.eclipse.edt.rui.widgets.HTML;
+
+handler Lesson3 type RUIhandler{initialUI =[ui], onConstructionFunction = start, cssFile = "css/e-Learning.css", title = ""}
+
+    ui GridLayout{columns = 1, rows = 1, cellPadding = 4, children = [ Lesson1Box ]};
+    Lesson1Box Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ TitleBox, contentBox ],
+    	width = "900",
+    	columns = 1 };
+    	
+    TitleBox Box{ padding=8,
+    	children = [ LessonTitle, ButtonsBox ], 
+    	backgroundColor = "LightSkyBlue",
+    	width = "900",
+    	height = "50",
+    	columns = 2 };
+    LessonTitle TextLabel{ text="小猫钓鱼", 
+    	font = "华文新魏",
+    	fontSize = "30" };
+    ButtonsBox Box{ padding=8,
+    	marginTop = 20,
+    	marginLeft = 10,
+    	columns = 8,
+    	children = [ Button1, Button2, Button3, Button4, Button5, Button6, Button7, Button8 ] };
+    Button1 Button{ text = "课程简介",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button2 Button{ text = "教师简介",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button3 Button{ text = "指定教材",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button4 Button{ text = "学习方法",
+    	fontSize = "14",
+    	font = "微软雅黑" }; 
+    Button5 Button{ text = "教学目标",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button6 Button{ text = "教学重点",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button7 Button{ text = "作业习题",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button8 Button{ text = "授课时长",
+    	fontSize = "14",
+    	font = "微软雅黑" }; 
+    	
+    contentBox Box{padding=8,columns=1, children=[topBox, bodyBox]};	
+    topBox Box{padding=8, columns=2, children=[leftBox],
+    	width = "840"};    
+    		
+    leftBox Box{padding=8, columns=2,
+    	children = [ leftImage, leftText ]};
+    leftImage Image{
+    	src = "E:\\workspace\\pictures\\图标.jpg"
+    };
+    leftText TextLabel{ text = "课 程 简 介",
+    	fontSize = "16" };
+    	
+    
+  
+   bodyBox Box{padding=8, columns=1,
+   	children = [ HTML1 ]};
+   HTML1 HTML{ text= "<li><b>一、 创设情境、引入新课</b></li><p>谁会讲小猫钓鱼和故事书中有4只小猫结伴到河边钓鱼，直到傍晚才回来，我们一起看他们的收获吧！</p>"+
+                    "<li><b>二、 探究新知，讲授新课 </b></li><p>1、出示小猫钓鱼图：  </p>"+
+                    "<p>（1）谁来介绍一下第一只小猫钓了几条鱼？用几来表示？第2只小猫呢？第三只小猫呢？第4只小猫吹胡子瞪眼睛地怎么了？一条鱼也没钓着用几表示呢？  </p>"+
+                    "<p>（2）指导写0。数字0占田字格的右半格，从右上角起笔向左下角运笔逆时针轨迹。回到起笔处，一笔写成。</p>"+
+                    "<p>2．引导学生观察直尺图。  </p>"+
+                    "<p>（2）仔细观察直尺是由哪个数字开始的？从0开始，0是起点。它在1的前面，比1小。  </p>"+
+                    "<p></p>",
+   	width = "800",
+   	fontSize = "14" }; 	
+
+    function start()
+    end
+end

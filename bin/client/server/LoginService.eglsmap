@@ -1,0 +1,13 @@
+SMAP
+LoginService.java
+egl
+*S egl
+*F
++ 1 LoginService.egl
+client/server/LoginService.egl
+*L
+6#1:32
+*E
+5#1;variableName;variableName;eglx.lang.EString
+6#1;F:register;register;()V
+*X

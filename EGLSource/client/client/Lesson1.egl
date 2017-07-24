@@ -1,0 +1,87 @@
+package client.client;
+
+import eglx.ui.rui.RUIHandler;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import dojo.widgets.DojoButton;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import org.eclipse.edt.rui.widgets.Button;
+import org.eclipse.edt.rui.widgets.Image;
+import org.eclipse.edt.rui.widgets.BoxLib;
+import org.eclipse.edt.rui.widgets.HyperLink;
+import org.eclipse.edt.rui.widgets.HTML;
+
+handler Lesson1 type RUIhandler{initialUI =[ui], onConstructionFunction = start, cssFile = "css/e-Learning.css", title = ""}
+
+    ui GridLayout{columns = 1, rows = 1, cellPadding = 4, children = [ Lesson1Box ]};
+    Lesson1Box Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ TitleBox, contentBox ],
+    	width = "900",
+    	columns = 1 };
+    	
+    TitleBox Box{ padding=8,
+    	children = [ LessonTitle, ButtonsBox ], 
+    	backgroundColor = "LightSkyBlue",
+    	width = "900",
+    	height = "50",
+    	columns = 2 };
+    LessonTitle TextLabel{ text="可爱的校园", 
+    	font = "华文新魏",
+    	fontSize = "30" };
+    ButtonsBox Box{ padding=8,
+    	marginTop = 20,
+    	marginLeft = 10,
+    	columns = 8,
+    	children = [ Button1, Button2, Button3, Button4, Button5, Button6, Button7, Button8 ] };
+    Button1 Button{ text = "课程简介",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button2 Button{ text = "教师简介",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button3 Button{ text = "指定教材",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button4 Button{ text = "学习方法",
+    	fontSize = "14",
+    	font = "微软雅黑" }; 
+    Button5 Button{ text = "教学目标",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button6 Button{ text = "教学重点",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button7 Button{ text = "作业习题",
+    	fontSize = "14",
+    	font = "微软雅黑" };
+    Button8 Button{ text = "授课时长",
+    	fontSize = "14",
+    	font = "微软雅黑" }; 
+    	
+    contentBox Box{padding=8,columns=1, children=[topBox, bodyBox]};	
+    topBox Box{padding=8, columns=2, children=[leftBox],
+    	width = "840"};    
+    		
+    leftBox Box{padding=8, columns=2,
+    	children = [ leftImage, leftText ]};
+    leftImage Image{
+    	src = "E:\\workspace\\pictures\\图标.jpg"
+    };
+    leftText TextLabel{ text = "课 程 简 介",
+    	fontSize = "16" };
+    	
+    
+  
+   bodyBox Box{padding=8, columns=1,
+   	children = [ HTML1 ]};
+   HTML1 HTML{ text= "<li><b>活动一：我们的校园</b></li><p>1．在我们的校园里你都看到了什么？    （我们的校园里有操场，我们的学校里有老师，我们的学校里有小朋友……）  </p>"+
+                     "<p>  2．你能用一句带有数字的话说一说你都看到了什么吗？   （我看到了1个老师，我看到了3座楼，我看到了一年级有7个班，有6个年级，有好多小朋友……）教师：对了！你们说的真好！我们的校园里还有许多的树、许多的花、许多的教室和老师，我们要在校园里共同生活学习，老师是你们的大朋友，如果你有什么困难就来找我好吗？    （点评：在课堂教学中发挥学生的主动学习作用，是课程标准中一个基本的教学理念．由于学生刚刚进入学校，对学校的了解还不多，通过学生们互相启发，引起学生对学校生活的兴趣，从而产生对学校生活的喜爱．）</p>"+
+                    "<li><b>活动二：动物王国的校园</b></li><p>教师：动物王国的动物学校也开学了，小动物们都高兴地来到学校，你们想到它们的学校看看吗？（想）   1．出示主题图：</p>"+
+                    "<p>2．观察小动物    （1）你们都看到有哪些小动物来上学了？（小熊、小松鼠、小兔子）    （2）你们能数一数这些小动物都有几只吗？（有6只小熊）   （3）我们一起数一数，看看是6只小熊吗？（师生共同数）   （4）有几只小松鼠呢？（有4只小松鼠）   （5）小兔子呢？（有2只小兔子）   （6）它们的老师是谁呀？（大象）   （7）有几位老师呀？（1位）    （点评：由于学生刚刚接触数学的学习，因此在这一环节教师要有意识地引导学生学会观察．教师从一开始带领学生观察画面，到由学生独立观察是一个非常漫长的过程，需要老师经常地有意识有目的的指导．）</p>",
+   	width = "800",
+   	fontSize = "14" }; 	
+
+    function start()
+    end
+end

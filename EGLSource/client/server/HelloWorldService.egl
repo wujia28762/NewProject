@@ -1,0 +1,10 @@
+package client.server;
+
+service HelloWorldService
+
+	function sayHello(name string in) returns(String) 
+		ret String = "Hello, " + name + "!";
+		return (ret);
+	end
+
+end

@@ -1,0 +1,35 @@
+package client.client;
+
+// RUI Handler
+
+import eglx.ui.rui.RUIHandler;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.Image;
+import org.eclipse.edt.rui.widgets.HyperLink;
+
+//
+//
+
+handler Learn0 type RUIhandler{initialUI =[ui
+            ], onConstructionFunction = start, cssFile = "css/NewProject.css", title = ""}
+
+    ui GridLayout{columns = 1, rows = 2, cellPadding = 4, children = [ HyperLink, Box ]};
+    Box Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ Image ] };
+    Image Image{
+    	src = "E:\\workspace\\pictures\\2.jpg"
+    };
+    HyperLink HyperLink{ layoutData = new GridLayoutData{ row = 2, column = 1 }, text = "请进入在线学习界面",
+    	font = "宋体",
+    	fontSize = "40",
+    	href = "http://www.zhly.cn/online/",
+    	position = "absolute",
+    	x = 250,
+    	y = 200,
+    	color = "DeepPink" };
+
+    function start()
+    end
+end

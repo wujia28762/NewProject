@@ -1,0 +1,88 @@
+package client.client;
+
+// RUI Handler
+
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import dojo.widgets.DojoButton;
+import dojo.widgets.DojoContentPane;
+import dojo.widgets.DojoLib;
+import dojo.widgets.DojoTabContainer;
+import eglx.ui.rui.Event;
+import eglx.ui.rui.RUIHandler;
+
+//
+//
+
+handler Learning type RUIhandler{initialUI =[ui
+            ], onConstructionFunction = start, cssFile = "css/NewProject.css", title = ""}
+            
+    ui GridLayout{columns = 1, rows = 2, cellPadding = 4, children = [ TabContainer, Box ]};
+    Box Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ TextLabel ] };
+    TextLabel TextLabel{ text = "在线学习",
+    	fontWeight = "bolder",
+    	font = "华文行楷",
+    	color = "YellowGreen",
+    	fontSize = "25",
+    	paddingLeft = 380 };
+    TabContainer DojoTabContainer{ layoutData = new GridLayoutData{ row = 2, column = 1 },
+		width = "900", height = "400", tabPosition = DojoLib.POSITION_TOP, //onTabSelected ::= TabSelected,
+		children = [
+			new DojoContentPane { title = "一年级", children = [ GridLayout ] },
+			new DojoContentPane { title = "二年级", children = []},
+			new DojoContentPane { title = "三年级", children = []},
+			new DojoContentPane { title = "四年级", children = []},
+			new DojoContentPane { title = "五年级", children = []},
+			new DojoContentPane { title = "六年级", children = []}
+		],
+		height = "1000",
+		selection = 1
+	};
+	GridLayout GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1 }, cellPadding = 4, rows = 2, columns = 1,
+    	children = [ GridLayout2, GridLayout1 ] };
+    GridLayout1 GridLayout{ layoutData = new GridLayoutData{ row = 1, column = 1 }, cellPadding = 4, rows = 1, columns = 2,
+    	children = [ Box2, Box1 ] };
+    Box1 Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	children = [ TextLabel1 ] };
+    
+    Box2 Box{ layoutData = new GridLayoutData{ row = 1, column = 2 }, padding=8,
+    	children = [ Button1, Button2, Button3, Button4 ] };
+    Button1 DojoButton{ text = "一、生活中的数",
+    	font = "微软雅黑",
+    	fontSize = "15", onClick ::= showcall };
+    Button2 DojoButton{ text = "二、比较",
+    	font = "微软雅黑",
+    	fontSize = "15", onClick ::= showcall };
+    Button3 DojoButton{ text = "三、加减法（一）",
+    	font = "微软雅黑",
+    	fontSize = "15", onClick ::= showcall };
+    Button4 DojoButton{ text = "四、分类",
+    	font = "微软雅黑",
+    	fontSize = "15" , onClick ::= showcall};
+    GridLayout2 GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1 }, cellPadding = 4, rows = 1, columns = 1,
+    	children = [ BoxBody ] };
+    BoxBody Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8,
+    	width = "790" };
+    TextLabel1 TextLabel{ text = "请选择测试章节：",
+    	font = "微软雅黑",
+    	fontSize = "18" };
+	
+	
+   
+    function start()
+    end 
+     
+    function showcall(event Event in)
+       button DojoButton=event.widget;
+       BoxBody.children = [ ];
+        case (button.text)
+        	when("一、生活中的数")   BoxBody.appendChild(new Learn{}.ui);
+        	when("二、比较")   BoxBody.appendChild(new Learn1{}.ui);
+        end	
+    end 
+end
+
+   

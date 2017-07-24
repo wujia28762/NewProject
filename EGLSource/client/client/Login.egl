@@ -1,0 +1,270 @@
+package client.client;
+
+import org.eclipse.edt.rui.mvc.Controller;
+import org.eclipse.edt.rui.mvc.DateFormat;
+import org.eclipse.edt.rui.mvc.FormField;
+import org.eclipse.edt.rui.mvc.FormManager;
+import org.eclipse.edt.rui.mvc.InputRequired;
+import org.eclipse.edt.rui.mvc.InputRequiredMsgKey;
+import org.eclipse.edt.rui.mvc.MVC;
+import org.eclipse.edt.rui.mvc.MVCValidStateSetter;
+import org.eclipse.edt.rui.mvc.MinimumInput;
+import org.eclipse.edt.rui.mvc.MinimumInputMsgKey;
+import org.eclipse.edt.rui.mvc.TypeChkMsgKey;
+import org.eclipse.edt.rui.mvc.ValidatingForm;
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.BoxLib;
+import org.eclipse.edt.rui.widgets.Button;
+import org.eclipse.edt.rui.widgets.Div;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.GridLayoutLib;
+import org.eclipse.edt.rui.widgets.PasswordTextField;
+import org.eclipse.edt.rui.widgets.TextField;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import client.common.ValidationMessages;
+import client.server.HelloWorldService;
+import dojo.widgets.DojoButton;
+import dojo.widgets.DojoDialog;
+import dojo.widgets.DojoDialogLib;
+import dojo.widgets.DojoTextField;
+import eglx.http.HttpProxy;
+import eglx.rbd.StrLib;
+import eglx.ui.rui.Event;
+import eglx.ui.rui.RUIHandler;
+import eglx.ui.rui.View;
+import eglx.ui.rui.Widget;
+
+handler Login type RUIhandler{initialUI =[ui], onConstructionFunction = start, cssFile = "css/e-Learning.css", title = "Login"}
+
+    ui GridLayout{columns = 1, rows = 1, cellPadding = 4, children = [ BodyBox ]};
+    BodyBox Box{ layoutData = new GridLayoutData{ row = 1, column = 1 }, padding=8, columns = 1,
+                 children = [WelcomeBox, LoginBox] };
+                 
+    WelcomeBox Box{padding = 8, children = [Welcome]};             
+    Welcome TextLabel{ text = "小学数学个性化智能教学系统欢迎您！",
+    	fontWeight = "bolder",
+    	font = "华文行楷",
+    	fontSize = "40",
+    	color = "YellowGreen" };
+    	
+    LoginBox Box{ padding=8, width = 600, height = 250, columns = 1,
+                  children=[fieldBox, logininBox, GreetBox] };    
+    fieldBox Box{padding=8, children=[myuser_ui]};
+    logininBox Box{padding=8,columns = 2,
+                   children = [ LoginIn, Register ],
+    	           alignment = BoxLib.ALIGN_CENTER}; 
+    LoginIn DojoButton{ text = "登录",
+    	font = "微软雅黑",
+    	fontSize = "14", onClick ::= LoginIn_onClick };
+    Register DojoButton{text = "注册",
+    	font = "微软雅黑",
+    	fontSize = "14", onClick ::= Register_onClick };  
+    GreetBox Box{ padding=8, children=[Greet] };  
+    Greet TextLabel{
+    	font = "微软雅黑",
+    	fontSize = "14"
+    };
+    	
+    myuser user;
+    
+	myuser_ui GridLayout { layoutData = new GridLayoutData{ row = 2, column = 2,
+		horizontalAlignment = GridLayoutLib.ALIGN_LEFT }, rows = 2, columns = 2, cellPadding = 4, children = [ myuser_username_nameLabel,myuser_username_field,myuser_password_nameLabel,myuser_password_field ],
+		marginTop = 20,
+		marginBottom = 5 };
+
+	myuser_username_nameLabel TextLabel { text="用户名：" , layoutData = new GridLayoutData { row = 1, column = 1},
+		font = "微软雅黑",
+		fontSize = "16",
+		fontWeight = "bolder" };
+	myuser_username_field DojoTextField {layoutData = new GridLayoutData { row = 1, column = 2} };
+	myuser_username_controller Controller { @MVC {model = myuser.username, view = myuser_username_field}, 
+	                                              validStateSetter = handleValidStateChange_myuser};
+	myuser_username_formField FormField { controller = myuser_username_controller, nameLabel = myuser_username_nameLabel};
+
+	myuser_password_nameLabel TextLabel { text="密码：   " , layoutData = new GridLayoutData { row = 2, column = 1},
+		font = "微软雅黑",
+		fontSize = "16",
+		fontWeight = "bolder" };
+	myuser_password_field PasswordTextField {layoutData = new GridLayoutData { row = 2, column = 2} };
+	myuser_password_controller Controller { @MVC {model = myuser.password, view = myuser_password_field}, 
+	                                              validStateSetter = handleValidStateChange_myuser};
+	myuser_password_formField FormField { controller = myuser_password_controller, nameLabel = myuser_password_nameLabel};	
+
+	myuser_form FormManager {entries = [ myuser_username_formField,myuser_password_formField ] };	 
+	
+	
+	Regdialog DojoDialog{ 
+       title = "用户注册",
+       padding = 20,
+       backgroundColor ="AliceBlue",
+       draggable = true,
+       children = [content]
+    };
+    content box{
+       columns =1,
+       children = [Reginfo] 
+    };
+    Reginfo Div {
+        padding=10, width=400,
+		backgroundColor="lightBlue",
+		children=[acctForm,
+		          new Box { marginTop=3, columns = 2,
+		              children=[ submitButton, clearButton]} ]
+	};
+   	
+	submitButton Button { text = "注册", onClick ::= submitForm, marginLeft=10, marginBottom=10 };
+	clearButton Button { text = "清空", onClick ::= clearForm, marginLeft=10, marginBottom=10 };
+	
+	account accountRecords;
+	usernameField TextField{};
+	passwordField PasswordTextField{};
+	emailField TextField{};
+	realNameField TextField{};
+	birthdayField TextField{};
+	addressField TextField{};
+	
+	usernameController Controller { @MVC { model = account.username, view = usernameField } };
+	passwordController Controller { @MVC { model = account.password, view = passwordField } };
+	emailController Controller { @MVC { model = account.email, view = emailField }, validators ::= validateEmail };
+	realNameController Controller { @MVC { model = account.realName, view = realNameField } };
+	birthdayController Controller { @MVC { model = account.birthday, view = birthdayField } };
+	addressController Controller { @MVC { model = account.address, view = addressField } };
+		
+	acctForm ValidatingForm {
+		marginTop=10,
+		marginLeft=10,
+		entries = [
+			new FormField { displayName="* 用户名:", controller = usernameController },
+			new FormField { displayName="* 密码:", controller = passwordController },
+			new FormField { displayName="* Email:", controller = emailController },
+			new FormField { displayName="* 真实姓名:", controller = realNameController },
+			new FormField { displayName="出生日期:", controller = birthdayController },
+			new FormField { displayName="* 地址:", controller = addressController }
+	]};
+	             
+
+    function start()
+    	myuser_username_field.focus();
+    end
+    
+    function LoginIn_onClick(e Event in) 
+    call HelloWorldService.sayHello (myuser_username_field.text)
+		        using new HttpProxy
+                returning to displayResults onException displayError;
+    	if(myuser.username=="yanxue" and myuser.password=="123456")
+            Greet.setText("Hello yanxue");
+         else
+//         	Greet.setText("Please login again");
+    	end
+    end
+     function displayResults(retResult string in)
+        DojoDialogLib.showAlert(retResult);
+    end
+
+    function displayError(exp AnyException in)
+        DojoDialogLib.showError("Error", exp.message, null);
+    end
+    function myuser_form_Submit(event Event in)
+    	if(myuser_form.isValid())
+    		myuser_form.commit();
+//    		call loginService.register 
+//    		     (user.username,
+//    		      user.password)
+//    		      	returning to myCallback;
+//    	    end
+    	end
+    end
+    
+    function myuser_form_Publish(event Event in)
+    	myuser_form.publish();
+    	myuser_form_Validate();
+    end
+    
+    function myuser_form_Validate()
+    	myuser_form.isValid();
+    end
+    
+    function Register_onClick(e Event in) 
+    	Regdialog.showDialog();
+    end
+    
+    function handleValidStateChange_myuser(widget Widget in, valid boolean in) 
+    	for (n int from myuser_form.entries.getSize() to 1 decrement by 1)
+    		entry FormField = myuser_form.entries[n];
+    		if(entry.controller.view == view)
+    			if(valid)
+    				// TODO: handle valid value
+    			else
+    				msg String? = entry.controller.getErrorMessage();
+    				// TODO: handle invalid value
+    			end
+    		end
+    	end
+    end
+    
+    function submitForm(e Event in) 
+    	if(acctForm.isValid())
+			acctForm.commit();			
+			Reginfo.children = [
+				new TextLabel {
+					text = "账户创建成功!",
+					color="red",
+					fontWeight="bold",
+					margin=10
+				},
+				new Box { columns=2, marginLeft=10, children=[
+					new TextLabel { text="用户名:" },
+					new TextLabel { text=account.username, marginLeft=10 },
+					new TextLabel { text="Email:" },
+					new TextLabel { text=account.email, marginLeft=10 },
+					new TextLabel { text="真实姓名:" },
+					new TextLabel { text=account.realName, marginLeft=10 },
+					new TextLabel { text="出生日期:" },
+					new TextLabel { text=account.birthday, marginLeft=10 },
+					new TextLabel { text="地址:" },
+					new TextLabel { text=account.address, marginLeft=10 }
+				] },
+				new Button { text = "OK", onClick ::= reset, width=100, margin=10 }
+			];
+		end    
+    end
+    
+    function clearForm(e Event in)    	
+		account = (new accountRecords);
+		acctForm.publish();
+    end
+    
+    function validateEmail(input string in) returns(string?)
+    	i int = StrLib.indexOf(input, "@");
+		if(i > 0)
+			i = StrLib.indexOf(input, ".", i);
+			if(i < StrLib.characterLen(input))
+				return("");
+			end
+		end
+		return(ValidationMessages.emailError);
+    end
+    
+    function reset( e Event in )
+		clearForm( e );
+		Reginfo.children = [ acctForm, new Box { marginTop=3, children=[
+			submitButton,
+			clearButton
+		] } ];
+	end
+end
+
+record user
+  username string;
+  password string;
+end
+
+record accountRecords
+	username string { @MinimumInput{6}, @MinimumInputMsgKey{"usrMinInput"} };
+	password string { @MinimumInput{6}, @MinimumInputMsgKey{"pwMinInput"} };
+	email string;
+	realName string { @InputRequired{yes}, @InputRequiredMsgKey{"valReq"}};
+	birthday date { @dateFormat{"MM/dd/yy"}, @TypeChkMsgKey{"invalidDate"}};
+	address string { @InputRequired{yes}, @InputRequiredMsgKey{"valReq"}};   
+end

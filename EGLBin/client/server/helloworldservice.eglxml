@@ -1,0 +1,64 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<Service ID="1" eClass="org.eclipse.edt.mof.egl.Service" name="HelloWorldService" fileName="client/server/HelloWorldService.egl" hasCompileErrors="false" packageName="client.server" isAbstract="false" >
+	<annotations ID="2" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:143" off="i:24" line="i:3" />
+	<superTypes href="egl:eglx.lang.anystruct"/>
+	<functions ID="3" eClass="org.eclipse.edt.mof.egl.Function" name="sayHello" type="egl:eglx.lang.estring" isNullable="false" isStatic="false" isAbstract="false" >
+		<annotations ID="4" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:110" off="i:52" line="i:5" />
+		<container IDREF="1"/>
+		<parameters ID="5" eClass="org.eclipse.edt.mof.egl.FunctionParameter" name="name" type="egl:eglx.lang.estring" isNullable="false" isStatic="false" isAbstract="false" accessKind="ACC_PRIVATE" parameterKind="PARM_IN" isDefinedSqlNullable="false" isField="false" isConst="false" >
+			<annotations ID="6" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:14" off="i:70" line="i:5" />
+			<container IDREF="3"/>
+		</parameters>
+		<statementBlock ID="7" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+			<container IDREF="3"/>
+			<statements ID="8" eClass="org.eclipse.edt.mof.egl.LocalVariableDeclarationStatement" >
+				<annotations ID="9" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:36" off="i:105" line="i:6" />
+				<container IDREF="3"/>
+				<expr ID="10" eClass="org.eclipse.edt.mof.egl.DeclarationExpression" >
+					<annotations ID="11" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:36" off="i:105" line="i:6" />
+					<fields ID="12" eClass="org.eclipse.edt.mof.egl.Field" name="ret" type="egl:eglx.lang.estring" isNullable="false" isStatic="false" isAbstract="false" hasSetValuesBlock="true" isImplicit="false" isSystemField="false" >
+						<annotations ID="13" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:3" off="i:105" line="i:6" />
+						<container IDREF="3"/>
+						<initializerStatements ID="14" eClass="org.eclipse.edt.mof.egl.StatementBlock" >
+							<annotations ID="15" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:22" off="i:118" line="i:6" />
+							<container IDREF="1"/>
+							<statements ID="16" eClass="org.eclipse.edt.mof.egl.AssignmentStatement" >
+								<annotations ID="17" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:22" off="i:118" line="i:6" />
+								<container IDREF="1"/>
+								<expr ID="18" eClass="org.eclipse.edt.mof.egl.Assignment" >
+									<LHS ID="19" eClass="org.eclipse.edt.mof.egl.MemberName" id="ret" >
+										<member IDREF="12"/>
+									</LHS>
+									<RHS ID="20" eClass="org.eclipse.edt.mof.egl.BinaryExpression" operator="+" >
+										<annotations ID="21" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:22" off="i:118" line="i:6" />
+										<operands ID="22" eClass="org.eclipse.edt.mof.egl.BinaryExpression" operator="+" >
+											<annotations ID="23" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:16" off="i:118" line="i:6" />
+											<operands ID="24" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="Hello&#44; " isHex="false" >
+												<annotations ID="25" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:9" off="i:118" line="i:6" />
+											</operands>
+											<operands ID="26" eClass="org.eclipse.edt.mof.egl.MemberName" id="name" >
+												<annotations ID="27" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:4" off="i:130" line="i:6" />
+												<member IDREF="5"/>
+											</operands>
+										</operands>
+										<operands ID="28" eClass="org.eclipse.edt.mof.egl.StringLiteral" value="!" isHex="false" >
+											<annotations ID="29" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:3" off="i:137" line="i:6" />
+										</operands>
+									</RHS>
+								</expr>
+							</statements>
+						</initializerStatements>
+					</fields>
+				</expr>
+			</statements>
+			<statements ID="30" eClass="org.eclipse.edt.mof.egl.ReturnStatement" >
+				<annotations ID="31" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:13" off="i:144" line="i:7" />
+				<container IDREF="3"/>
+				<expression ID="32" eClass="org.eclipse.edt.mof.egl.MemberName" id="ret" >
+					<annotations ID="33" eClass="dynMof:org.eclipse.edt.mof.egl.Annotation:EGL_Location" len="i:3" off="i:152" line="i:7" />
+					<member IDREF="12"/>
+				</expression>
+			</statements>
+		</statementBlock>
+	</functions>
+</Service>

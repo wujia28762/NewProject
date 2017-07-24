@@ -1,0 +1,106 @@
+package client.client;
+
+import org.eclipse.edt.rui.widgets.Box;
+import org.eclipse.edt.rui.widgets.Button;
+import org.eclipse.edt.rui.widgets.Div;
+import org.eclipse.edt.rui.widgets.GridLayout;
+import org.eclipse.edt.rui.widgets.GridLayoutData;
+import org.eclipse.edt.rui.widgets.GridLayoutLib;
+import org.eclipse.edt.rui.widgets.HyperLink;
+import org.eclipse.edt.rui.widgets.Image;
+import org.eclipse.edt.rui.widgets.TextField;
+import org.eclipse.edt.rui.widgets.TextLabel;
+import dojo.widgets.DojoButton;
+import dojo.widgets.DojoTitlePane;
+import eglx.ui.rui.Event;
+import eglx.ui.rui.RUIHandler;
+import dojo.widgets.DojoTextField;
+
+handler Study type RUIhandler{initialUI =[ui
+            ], onConstructionFunction = start, cssFile = "css/e-Learning.css", title = ""}
+
+    ui GridLayout{columns = 3, rows = 5, children = [ Box, gridlayoutaccouncement, bottom, gridlayoutnavigation, boxdoor],
+    	width = "1000",
+    	backgroundColor = "AliceBlue",
+    	marginBottom = 5};
+    BoxDoor Box{ layoutData = new GridLayoutData{ row = 1, column = 1,
+    	horizontalSpan = 3 }, padding=8,
+    	children = [ Door ],
+    	backgroundColor = "AliceBlue" }; 
+    Door Image{
+    	src = "E:\\workspace\\pictures\\3.jpg"
+    };
+    GridLayoutNavigation GridLayout{ layoutData = new GridLayoutData{ row = 2, column = 1,
+    	horizontalSpan = 2 }, cellPadding = 4, rows = 1, columns = 2,
+    	children = [ BoxNavigation ],
+    	width = "1000",
+    	height = "50",
+    	borderBottomStyle = "solid",
+    	borderColor = "Khaki",
+    	backgroundColor = "Khaki" };
+    BoxNavigation Box{ layoutData = new GridLayoutData{ row = 1, column = 1,
+    	horizontalSpan = 2 }, padding=8,
+    	children = [ Login, HomePage,  Learning, test, Education, Users ],
+    	width = "600",
+    	height = "50"};
+    HomePage Button{ text = "首页",
+    	font = "微软雅黑",
+    	fontSize = "16",
+    	fontWeight = "bold", onClick ::= showcall };
+    Learning Button{ text = "在线学习",
+    	font = "微软雅黑",
+    	fontSize = "16",
+    	fontWeight = "bold", onClick ::= showcall};
+    Test Button{ text = "在线测试",
+    	font = "微软雅黑",
+    	fontSize = "16",
+    	fontWeight = "bold", onClick ::= showcall };
+    Education Button{ text = "教育资讯",
+    	font = "微软雅黑",
+    	fontSize = "16",
+    	fontWeight = "bold", onClick ::= showcall };
+    Users Button{ text = "个人中心",
+    	font = "微软雅黑",
+    	fontSize = "16",
+    	fontWeight = "bold", onClick ::= showcall };
+    Bottom TextLabel{ layoutData = new GridLayoutData{ row = 5, column = 1,
+    	horizontalSpan = 3,
+    	horizontalAlignment = GridLayoutLib.ALIGN_CENTER }, text = "All Rights Reserved!",
+    	marginTop = 20,
+    	marginBottom = 10,
+    	font = "微软雅黑" };
+    GridLayoutAccouncement GridLayout{ layoutData = new GridLayoutData{ row = 3, column = 1,
+    	horizontalSpan = 3 }, cellPadding = 4, rows = 3, columns = 3,
+    	children = [BoxBody ] };
+    BoxBody Box{ layoutData = new GridLayoutData{ row = 1, column = 1,
+    	horizontalSpan = 2,
+    	verticalAlignment = GridLayoutLib.VALIGN_TOP }, padding=8,
+    	width = "1000",
+    	position = "relative" };
+    Login DojoButton{ text = "登陆",
+    	font = "微软雅黑",
+    	fontSize = "16",
+    	fontWeight = "bold", onClick ::= showcall };
+    Box Box{ layoutData = new GridLayoutData{ row = 2, column = 3 }, padding=8,
+    	children = [ TextField, Button ] };
+    TextField DojoTextField{};
+    Button DojoButton{ text = "搜索" };
+   
+
+    	
+    function start()  	
+    end     
+   
+    function showcall(event Event in) 
+     button DojoButton=event.widget;
+       BoxBody.children = [ ];
+        case (button.text)
+        	when("登陆")   BoxBody.appendChild(new Login{}.ui);
+        	when("首页")   BoxBody.appendChild(new HomePage{}.ui);
+        	when("在线学习")   BoxBody.appendChild(new Learning{}.ui);
+        	when("在线测试")   BoxBody.appendChild(new Test{}.ui);
+        	when("教育资讯")   BoxBody.appendChild(new Education{}.ui);
+        	when("个人中心")   BoxBody.appendChild(new UserIn{}.ui);
+        end	
+    end    
+end

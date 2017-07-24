@@ -1,0 +1,10 @@
+package client.common;
+
+library ValidationMessages
+	usrMinInput String;
+	pwMinInput String;
+	valReq String;
+	validZip String;
+	emailError String;
+	invalidDate String;
+end

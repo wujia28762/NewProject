@@ -1,0 +1,13 @@
+package client.common;
+
+
+import eglx.persistence.Entity;
+import eglx.persistence.Id;
+import eglx.persistence.sql.*;
+
+record Lesson type Entity{@table{name = "USER_LESSON"}}
+    lesson_id int{@id,@GeneratedValue,@Column{name="lesson_id"}};
+    lessonname string(100){@Column{name="lessonname"}};
+    coursecom string(255){@Column{name="coursecom"}};
+    _url string(255)?{@column{name = "URL"}};
+end
